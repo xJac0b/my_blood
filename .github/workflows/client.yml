@@ -1,0 +1,44 @@
+name: client
+on: [ push, pull_request ]
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: .
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.9.0-1.0.pre.33
+          channel: master
+          cache: true
+          cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: 📦 Install Dependencies
+        run: |
+          flutter pub global activate very_good_cli
+          very_good --analytics false
+          very_good packages get --recursive
+      - name: Generate code users_repository
+        run: flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+        working-directory: packages/users_repository
+      - name: Generate code client
+        run: flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs && flutter gen-l10n
+      - name: ✨ Check Formatting
+        run: dart format --set-exit-if-changed lib test
+
+      - name: 🕵️ Analyze
+        run: flutter analyze lib test
+
+      - name: 📊 Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v2
+        with:
+          path: coverage/lcov.info
+          exclude: "*.g.dart *.freezed.dart *.gen.dart *.pb.dart *.pbenum.dart *.pbgrpc.dart *.pbjson.dart"
+          min_coverage: 0
