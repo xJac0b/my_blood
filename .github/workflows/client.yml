@@ -1,5 +1,5 @@
 name: client
-on: [ push, pull_request ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -25,9 +25,6 @@ jobs:
           flutter pub global activate very_good_cli
           very_good --analytics false
           very_good packages get --recursive
-      - name: Generate code users_repository
-        run: flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
-        working-directory: packages/users_repository
       - name: Generate code client
         run: flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs && flutter gen-l10n
       - name: ✨ Check Formatting
