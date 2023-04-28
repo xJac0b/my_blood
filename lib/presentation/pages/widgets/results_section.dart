@@ -12,7 +12,6 @@ class ResultsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
-      color: const Color.fromARGB(255, 245, 244, 244),
       height: 250,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

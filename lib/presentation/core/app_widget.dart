@@ -35,6 +35,11 @@ class MyAppWidget extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: Colors.black,
           ),
+          labelLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          ),
         ),
       ),
     );

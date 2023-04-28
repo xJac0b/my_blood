@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../utils/extensions.dart';
 import '../../core/widgets/headline_large.dart';
 import '../widgets/app_bar.dart';
+import '../widgets/menu_button.dart';
 import '../widgets/results_section.dart';
 
 class HomePageView extends StatelessWidget {
@@ -18,6 +19,12 @@ class HomePageView extends StatelessWidget {
           const HeadlineLarge('Hi, John 👋'),
           const SizedBox(height: 20),
           const ResultsSection(),
+          const MenuButton(
+            label: 'Show full list',
+          ),
+          const MenuButton(
+            label: 'Add new entry',
+          ),
         ],
       ),
     );
