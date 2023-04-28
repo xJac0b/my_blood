@@ -1,0 +1,7 @@
+name: test
+description: A new Flutter application.
+version: 1.0.0
+
+dependencies:
+
+dev_dependencies:
