@@ -1,3 +1,7 @@
 {
-    "helloWorld": "Witaj świecie!"
+    "greeting": "Cześć",
+    "resultsSectionTitle": "Twoje ostatnie wyniki",
+    "showFullListButton": "Pokaż całą listę",
+    "addNewEntryButton": "Dodaj nowy wpis",
+    "trackProgressButton": "Śledź postępy"
 }

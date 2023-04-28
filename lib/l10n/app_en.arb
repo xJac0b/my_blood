@@ -1,6 +1,7 @@
 {
-    "helloWorld": "Hello World!",
-    "@helloWorld": {
-      "description": "The conventional newborn programmer greeting"
-    }
+    "greeting": "Hi",
+    "resultsSectionTitle": "Your last results",
+    "showFullListButton": "Show full list",
+    "addNewEntryButton": "Add new entry",
+    "trackProgressButton": "Track progress"
 }

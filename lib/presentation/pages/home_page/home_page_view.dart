@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../utils/extensions.dart';
+import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/headline_large.dart';
 import '../widgets/app_bar.dart';
+import '../widgets/buttons_section.dart';
 import '../widgets/menu_button.dart';
 import '../widgets/results_section.dart';
 
@@ -13,17 +15,14 @@ class HomePageView extends StatelessWidget {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CustomAppBar(title: context.l10n.helloWorld),
-          const SizedBox(height: 20),
-          const HeadlineLarge('Hi, John 👋'),
-          const SizedBox(height: 20),
+          DefaultPadding(child: CustomAppBar()),
+          DefaultPadding(
+              child: HeadlineLarge('${context.l10n.greeting} John 👋')),
           const ResultsSection(),
-          const MenuButton(
-            label: 'Show full list',
-          ),
-          const MenuButton(
-            label: 'Add new entry',
+          const DefaultPadding(
+            child: ButtonsSection(),
           ),
         ],
       ),

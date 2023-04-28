@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/extensions.dart';
+import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/headline_medium.dart';
 import 'result_card.dart';
 
@@ -17,10 +19,8 @@ class ResultsSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8),
-            child: HeadlineMedium('Your last results 📝'),
-          ),
+          DefaultPadding(
+              child: HeadlineMedium('${context.l10n.resultsSectionTitle} 📝')),
           Container(
             height: 120,
             child: ListView(
