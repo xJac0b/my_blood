@@ -6,7 +6,7 @@
     "trackProgressButton": "Track progress",
 
 
-    "addNewEntryAppBarTitle": "Add new entry",
+    "newEntryAppBarTitle": "Add new entry",
     "dateFieldHint": "Date of test",
     "next": "Next",
     "hematology": "Hematology",

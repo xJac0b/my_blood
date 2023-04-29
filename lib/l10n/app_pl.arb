@@ -5,7 +5,7 @@
     "addNewEntryButton": "Dodaj nowy wpis",
     "trackProgressButton": "Śledź postępy",
     
-    "addNewEntryAppBarTitle": "Dodaj nowy wpis",
+    "newEntryAppBarTitle": "Dodaj nowy wpis",
     "dateFieldHint": "Data badania",
     "next": "Dalej",
     "hematology": "Hematologia",
