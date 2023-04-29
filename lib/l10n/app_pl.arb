@@ -3,5 +3,13 @@
     "resultsSectionTitle": "Twoje ostatnie wyniki",
     "showFullListButton": "Pokaż całą listę",
     "addNewEntryButton": "Dodaj nowy wpis",
-    "trackProgressButton": "Śledź postępy"
+    "trackProgressButton": "Śledź postępy",
+    
+    "addNewEntryAppBarTitle": "Dodaj nowy wpis",
+    "dateFieldHint": "Data badania",
+    "next": "Dalej",
+    "hematology": "Hematologia",
+    "biochemistry": "Biochemia",
+    "urinalysis": "Badanie moczu",
+    "endocrinology": "Endokrynologia"
 }

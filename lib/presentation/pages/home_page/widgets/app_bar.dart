@@ -1,20 +1,22 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/widgets/headline_medium.dart';
+import '../../../core/widgets/headline_small.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, this.title = ''});
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({
+    Key? key,
+    this.title = '',
+    this.leading,
+  }) : super(key: key);
   final String title;
-
+  final Widget? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
         centerTitle: true,
-        leading: const CircleAvatar(
-          backgroundColor: Color.fromARGB(255, 201, 208, 213),
-        ),
-        title: HeadlineMedium(
+        leading: leading,
+        title: HeadlineSmall(
           title,
         ),
         actions: [
@@ -27,4 +29,7 @@ class CustomAppBar extends StatelessWidget {
     super.debugFillProperties(properties);
     properties.add(StringProperty('text', title));
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 }

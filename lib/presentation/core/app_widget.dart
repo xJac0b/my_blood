@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../../utils/extensions.dart';
-import 'router/router.dart';
+import '../router/router.dart';
+import 'constants/theme.dart';
 
 class MyAppWidget extends StatelessWidget {
   final _appRouter = AppRouter();
@@ -9,6 +10,7 @@ class MyAppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      
       debugShowCheckedModeBanner: false,
       routerConfig: _appRouter.config(),
       title: 'My Blood',
@@ -22,26 +24,7 @@ class MyAppWidget extends StatelessWidget {
         Locale('en'),
         Locale('pl'),
       ],
-      theme: ThemeData(
-        useMaterial3: true,
-        textTheme: const TextTheme(
-          headlineLarge: TextStyle(
-            fontSize: 48,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
-          headlineMedium: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.w400,
-            color: Colors.black,
-          ),
-          labelLarge: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
-        ),
-      ),
+      theme: themeData,
     );
   }
 }

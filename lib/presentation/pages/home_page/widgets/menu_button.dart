@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/extensions.dart';
+import '../../../core/widgets/label_large.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({
@@ -20,10 +20,7 @@ class MenuButton extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20, bottom: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(label, style: context.textTheme.labelLarge),
-              const Icon(Icons.arrow_forward_ios)
-            ],
+            children: [LabelLarge(label), const Icon(Icons.arrow_forward_ios)],
           ),
         ));
   }

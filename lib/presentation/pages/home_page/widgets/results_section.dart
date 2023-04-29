@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/extensions.dart';
-import '../../core/widgets/default_padding.dart';
-import '../../core/widgets/headline_medium.dart';
+import '../../../../utils/extensions.dart';
+import '../../../core/widgets/default_padding.dart';
+import '../../../core/widgets/headline_medium.dart';
 import 'result_card.dart';
 
 class ResultsSection extends StatelessWidget {
