@@ -18,8 +18,6 @@ class EnterDate extends StatelessWidget {
         const HeadlineMedium('Enter date of test'),
         const SizedBox(height: 20),
         const DateField(),
-        // Assets.images.datePicker.svg(),
-        // SvgPicture.asset('assets/images/date_picker.svg'),
         Expanded(child: Assets.images.datePicker.svg()),
         ElevatedButton(
             style: ElevatedButton.styleFrom(
