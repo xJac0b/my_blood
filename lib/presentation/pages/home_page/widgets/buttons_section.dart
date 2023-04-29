@@ -19,7 +19,7 @@ class ButtonsSection extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         MenuButton(
-          onPressed: () => context.router.push(const AddEntryRoute()),
+          onPressed: () => context.router.push(const NewEntryRoute()),
           label: context.l10n.addNewEntryButton,
         ),
         const SizedBox(height: 20),
