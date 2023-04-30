@@ -1,5 +1,3 @@
-// ignore_for_file: cascade_invocations
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +15,7 @@ class ResultCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 250,
       height: 60,
       child: Card(
@@ -67,8 +65,9 @@ class ResultCard extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(StringProperty('dayMonth', dayMonth));
-    properties.add(StringProperty('year', year));
-    properties.add(StringProperty('title', title));
+    properties
+      ..add(StringProperty('dayMonth', dayMonth))
+      ..add(StringProperty('year', year))
+      ..add(StringProperty('title', title));
   }
 }

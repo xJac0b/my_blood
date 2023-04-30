@@ -2,8 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../../../utils/extensions.dart';
-import '../../../../core/widgets/default_padding.dart';
+import '../../../../utils/extensions.dart';
+import 'custom_text_field.dart';
+import 'default_padding.dart';
 
 class DateField extends StatefulWidget {
   const DateField({
@@ -19,13 +20,7 @@ class _DateFieldState extends State<DateField> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultPadding(
-      child: TextFormField(
-        controller: dateInput,
-        decoration: InputDecoration(
-            prefixIcon: const Icon(Icons.calendar_today),
-            hintText: context.l10n.dateFieldHint),
-        readOnly: true,
+    return CustomTextField(
         onTap: () async {
           final pickedDate = await showDatePicker(
             context: context,
@@ -41,8 +36,10 @@ class _DateFieldState extends State<DateField> {
             });
           }
         },
-      ),
-    );
+        readOnly: true,
+        controller: dateInput,
+        prefixIcon: const Icon(Icons.calendar_today),
+        hintText: context.l10n.dateFieldHint);
   }
 
   @override

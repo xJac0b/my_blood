@@ -5,6 +5,9 @@
     "addNewEntryButton": "Add new entry",
     "trackProgressButton": "Track progress",
 
+    "resultListAppBarTitle": "Results",
+    
+
     "newEntryAppBarTitle": "Add new entry",
     "enterDateHeadline": "Enter date of test",
     "dateFieldHint": "Date of test",

@@ -5,6 +5,8 @@
     "addNewEntryButton": "Dodaj nowy wpis",
     "trackProgressButton": "Śledź postępy",
     
+    "resultListAppBarTitle": "Wyniki",
+
     "newEntryAppBarTitle": "Dodaj nowy wpis",
     "enterDateHeadline": "Wpisz datę badania",
     "dateFieldHint": "Data badania",

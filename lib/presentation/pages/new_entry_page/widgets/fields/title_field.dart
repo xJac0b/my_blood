@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../utils/extensions.dart';
-import 'custom_text_field.dart';
+import '../../../../core/widgets/custom_text_field.dart';
 
 class TitleField extends StatelessWidget {
   const TitleField({super.key});

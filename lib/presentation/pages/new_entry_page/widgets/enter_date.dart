@@ -4,7 +4,7 @@ import '../../../../gen/assets.gen.dart';
 import '../../../../utils/extensions.dart';
 import '../../../core/widgets/default_padding.dart';
 import '../../../core/widgets/headline_medium.dart';
-import 'fields/date_field.dart';
+import '../../../core/widgets/date_field.dart';
 import 'fields/wide_button.dart';
 
 class EnterDate extends StatelessWidget {

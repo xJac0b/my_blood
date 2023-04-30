@@ -15,6 +15,7 @@ class ButtonsSection extends StatelessWidget {
     return Column(
       children: [
         MenuButton(
+          onPressed: () => context.router.push(const ResultListRoute()),
           label: context.l10n.showFullListButton,
         ),
         const SizedBox(height: 20),
