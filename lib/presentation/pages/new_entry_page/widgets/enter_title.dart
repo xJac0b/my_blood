@@ -4,21 +4,21 @@ import '../../../../gen/assets.gen.dart';
 import '../../../../utils/extensions.dart';
 import '../../../core/widgets/default_padding.dart';
 import '../../../core/widgets/headline_medium.dart';
-import 'fields/date_field.dart';
+import 'fields/title_field.dart';
 import 'fields/wide_button.dart';
 
-class EnterDate extends StatelessWidget {
-  const EnterDate({super.key});
+class EnterTitle extends StatelessWidget {
+  const EnterTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultPadding(
       child: Column(children: [
-        HeadlineMedium(context.l10n.enterDateHeadline),
+        HeadlineMedium(context.l10n.enterTitleHeadline),
         const SizedBox(height: 20),
-        const DateField(),
-        Expanded(child: Assets.images.datePicker.svg()),
-        WideButton(label: context.l10n.next, onPressed: () {})
+        const TitleField(),
+        Expanded(child: Assets.images.title.svg()),
+        WideButton(label: context.l10n.submit, onPressed: () {})
       ]),
     );
   }

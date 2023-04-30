@@ -6,10 +6,14 @@
     "trackProgressButton": "Śledź postępy",
     
     "newEntryAppBarTitle": "Dodaj nowy wpis",
+    "enterDateHeadline": "Wpisz datę badania",
     "dateFieldHint": "Data badania",
     "next": "Dalej",
+    "submit": "Zapisz",
     "hematology": "Hematologia",
     "biochemistry": "Biochemia",
-    "urinalysis": "Badanie moczu",
-    "endocrinology": "Endokrynologia"
+    "thyroidHormones": "Hormony tarczycy",
+    "enterTitleHeadline": "Wpisz wymowny tytuł",
+    "titleFieldHint": "e.g. routine check-up"
+
 }

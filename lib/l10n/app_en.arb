@@ -5,12 +5,14 @@
     "addNewEntryButton": "Add new entry",
     "trackProgressButton": "Track progress",
 
-
     "newEntryAppBarTitle": "Add new entry",
+    "enterDateHeadline": "Enter date of test",
     "dateFieldHint": "Date of test",
     "next": "Next",
+    "submit": "Submit",
     "hematology": "Hematology",
     "biochemistry": "Biochemistry",
-    "urinalysis": "Urinalysis",
-    "endocrinology": "Endocrinology"
+    "thyroidHormones": "Thyroid hormones",
+    "enterTitleHeadline": "Enter descriptive title",
+    "titleFieldHint": "e.g. routine check-up"
 }

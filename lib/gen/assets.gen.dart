@@ -18,8 +18,11 @@ class $AssetsImagesGen {
   SvgGenImage get datePicker =>
       const SvgGenImage('assets/images/date_picker.svg');
 
+  /// File path: assets/images/title.svg
+  SvgGenImage get title => const SvgGenImage('assets/images/title.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [datePicker];
+  List<SvgGenImage> get values => [datePicker, title];
 }
 
 class Assets {

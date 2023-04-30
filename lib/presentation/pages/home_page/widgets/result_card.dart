@@ -22,11 +22,11 @@ class ResultCard extends StatelessWidget {
       height: 60,
       child: Card(
         clipBehavior: Clip.hardEdge,
-        color: const Color.fromARGB(154, 245, 39, 39),
+        color: const Color.fromARGB(137, 230, 26, 7),
         child: Row(
           children: [
             Container(
-                color: const Color.fromARGB(255, 253, 213, 93),
+                color: const Color.fromARGB(231, 252, 250, 250),
                 width: 100,
                 height: double.infinity,
                 child: Center(

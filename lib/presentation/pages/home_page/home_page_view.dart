@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../utils/extensions.dart';
+import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/headline_large.dart';
-import 'widgets/app_bar.dart';
 import 'widgets/buttons_section.dart';
 import 'widgets/results_section.dart';
 
