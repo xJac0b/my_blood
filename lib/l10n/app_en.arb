@@ -6,8 +6,7 @@
     "trackProgressButton": "Track progress",
 
     "resultListAppBarTitle": "Results",
-    
-
+    "resultListSearchFieldHint": "Find result by title",
     "newEntryAppBarTitle": "Add new entry",
     "enterDateHeadline": "Enter date of test",
     "dateFieldHint": "Date of test",
@@ -17,5 +16,9 @@
     "biochemistry": "Biochemistry",
     "thyroidHormones": "Thyroid hormones",
     "enterTitleHeadline": "Enter descriptive title",
-    "titleFieldHint": "e.g. routine check-up"
+    "titleFieldHint": "e.g. routine check-up",
+    "progressAppBarTitle": "Track your progress",
+    "progressSearchFieldHint": "Pick an element",
+    "progressDateFieldStart": "Start date",
+    "progressDateFieldEnd": "End date"
 }

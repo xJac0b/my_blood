@@ -9,5 +9,6 @@ class AppRouter extends $AppRouter {
         AutoRoute(path: '/', page: HomeRoute.page),
         AutoRoute(path: '/results', page: ResultListRoute.page),
         AutoRoute(path: '/add', page: NewEntryRoute.page),
+        AutoRoute(path: '/progress', page: ProgressRoute.page),
       ];
 }

@@ -21,6 +21,7 @@ dependencies:
   intl: ^0.18.0
   flutter_gen_runner: ^5.3.0
   flutter_svg: ^2.0.5
+  syncfusion_flutter_charts: ^21.1.41
 
 dev_dependencies:
   flutter_test:

@@ -6,7 +6,7 @@
     "trackProgressButton": "Śledź postępy",
     
     "resultListAppBarTitle": "Wyniki",
-
+    "resultListSearchFieldHint": "Wyszukaj wyniku po tytule",
     "newEntryAppBarTitle": "Dodaj nowy wpis",
     "enterDateHeadline": "Wpisz datę badania",
     "dateFieldHint": "Data badania",
@@ -16,6 +16,11 @@
     "biochemistry": "Biochemia",
     "thyroidHormones": "Hormony tarczycy",
     "enterTitleHeadline": "Wpisz wymowny tytuł",
-    "titleFieldHint": "e.g. routine check-up"
+    "titleFieldHint": "e.g. routine check-up",
+    "progressAppBarTitle": "Śledź postępy",
+    "progressSearchFieldHint": "Wybierz element",
+    "progressDateFieldStart": "Data początkowa",
+    "progressDateFieldEnd": "Data końcowa"
+
 
 }

@@ -25,6 +25,7 @@ class ButtonsSection extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         MenuButton(
+          onPressed: () => context.router.push(const ProgressRoute()),
           label: context.l10n.trackProgressButton,
         ),
       ],
