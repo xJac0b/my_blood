@@ -19,8 +19,8 @@ class ProgressGraph extends StatelessWidget {
                 ResultData(DateTime.now(), 32),
                 ResultData(DateTime.now(), 40)
               ],
-              xValueMapper: (ResultData result, _) => result.date,
-              yValueMapper: (ResultData result, _) => result.value)
+              xValueMapper: (result, _) => result.date,
+              yValueMapper: (result, _) => result.value)
         ]);
   }
 }
