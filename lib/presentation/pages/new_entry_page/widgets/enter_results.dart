@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../application/new_entry/new_entry_bloc.dart';
 import '../../../../utils/extensions.dart';
-import '../../../core/constants/blood_test_units.dart';
 import '../../../core/widgets/default_padding.dart';
 import 'fields/custom_dropdown_button.dart';
-import 'results/hematology_fields.dart';
-import 'results/selectable_fields.dart';
+import 'fields/wide_button.dart';
 
 class EnterResults extends StatelessWidget {
   const EnterResults({super.key});
@@ -20,11 +20,16 @@ class EnterResults extends StatelessWidget {
             context.l10n.biochemistry,
             context.l10n.thyroidHormones
           ]),
+          WideButton(
+              label: context.l10n.next,
+              onPressed: () => context
+                  .read<NewEntryBloc>()
+                  .add(const NewEntryEvent.pageChanged(2)))
           // HematologyFields(),
-          const HematologyFields(),
+          // const HematologyFields(),
 
-          SelectableFields(list: biochemistryResults),
-          SelectableFields(list: thyroidResults)
+          // SelectableFields(list: biochemistryResults),
+          // SelectableFields(list: thyroidResults)
           // ElevatedButton(
           //   onPressed: () {},
           //   child: const Row(

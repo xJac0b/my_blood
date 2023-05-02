@@ -12,23 +12,25 @@ class HomePageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          const DefaultPadding(
-              child: CustomAppBar(
-            leading: CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 201, 208, 213),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const DefaultPadding(
+                child: CustomAppBar(
+              leading: CircleAvatar(
+                backgroundColor: Color.fromARGB(255, 201, 208, 213),
+              ),
+            )),
+            DefaultPadding(
+                child: HeadlineLarge('${context.l10n.greeting} John 👋')),
+            const ResultsSection(),
+            const DefaultPadding(
+              child: ButtonsSection(),
             ),
-          )),
-          DefaultPadding(
-              child: HeadlineLarge('${context.l10n.greeting} John 👋')),
-          const ResultsSection(),
-          const DefaultPadding(
-            child: ButtonsSection(),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

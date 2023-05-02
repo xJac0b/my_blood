@@ -12,6 +12,8 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.onTap,
     this.readOnly = false,
+    this.onChanged,
+    this.initialValue,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -21,11 +23,15 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final Function()? onTap;
+  final Function(String)? onChanged;
   final bool readOnly;
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
+      onChanged: onChanged,
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
@@ -48,7 +54,10 @@ class CustomTextField extends StatelessWidget {
       ..add(DiagnosticsProperty<bool>('obscureText', obscureText))
       ..add(ObjectFlagProperty<Function()?>.has('onTap', onTap))
       ..add(DiagnosticsProperty<bool?>('readOnly', readOnly))
-      ..add(DiagnosticsProperty<TextEditingController?>(
-          'controller', controller));
+      ..add(
+          DiagnosticsProperty<TextEditingController?>('controller', controller))
+      ..add(
+          ObjectFlagProperty<Function(String p1)?>.has('onChanged', onChanged))
+      ..add(StringProperty('intialValue', initialValue));
   }
 }
