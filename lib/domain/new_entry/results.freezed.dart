@@ -18,8 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Results {
   Map<String, Map<String, UnitValue>> get results =>
       throw _privateConstructorUsedError;
-  set results(Map<String, Map<String, UnitValue>> value) =>
-      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ResultsCopyWith<Results> get copyWith => throw _privateConstructorUsedError;
@@ -94,12 +92,24 @@ class _$_Results extends _Results {
   _$_Results({required this.results}) : super._();
 
   @override
-  Map<String, Map<String, UnitValue>> results;
+  final Map<String, Map<String, UnitValue>> results;
 
   @override
   String toString() {
     return 'Results(results: $results)';
   }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Results &&
+            const DeepCollectionEquality().equals(other.results, results));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(results));
 
   @JsonKey(ignore: true)
   @override
@@ -109,13 +119,13 @@ class _$_Results extends _Results {
 }
 
 abstract class _Results extends Results {
-  factory _Results({required Map<String, Map<String, UnitValue>> results}) =
+  factory _Results(
+          {required final Map<String, Map<String, UnitValue>> results}) =
       _$_Results;
   _Results._() : super._();
 
   @override
   Map<String, Map<String, UnitValue>> get results;
-  set results(Map<String, Map<String, UnitValue>> value);
   @override
   @JsonKey(ignore: true)
   _$$_ResultsCopyWith<_$_Results> get copyWith =>

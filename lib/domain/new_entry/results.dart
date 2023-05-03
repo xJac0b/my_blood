@@ -5,7 +5,7 @@ import 'unit_value.dart';
 
 part 'results.freezed.dart';
 
-@unfreezed
+@Freezed(makeCollectionsUnmodifiable: false)
 abstract class Results implements _$Results {
   factory Results({
     required Map<String, Map<String, UnitValue>> results,
@@ -16,38 +16,30 @@ abstract class Results implements _$Results {
   factory Results.empty() => Results(results: {});
   bool get isEmpty => results.isEmpty;
 
-  void addCategory(String category) {
-    if (results.containsKey(category)) {
-      return;
-    }
+  Results addCategory(String category) {
     if (category == ResultUnitsKeys.hematology) {
       results[category] = resultsUnits[category]!
           .map((k, v) => MapEntry(k, UnitValue(unitIndex: v[0], value: 0)));
     } else {
       results[category] = {};
     }
+    return copyWith(results: results);
   }
 
-  void removeCategory(String category) {
-    if (!results.containsKey(category)) {
-      return;
-    }
+  Results removeCategory(String category) {
     results.remove(category);
+    return copyWith(results: results);
   }
 
-  void addResult(String category, String key) {
-    if (results[category]!.containsKey(key)) {
-      return;
-    }
+  Results addResult(String category, String key) {
     results[category]![key] =
         UnitValue(unitIndex: resultsUnits[category]![key]![0], value: 0);
+    return copyWith(results: results);
   }
 
-  void removeResult(String category, String key) {
-    if (!results[category]!.containsKey(key)) {
-      return;
-    }
+  Results removeResult(String category, String key) {
     results[category]!.remove(key);
+    return copyWith(results: results);
   }
 
   List<String> get categoriesLeft => resultsUnits.keys
