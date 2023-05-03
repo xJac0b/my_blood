@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fpdart/fpdart.dart';
 
 import '../../../../application/new_entry/new_entry_bloc.dart';
+import '../../../../domain/new_entry/value_objects.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../utils/extensions.dart';
 import '../../../core/widgets/date_field.dart';
@@ -15,7 +17,7 @@ class EnterDate extends StatelessWidget {
     Key? key,
     this.initialValue,
   }) : super(key: key);
-  final DateTime? initialValue;
+  final NewEntryDate? initialValue;
   @override
   Widget build(BuildContext context) {
     return DefaultPadding(
@@ -23,7 +25,7 @@ class EnterDate extends StatelessWidget {
         HeadlineMedium(context.l10n.enterDateHeadline),
         const SizedBox(height: 20),
         DateField(
-            initialValue: initialValue,
+            initialValue: initialValue?.value.fold((_) => null, id),
             hintText: context.l10n.dateFieldHint,
             dateChanged: (date) {
               context.read<NewEntryBloc>().add(NewEntryEvent.dateChanged(date));
@@ -41,6 +43,7 @@ class EnterDate extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<DateTime>('initialValue', initialValue));
+    properties
+        .add(DiagnosticsProperty<NewEntryDate>('initialValue', initialValue));
   }
 }

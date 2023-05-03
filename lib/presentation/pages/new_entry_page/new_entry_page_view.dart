@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../application/new_entry/new_entry_bloc.dart';
 import '../../../utils/extensions.dart';
 import '../../core/widgets/app_bar.dart';
+import 'widgets/enter_date.dart';
 import 'widgets/enter_results.dart';
+import 'widgets/enter_title.dart';
 
 class NewEntryPageView extends StatelessWidget {
   NewEntryPageView({super.key});
@@ -36,12 +38,12 @@ class NewEntryPageView extends StatelessWidget {
                 .read<NewEntryBloc>()
                 .add(NewEntryEvent.pageChanged(ind)),
             controller: _controller,
-            children: const [
-              // TODO :: EnterDate(
-              //   initialValue: state.newEntry.date,
-              // ),
-              EnterResults(),
-              //TODO:: EnterTitle(initialValue: state.newEntry.title.value),
+            children: [
+              EnterDate(
+                initialValue: state.newEntry.date,
+              ),
+              const EnterResults(),
+              EnterTitle(initialValue: state.newEntry.title),
             ],
           ),
           floatingActionButton: state.pageIndex == 1

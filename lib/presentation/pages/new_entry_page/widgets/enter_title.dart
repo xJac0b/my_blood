@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fpdart/fpdart.dart';
 
 import '../../../../application/new_entry/new_entry_bloc.dart';
+import '../../../../domain/new_entry/value_objects.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../utils/extensions.dart';
 import '../../../core/widgets/default_padding.dart';
@@ -15,7 +17,7 @@ class EnterTitle extends StatelessWidget {
     Key? key,
     this.initialValue,
   }) : super(key: key);
-  final String? initialValue;
+  final NewEntryTitle? initialValue;
   @override
   Widget build(BuildContext context) {
     return DefaultPadding(
@@ -23,7 +25,7 @@ class EnterTitle extends StatelessWidget {
         HeadlineMedium(context.l10n.enterTitleHeadline),
         const SizedBox(height: 20),
         TitleField(
-            initialValue: initialValue,
+            initialValue: initialValue?.value.fold((_) => null, id),
             onChanged: (title) {
               context
                   .read<NewEntryBloc>()
@@ -38,6 +40,7 @@ class EnterTitle extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(StringProperty('initialValue', initialValue));
+    properties
+        .add(DiagnosticsProperty<NewEntryTitle?>('initialValue', initialValue));
   }
 }

@@ -31,21 +31,31 @@ abstract class Results implements _$Results {
     return copyWith(results: results);
   }
 
-  Results addResult(String category, String key) {
+  Results addElement(String category, String key) {
     results[category]![key] =
         UnitValue(unitIndex: resultsUnits[category]![key]![0], value: 0);
     return copyWith(results: results);
   }
 
-  Results removeResult(String category, String key) {
+  Results removeElement(String category, String key) {
     results[category]!.remove(key);
     return copyWith(results: results);
   }
 
-  List<String> get categoriesLeft => resultsUnits.keys
-      .where((element) => !results.keys.contains(element))
+  Results changeUnit(String category, String key, int unitIndex) {
+    results[category]![key]!.unitIndex = unitIndex;
+    return copyWith(results: results);
+  }
+
+  Results changeValue(String category, String key, double value) {
+    results[category]![key]!.value = value;
+    return copyWith(results: results);
+  }
+
+  List<String> categoriesLeft() => resultsUnits.keys
+      .where((category) => !results.keys.contains(category))
       .toList();
-  List<String> resultsLeft(String category) => resultsUnits[category]!
+  List<String> elementsLeft(String category) => resultsUnits[category]!
       .keys
       .where((element) => !results[category]!.keys.contains(element))
       .toList();

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../domain/new_entry/new_entry.dart';
+import '../../domain/new_entry/value_objects.dart';
 
 part 'new_entry_event.dart';
 part 'new_entry_state.dart';
@@ -11,14 +12,59 @@ part 'new_entry_bloc.freezed.dart';
 class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
   NewEntryBloc() : super(NewEntryState.initial()) {
     on<_PageChanged>((event, emit) {
-      emit(
-          state.copyWith(pageIndex: event.pageIndex, NewEntry: state.newEntry));
+      emit(state.copyWith(pageIndex: event.pageIndex));
     });
     on<_DateChanged>((event, emit) {
-      emit(state.copyWith(date: event.date, NewEntry: state.newEntry));
+      emit(state.copyWith.newEntry(date: NewEntryDate(event.date)));
     });
     on<_TitleChanged>((event, emit) {
-      emit(state.copyWith(title: event.title, NewEntry: state.newEntry));
+      emit(state.copyWith.newEntry(title: NewEntryTitle(event.title)));
+    });
+    on<_CategoryAdded>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results.addCategory(event.category)),
+      ));
+    });
+    on<_ElementAdded>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results
+                .addElement(event.category, event.element)),
+      ));
+    });
+    on<_CategoryRemoved>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results.removeCategory(event.category)),
+      ));
+    });
+    on<_ElementRemoved>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results
+                .removeElement(event.category, event.element)),
+      ));
+    });
+    on<_UnitChanged>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results
+                .changeUnit(event.category, event.element, event.unitIndex)),
+      ));
+    });
+    on<_ValueChanged>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results
+                .changeValue(event.category, event.element, event.value)),
+      ));
+    });
+    on<_Saved>((event, emit) {
+      if (state.newEntry.results.isEmpty) {
+        emit(state);
+      }
+      throw UnimplementedError();
     });
   }
 
