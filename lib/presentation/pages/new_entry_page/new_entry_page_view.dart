@@ -36,11 +36,11 @@ class NewEntryPageView extends StatelessWidget {
                 .read<NewEntryBloc>()
                 .add(NewEntryEvent.pageChanged(ind)),
             controller: _controller,
-            children: [
+            children: const [
               // TODO :: EnterDate(
               //   initialValue: state.newEntry.date,
               // ),
-              const EnterResults(),
+              EnterResults(),
               //TODO:: EnterTitle(initialValue: state.newEntry.title.value),
             ],
           ),
