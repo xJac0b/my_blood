@@ -501,9 +501,7 @@ abstract class _TitleChanged implements NewEntryEvent {
 /// @nodoc
 mixin _$NewEntryState {
   int get pageIndex => throw _privateConstructorUsedError;
-  DateTime get date =>
-      throw _privateConstructorUsedError; //TODO:: required Results results,
-  String get title => throw _privateConstructorUsedError;
+  NewEntry get newEntry => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewEntryStateCopyWith<NewEntryState> get copyWith =>
@@ -516,7 +514,9 @@ abstract class $NewEntryStateCopyWith<$Res> {
           NewEntryState value, $Res Function(NewEntryState) then) =
       _$NewEntryStateCopyWithImpl<$Res, NewEntryState>;
   @useResult
-  $Res call({int pageIndex, DateTime date, String title});
+  $Res call({int pageIndex, NewEntry newEntry});
+
+  $NewEntryCopyWith<$Res> get newEntry;
 }
 
 /// @nodoc
@@ -533,23 +533,26 @@ class _$NewEntryStateCopyWithImpl<$Res, $Val extends NewEntryState>
   @override
   $Res call({
     Object? pageIndex = null,
-    Object? date = null,
-    Object? title = null,
+    Object? newEntry = null,
   }) {
     return _then(_value.copyWith(
       pageIndex: null == pageIndex
           ? _value.pageIndex
           : pageIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
+      newEntry: null == newEntry
+          ? _value.newEntry
+          : newEntry // ignore: cast_nullable_to_non_nullable
+              as NewEntry,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NewEntryCopyWith<$Res> get newEntry {
+    return $NewEntryCopyWith<$Res>(_value.newEntry, (value) {
+      return _then(_value.copyWith(newEntry: value) as $Val);
+    });
   }
 }
 
@@ -561,7 +564,10 @@ abstract class _$$_NewEntryStateCopyWith<$Res>
       __$$_NewEntryStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int pageIndex, DateTime date, String title});
+  $Res call({int pageIndex, NewEntry newEntry});
+
+  @override
+  $NewEntryCopyWith<$Res> get newEntry;
 }
 
 /// @nodoc
@@ -576,22 +582,17 @@ class __$$_NewEntryStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pageIndex = null,
-    Object? date = null,
-    Object? title = null,
+    Object? newEntry = null,
   }) {
     return _then(_$_NewEntryState(
       pageIndex: null == pageIndex
           ? _value.pageIndex
           : pageIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
+      newEntry: null == newEntry
+          ? _value.newEntry
+          : newEntry // ignore: cast_nullable_to_non_nullable
+              as NewEntry,
     ));
   }
 }
@@ -599,20 +600,16 @@ class __$$_NewEntryStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NewEntryState implements _NewEntryState {
-  const _$_NewEntryState(
-      {required this.pageIndex, required this.date, required this.title});
+  const _$_NewEntryState({required this.pageIndex, required this.newEntry});
 
   @override
   final int pageIndex;
   @override
-  final DateTime date;
-//TODO:: required Results results,
-  @override
-  final String title;
+  final NewEntry newEntry;
 
   @override
   String toString() {
-    return 'NewEntryState(pageIndex: $pageIndex, date: $date, title: $title)';
+    return 'NewEntryState(pageIndex: $pageIndex, newEntry: $newEntry)';
   }
 
   @override
@@ -622,12 +619,12 @@ class _$_NewEntryState implements _NewEntryState {
             other is _$_NewEntryState &&
             (identical(other.pageIndex, pageIndex) ||
                 other.pageIndex == pageIndex) &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.newEntry, newEntry) ||
+                other.newEntry == newEntry));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pageIndex, date, title);
+  int get hashCode => Object.hash(runtimeType, pageIndex, newEntry);
 
   @JsonKey(ignore: true)
   @override
@@ -639,15 +636,12 @@ class _$_NewEntryState implements _NewEntryState {
 abstract class _NewEntryState implements NewEntryState {
   const factory _NewEntryState(
       {required final int pageIndex,
-      required final DateTime date,
-      required final String title}) = _$_NewEntryState;
+      required final NewEntry newEntry}) = _$_NewEntryState;
 
   @override
   int get pageIndex;
   @override
-  DateTime get date;
-  @override //TODO:: required Results results,
-  String get title;
+  NewEntry get newEntry;
   @override
   @JsonKey(ignore: true)
   _$$_NewEntryStateCopyWith<_$_NewEntryState> get copyWith =>
