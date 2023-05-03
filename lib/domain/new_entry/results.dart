@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'constants/blood_test_units.dart';
+import 'constants/result_units_keys.dart';
+import 'constants/results_units.dart';
 import 'unit_value.dart';
 
 part 'results.freezed.dart';

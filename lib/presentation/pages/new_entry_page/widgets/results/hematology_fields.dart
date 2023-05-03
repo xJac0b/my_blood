@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../domain/new_entry/constants/blood_test_units.dart';
+import '../../../../../domain/new_entry/constants/results_units.dart';
+import '../../../../../domain/new_entry/constants/units.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/label_large.dart';
 import '../fields/custom_dropdown_button.dart';

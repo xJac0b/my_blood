@@ -1,30 +1,4 @@
-const List<String> units = [
-  '10^3/µL',
-  '10^9/L',
-  'G/L',
-  '10^6/µL',
-  '10^12/L',
-  'T/L',
-  'g/dL',
-  'g/L',
-  'mmol/L',
-  '%',
-  'L/L',
-  'fL',
-  'IU/L',
-  'µIU/mL',
-  'ng/dL',
-  'µg/dL',
-  'pg/mL',
-  'ng/mL',
-  'µmol/L',
-];
-
-class ResultUnitsKeys {
-  static const String hematology = 'hematology';
-  static const String thyroidHormones = 'thyroidHormones';
-  static const String biochemistry = 'biochemistry';
-}
+import 'result_units_keys.dart';
 
 const Map<String, Map<String, List<int>>> resultsUnits = {
   ResultUnitsKeys.hematology: {
