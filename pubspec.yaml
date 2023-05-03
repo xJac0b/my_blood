@@ -20,6 +20,8 @@ dependencies:
   flutter_svg: ^2.0.5
   syncfusion_flutter_charts: ^21.1.41
   flutter_bloc: ^8.1.2
+  fpdart: ^0.5.0
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:

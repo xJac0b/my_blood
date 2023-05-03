@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+import '../../../../utils/extensions.dart';
+
 class ProgressGraph extends StatelessWidget {
   const ProgressGraph({super.key});
 
@@ -13,11 +15,11 @@ class ProgressGraph extends StatelessWidget {
           LineSeries<ResultData, DateTime>(
               // Bind data source
               dataSource: <ResultData>[
-                ResultData(DateTime.now(), 35),
-                ResultData(DateTime.now(), 28),
-                ResultData(DateTime.now(), 34),
-                ResultData(DateTime.now(), 32),
-                ResultData(DateTime.now(), 40)
+                ResultData(DateTimeX.nowDate, 35),
+                ResultData(DateTimeX.nowDate, 28),
+                ResultData(DateTimeX.nowDate, 34),
+                ResultData(DateTimeX.nowDate, 32),
+                ResultData(DateTimeX.nowDate, 40)
               ],
               xValueMapper: (result, _) => result.date,
               yValueMapper: (result, _) => result.value)

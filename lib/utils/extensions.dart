@@ -8,6 +8,13 @@ extension AppLocalizationsX on BuildContext {
   AppLocalizations get l10n => AppLocalizations.of(this) as AppLocalizations;
 }
 
+extension DateTimeX on DateTime {
+  static DateTime get nowDate {
+    final now = DateTime.now();
+    return DateTime(now.year, now.month, now.day);
+  }
+}
+
 extension MediaQueryX on BuildContext {
   Size get screenSize => MediaQuery.of(this).size;
 }

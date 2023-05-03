@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/blood_test_units.dart';
+import '../../../../../domain/new_entry/constants/blood_test_units.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 import '../../../../core/widgets/label_large.dart';
 import '../fields/custom_dropdown_button.dart';
@@ -11,7 +11,7 @@ class HematologyFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final rows = <Widget>[];
-    for (final i in hematologyUnits.entries) {
+    for (final i in resultsUnits['hematology']!.entries) {
       rows
         ..add(Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

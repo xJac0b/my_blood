@@ -1,5 +1,6 @@
 import 'package:fpdart/fpdart.dart';
 
+import '../../utils/extensions.dart';
 import 'failures.dart';
 
 Either<ValueFailure<String>, String> validateMaxStringLength(
@@ -38,7 +39,7 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
 
 Either<ValueFailure<DateTime>, DateTime> validateDateNotInFuture(
     DateTime date) {
-  if (date.isAfter(DateTime.now())) {
+  if (date.isAfter(DateTimeX.nowDate)) {
     return left(ValueFailure.invalidDate(failedValue: date));
   } else {
     return right(date);

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../../utils/extensions.dart';
 import 'custom_text_field.dart';
 
 class DateField extends StatefulWidget {
@@ -41,7 +42,7 @@ class _DateFieldState extends State<DateField> {
   Widget build(BuildContext context) {
     return CustomTextField(
         onTap: () async {
-          final now = DateTime.now();
+          final now = DateTimeX.nowDate;
           final pickedDate = await showDatePicker(
             context: context,
             initialDate: DateTime(now.year, now.month, now.day),

@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../utils/extensions.dart';
 import 'results.dart';
 import 'value_objects.dart';
 
@@ -17,7 +18,7 @@ abstract class NewEntry implements _$NewEntry {
 
   factory NewEntry.empty() => NewEntry(
         title: NewEntryTitle(''),
-        date: NewEntryDate(DateTime.now()),
+        date: NewEntryDate(DateTimeX.nowDate),
         results: Results.empty(),
       );
 }
