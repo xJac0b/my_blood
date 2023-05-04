@@ -3,8 +3,7 @@
     "resultsSectionTitle": "Twoje ostatnie wyniki",
     "showFullListButton": "Pokaż całą listę",
     "addNewEntryButton": "Dodaj nowy wpis",
-    "trackProgressButton": "Śledź postępy",
-    
+    "trackProgressButton": "Śledź postępy",   
     "resultListAppBarTitle": "Wyniki",
     "resultListSearchFieldHint": "Wyszukaj wyniku po tytule",
     "newEntryAppBarTitle": "Dodaj nowy wpis",
@@ -21,6 +20,4 @@
     "progressSearchFieldHint": "Wybierz element",
     "progressDateFieldStart": "Data początkowa",
     "progressDateFieldEnd": "Data końcowa"
-
-
 }
