@@ -1,7 +1,7 @@
-import 'result_units_keys.dart';
+import 'result_keys.dart';
 
 const Map<String, Map<String, List<int>>> resultsUnits = {
-  ResultUnitsKeys.hematology: {
+  ResultKeys.hematology: {
     'WBC': [0, 1, 2],
     'RBC': [3, 4, 5],
     'HGB': [6, 7, 8],
@@ -30,7 +30,7 @@ const Map<String, Map<String, List<int>>> resultsUnits = {
     'BASO%': [9],
     'IG%': [9],
   },
-  ResultUnitsKeys.thyroidHormones: {
+  ResultKeys.thyroidHormones: {
     'TSH': [12, 13],
     'Free T4': [14],
     'Total T4': [15],
@@ -41,7 +41,7 @@ const Map<String, Map<String, List<int>>> resultsUnits = {
     'Anti-Tg': [12],
     'TRAB': [12],
   },
-  ResultUnitsKeys.biochemistry: {
+  ResultKeys.biochemistry: {
     'Sodium': [6],
     'Potassium': [6],
     'Magnesium': [6],

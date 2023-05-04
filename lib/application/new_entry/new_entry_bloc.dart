@@ -21,9 +21,16 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
       emit(state.copyWith.newEntry(title: NewEntryTitle(event.title)));
     });
     on<_CategoryAdded>((event, emit) {
+      emit(state.copyWith.newEntry(
+        results: state.newEntry.results.addCategory(event.category),
+      ));
+    });
+    on<_CategoryChanged>((event, emit) {
       emit(state.copyWith(
         newEntry: state.newEntry.copyWith(
-            results: state.newEntry.results.addCategory(event.category)),
+          results: state.newEntry.results
+              .changeCategory(event.oldCategory, event.newCategory),
+        ),
       ));
     });
     on<_ElementAdded>((event, emit) {
@@ -54,6 +61,12 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
       ));
     });
     on<_ValueChanged>((event, emit) {
+      debugPrint((state.newEntry.results.results['hematology']!['WBC'] ==
+              state.newEntry.results
+                  .changeValue(event.category, event.element, event.value)
+                  .results['hematology']!['WBC'])
+          .toString());
+      //! Should be false
       emit(state.copyWith(
         newEntry: state.newEntry.copyWith(
             results: state.newEntry.results
@@ -61,7 +74,7 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
       ));
     });
     on<_Saved>((event, emit) {
-      if (state.newEntry.results.isEmpty) {
+      if (state.newEntry.results.noElements) {
         emit(state);
       }
       throw UnimplementedError();

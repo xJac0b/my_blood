@@ -10,6 +10,8 @@ class NewEntryEvent with _$NewEntryEvent {
       _ElementAdded;
   const factory NewEntryEvent.categoryRemoved(String category) =
       _CategoryRemoved;
+  const factory NewEntryEvent.categoryChanged(
+      String oldCategory, String newCategory) = _CategoryChanged;
   const factory NewEntryEvent.elementRemoved(String category, String element) =
       _ElementRemoved;
   const factory NewEntryEvent.unitChanged(
@@ -17,5 +19,4 @@ class NewEntryEvent with _$NewEntryEvent {
   const factory NewEntryEvent.valueChanged(
       String category, String element, double value) = _ValueChanged;
   const factory NewEntryEvent.saved() = _Saved;
-  
 }

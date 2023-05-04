@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/add_result.svg
+  SvgGenImage get addResult =>
+      const SvgGenImage('assets/images/add_result.svg');
+
   /// File path: assets/images/date_picker.svg
   SvgGenImage get datePicker =>
       const SvgGenImage('assets/images/date_picker.svg');
@@ -22,13 +26,27 @@ class $AssetsImagesGen {
   SvgGenImage get title => const SvgGenImage('assets/images/title.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [datePicker, title];
+  List<SvgGenImage> get values => [addResult, datePicker, title];
+}
+
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/en-US.json
+  String get enUS => 'assets/translations/en-US.json';
+
+  /// File path: assets/translations/pl.json
+  String get pl => 'assets/translations/pl.json';
+
+  /// List of all assets
+  List<String> get values => [enUS, pl];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

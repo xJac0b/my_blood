@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import '../../../utils/extensions.dart';
+
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/headline_large.dart';
@@ -23,8 +24,7 @@ class HomePageView extends StatelessWidget {
                 backgroundColor: Color.fromARGB(255, 201, 208, 213),
               ),
             )),
-            DefaultPadding(
-                child: HeadlineLarge('${context.l10n.greeting} John 👋')),
+            DefaultPadding(child: HeadlineLarge('${'greeting'.tr()} John 👋')),
             const ResultsSection(),
             const DefaultPadding(
               child: ButtonsSection(),

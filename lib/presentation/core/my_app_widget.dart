@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import '../../utils/extensions.dart';
+
 import '../router/router.dart';
 import 'constants/theme.dart';
 
@@ -13,16 +13,9 @@ class MyAppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: _appRouter.config(),
       title: 'My Blood',
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en'),
-        Locale('pl'),
-      ],
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: themeData,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -14,6 +15,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly = false,
     this.onChanged,
     this.initialValue,
+    this.inputFormatters,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -26,10 +28,12 @@ class CustomTextField extends StatelessWidget {
   final Function(String)? onChanged;
   final bool readOnly;
   final String? initialValue;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      inputFormatters: inputFormatters,
       initialValue: initialValue,
       onChanged: onChanged,
       controller: controller,
@@ -58,6 +62,8 @@ class CustomTextField extends StatelessWidget {
           DiagnosticsProperty<TextEditingController?>('controller', controller))
       ..add(
           ObjectFlagProperty<Function(String p1)?>.has('onChanged', onChanged))
-      ..add(StringProperty('intialValue', initialValue));
+      ..add(StringProperty('intialValue', initialValue))
+      ..add(IterableProperty<TextInputFormatter>(
+          'inputFormatters', inputFormatters));
   }
 }

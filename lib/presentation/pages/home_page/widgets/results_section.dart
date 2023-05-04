@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/extensions.dart';
 import '../../../core/widgets/default_padding.dart';
 import '../../../core/widgets/headline_medium.dart';
 import 'result_card.dart';
@@ -20,7 +20,7 @@ class ResultsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DefaultPadding(
-              child: HeadlineMedium('${context.l10n.resultsSectionTitle} 📝')),
+              child: HeadlineMedium('${'resultsSectionTitle'.tr()} 📝')),
           Container(
             height: 120,
             child: ListView(

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,6 @@ import 'package:fpdart/fpdart.dart';
 import '../../../../application/new_entry/new_entry_bloc.dart';
 import '../../../../domain/new_entry/value_objects.dart';
 import '../../../../gen/assets.gen.dart';
-import '../../../../utils/extensions.dart';
 import '../../../core/widgets/default_padding.dart';
 import '../../../core/widgets/headline_medium.dart';
 import 'fields/title_field.dart';
@@ -22,7 +22,7 @@ class EnterTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultPadding(
       child: Column(children: [
-        HeadlineMedium(context.l10n.enterTitleHeadline),
+        HeadlineMedium('enterTitleHeadline'.tr()),
         const SizedBox(height: 20),
         TitleField(
             initialValue: initialValue?.value.fold((_) => null, id),
@@ -32,7 +32,7 @@ class EnterTitle extends StatelessWidget {
                   .add(NewEntryEvent.titleChanged(title));
             }),
         Expanded(child: Assets.images.title.svg()),
-        WideButton(label: context.l10n.submit, onPressed: () {})
+        WideButton(label: 'submit'.tr(), onPressed: () {})
       ]),
     );
   }

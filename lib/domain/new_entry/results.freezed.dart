@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Results {
   Map<String, Map<String, UnitValue>> get results =>
       throw _privateConstructorUsedError;
+  List<String> get order => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ResultsCopyWith<Results> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,7 @@ abstract class $ResultsCopyWith<$Res> {
   factory $ResultsCopyWith(Results value, $Res Function(Results) then) =
       _$ResultsCopyWithImpl<$Res, Results>;
   @useResult
-  $Res call({Map<String, Map<String, UnitValue>> results});
+  $Res call({Map<String, Map<String, UnitValue>> results, List<String> order});
 }
 
 /// @nodoc
@@ -45,12 +46,17 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
   @override
   $Res call({
     Object? results = null,
+    Object? order = null,
   }) {
     return _then(_value.copyWith(
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as Map<String, Map<String, UnitValue>>,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -62,7 +68,7 @@ abstract class _$$_ResultsCopyWith<$Res> implements $ResultsCopyWith<$Res> {
       __$$_ResultsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, Map<String, UnitValue>> results});
+  $Res call({Map<String, Map<String, UnitValue>> results, List<String> order});
 }
 
 /// @nodoc
@@ -76,27 +82,43 @@ class __$$_ResultsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? results = null,
+    Object? order = null,
   }) {
     return _then(_$_Results(
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as Map<String, Map<String, UnitValue>>,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Results extends _Results {
-  _$_Results({required this.results}) : super._();
+class _$_Results extends _Results with DiagnosticableTreeMixin {
+  _$_Results({required this.results, required this.order}) : super._();
 
   @override
   final Map<String, Map<String, UnitValue>> results;
+  @override
+  final List<String> order;
 
   @override
-  String toString() {
-    return 'Results(results: $results)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Results(results: $results, order: $order)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Results'))
+      ..add(DiagnosticsProperty('results', results))
+      ..add(DiagnosticsProperty('order', order));
   }
 
   @override
@@ -104,12 +126,15 @@ class _$_Results extends _Results {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Results &&
-            const DeepCollectionEquality().equals(other.results, results));
+            const DeepCollectionEquality().equals(other.results, results) &&
+            const DeepCollectionEquality().equals(other.order, order));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(results));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(results),
+      const DeepCollectionEquality().hash(order));
 
   @JsonKey(ignore: true)
   @override
@@ -120,12 +145,14 @@ class _$_Results extends _Results {
 
 abstract class _Results extends Results {
   factory _Results(
-          {required final Map<String, Map<String, UnitValue>> results}) =
-      _$_Results;
+      {required final Map<String, Map<String, UnitValue>> results,
+      required final List<String> order}) = _$_Results;
   _Results._() : super._();
 
   @override
   Map<String, Map<String, UnitValue>> get results;
+  @override
+  List<String> get order;
   @override
   @JsonKey(ignore: true)
   _$$_ResultsCopyWith<_$_Results> get copyWith =>

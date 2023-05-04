@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/extensions.dart';
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/date_field.dart';
 import '../../core/widgets/default_padding.dart';
@@ -16,7 +16,7 @@ class ResultListPageView extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          title: context.l10n.resultListAppBarTitle,
+          title: 'resultListAppBarTitle'.tr(),
           leading: IconButton(
             icon: const Icon(Icons.home, color: Colors.black),
             onPressed: () => context.router.pop(),
@@ -27,11 +27,11 @@ class ResultListPageView extends StatelessWidget {
             child: Column(
               children: [
                 SearchField(
-                  hintText: context.l10n.resultListSearchFieldHint,
+                  hintText: 'resultListSearchFieldHint'.tr(),
                 ),
                 const SizedBox(height: 20),
                 DateField(
-                  hintText: context.l10n.dateFieldHint,
+                  hintText: 'dateFieldHint'.tr(),
                 ),
                 const SizedBox(height: 20),
                 for (int i = 0; i < 10; i++) const ResultCard()

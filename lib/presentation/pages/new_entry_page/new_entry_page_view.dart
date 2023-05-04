@@ -1,13 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/new_entry/new_entry_bloc.dart';
-import '../../../utils/extensions.dart';
 import '../../core/widgets/app_bar.dart';
 import 'widgets/back_arrow_icon.dart';
 import 'widgets/enter_date.dart';
 import 'widgets/enter_results.dart';
 import 'widgets/enter_title.dart';
+import 'widgets/fields/floating_plus_button.dart';
 import 'widgets/home_icon.dart';
 
 class NewEntryPageView extends StatelessWidget {
@@ -28,7 +29,7 @@ class NewEntryPageView extends StatelessWidget {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
-            title: context.l10n.newEntryAppBarTitle,
+            title: 'newEntryAppBarTitle'.tr(),
             leading: state.pageIndex == 0
                 ? const HomeIcon()
                 : BackArrowIcon(
@@ -46,15 +47,21 @@ class NewEntryPageView extends StatelessWidget {
               EnterDate(
                 initialValue: state.newEntry.date,
               ),
-              const EnterResults(),
+              EnterResults(results: state.newEntry.results),
               EnterTitle(initialValue: state.newEntry.title),
             ],
           ),
           floatingActionButton: state.pageIndex == 1
-              ? FloatingActionButton(
-                  onPressed: () {},
-                  child: const Icon(Icons.add),
-                )
+              ? FloatingPlusButton(onPressed: () {
+                  final categoriesLeft =
+                      state.newEntry.results.categoriesLeft();
+                  if (categoriesLeft.isEmpty) {
+                    return;
+                  }
+                  context
+                      .read<NewEntryBloc>()
+                      .add(NewEntryEvent.categoryAdded(categoriesLeft[0]));
+                })
               : null,
         );
       },

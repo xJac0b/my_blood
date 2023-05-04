@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/extensions.dart';
 import '../../../../core/widgets/custom_text_field.dart';
 
 class TitleField extends StatelessWidget {
@@ -18,7 +18,7 @@ class TitleField extends StatelessWidget {
       initialValue: initialValue,
       onChanged: onChanged,
       prefixIcon: const Icon(Icons.title),
-      hintText: context.l10n.titleFieldHint,
+      hintText: 'titleFieldHint'.tr(),
     );
   }
 

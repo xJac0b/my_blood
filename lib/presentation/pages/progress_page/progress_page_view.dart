@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/extensions.dart';
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/date_field.dart';
 import '../../core/widgets/default_padding.dart';
@@ -16,7 +16,7 @@ class ProgressPageView extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          title: context.l10n.progressAppBarTitle,
+          title: 'progressAppBarTitle'.tr(),
           leading: IconButton(
             icon: const Icon(Icons.home, color: Colors.black),
             onPressed: () => context.router.pop(),
@@ -25,11 +25,11 @@ class ProgressPageView extends StatelessWidget {
         body: DefaultPadding(
           child: Column(
             children: [
-              SearchField(hintText: context.l10n.progressSearchFieldHint),
+              SearchField(hintText: 'progressSearchFieldHint'.tr()),
               const SizedBox(height: 20),
-              DateField(hintText: context.l10n.progressDateFieldStart),
+              DateField(hintText: 'progressDateFieldStart'.tr()),
               const SizedBox(height: 20),
-              DateField(hintText: context.l10n.progressDateFieldEnd),
+              DateField(hintText: 'progressDateFieldEnd'.tr()),
               const SizedBox(height: 40),
               const ProgressGraph()
             ],
