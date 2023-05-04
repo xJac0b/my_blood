@@ -12,6 +12,7 @@ class CustomSingleChildScrollView extends StatelessWidget {
         ? SingleChildScrollView(child: child)
         : Container(child: child);
   }
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
