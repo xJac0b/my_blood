@@ -28,8 +28,8 @@ class EnterDate extends StatelessWidget {
             validator: (_) =>
                 context.read<NewEntryBloc>().state.newEntry.date.value.fold(
                       (f) => f.maybeMap(
-                        invalidDate: (_) => 'Invalid date',
-                        orElse: () => 'Invalid date',
+                        invalidDate: (_) => 'invalidDate'.tr(),
+                        orElse: () => 'invalidDate'.tr(),
                       ),
                       (_) => null,
                     ),

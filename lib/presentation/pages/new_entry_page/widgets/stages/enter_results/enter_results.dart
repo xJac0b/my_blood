@@ -23,7 +23,7 @@ class EnterResults extends StatelessWidget {
       child: DefaultPadding(
         child: Column(children: [
           if (results.noCategories) ...[
-            const HeadlineMedium('Enter results using the plus buttons'),
+            HeadlineMedium('enterResultsHeadline'.tr()),
             Expanded(child: Assets.images.addResult.svg()),
           ],
           for (var i in results.categoriesOrder) ...[

@@ -34,10 +34,10 @@ class EnterTitle extends StatelessWidget {
           validator: (_) =>
               context.read<NewEntryBloc>().state.newEntry.title.value.fold(
                     (f) => f.maybeMap(
-                      exceedingLength: (_) =>
-                          'Title maximum length is ${NewEntryTitle.maxLength} characters',
-                      empty: (_) => 'Title must not be empty',
-                      orElse: () => 'Invalid title',
+                      exceedingLength: (_) => 'exceedingTitleLength'.tr(
+                          namedArgs: {'length': '${NewEntryTitle.maxLength}'}),
+                      empty: (_) => 'emptyTitle'.tr(),
+                      orElse: () => 'invalidTitle'.tr(),
                     ),
                     (_) => null,
                   ),
