@@ -45,7 +45,13 @@ class EnterTitle extends StatelessWidget {
                   ),
         ),
         Expanded(child: Assets.images.title.svg()),
-        WideButton(label: 'submit'.tr(), onPressed: () {})
+        Visibility(
+            maintainSize: true,
+            maintainState: true,
+            maintainAnimation: true,
+            visible:
+                context.read<NewEntryBloc>().state.newEntry.title.isValid(),
+            child: WideButton(label: 'submit'.tr(), onPressed: () {}))
       ]),
     );
   }

@@ -12,6 +12,10 @@ part 'new_entry_bloc.freezed.dart';
 class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
   NewEntryBloc() : super(NewEntryState.initial()) {
     on<_PageChanged>((event, emit) {
+      if (event.pageIndex == 1 && !state.newEntry.date.isValid() ||
+          event.pageIndex == 2 && state.newEntry.results.noElements) {
+        return;
+      }
       emit(state.copyWith(pageIndex: event.pageIndex));
     });
     on<_DateChanged>((event, emit) {
@@ -75,8 +79,10 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
       ));
     });
     on<_Saved>((event, emit) {
-      if (state.newEntry.results.noElements) {
-        emit(state);
+      if (state.newEntry.title.isValid() &&
+          state.newEntry.date.isValid() &&
+          !state.newEntry.results.noElements) {
+        return;
       }
       throw UnimplementedError();
     });
