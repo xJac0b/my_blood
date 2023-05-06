@@ -11,10 +11,12 @@ class DateField extends StatefulWidget {
     required this.hintText,
     this.dateChanged,
     this.initialValue,
+    this.validator,
   }) : super(key: key);
   final String hintText;
   final Function(DateTime date)? dateChanged;
   final DateTime? initialValue;
+  final String? Function(String?)? validator;
   @override
   State<DateField> createState() => _DateFieldState();
   @override
@@ -24,7 +26,9 @@ class DateField extends StatefulWidget {
       ..add(StringProperty('hintText', hintText))
       ..add(ObjectFlagProperty<Function(DateTime date)?>.has(
           'dateChanged', dateChanged))
-      ..add(DiagnosticsProperty<DateTime?>('initialValue', initialValue));
+      ..add(DiagnosticsProperty<DateTime?>('initialValue', initialValue))
+      ..add(ObjectFlagProperty<String? Function(String? p1)?>.has(
+          'validator', validator));
   }
 }
 
@@ -41,11 +45,13 @@ class _DateFieldState extends State<DateField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
+        validator: widget.validator,
         onTap: () async {
           final now = DateTimeX.nowDate;
           final pickedDate = await showDatePicker(
             context: context,
-            initialDate: DateTime(now.year, now.month, now.day),
+            initialDate:
+                widget.initialValue ?? DateTime(now.year, now.month, now.day),
             firstDate: DateTime(1900),
             lastDate: DateTime(now.year, now.month, now.day),
           );

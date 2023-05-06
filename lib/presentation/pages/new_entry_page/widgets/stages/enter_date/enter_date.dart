@@ -25,6 +25,14 @@ class EnterDate extends StatelessWidget {
         HeadlineMedium('enterDateHeadline'.tr()),
         const SizedBox(height: 20),
         DateField(
+            validator: (_) =>
+                context.read<NewEntryBloc>().state.newEntry.date.value.fold(
+                      (f) => f.maybeMap(
+                        invalidDate: (_) => 'Invalid date',
+                        orElse: () => 'Invalid date',
+                      ),
+                      (_) => null,
+                    ),
             initialValue: initialValue?.value.fold((_) => null, id),
             hintText: 'dateFieldHint'.tr(),
             dateChanged: (date) {
