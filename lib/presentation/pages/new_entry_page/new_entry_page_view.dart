@@ -38,18 +38,22 @@ class NewEntryPageView extends StatelessWidget {
                         .add(NewEntryEvent.pageChanged(state.pageIndex - 1)),
                   ),
           ),
-          body: PageView(
-            onPageChanged: (ind) => context
-                .read<NewEntryBloc>()
-                .add(NewEntryEvent.pageChanged(ind)),
-            controller: _controller,
-            children: [
-              EnterDate(
-                initialValue: state.newEntry.date,
-              ),
-              EnterResults(results: state.newEntry.results),
-              EnterTitle(initialValue: state.newEntry.title),
-            ],
+          body: Form(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            child: PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              onPageChanged: (ind) => context
+                  .read<NewEntryBloc>()
+                  .add(NewEntryEvent.pageChanged(ind)),
+              controller: _controller,
+              children: [
+                EnterDate(
+                  initialValue: state.newEntry.date,
+                ),
+                EnterResults(results: state.newEntry.results),
+                EnterTitle(initialValue: state.newEntry.title),
+              ],
+            ),
           ),
           floatingActionButton: state.pageIndex == 1
               ? FloatingPlusButton(onPressed: () {

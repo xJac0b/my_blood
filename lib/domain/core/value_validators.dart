@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
 
 import '../../utils/extensions.dart';
@@ -30,6 +31,7 @@ Either<ValueFailure<String>, String> validateMinStringLength(
 }
 
 Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
+  debugPrint("INPUT: $input");
   if (input.isNotEmpty) {
     return right(input);
   } else {

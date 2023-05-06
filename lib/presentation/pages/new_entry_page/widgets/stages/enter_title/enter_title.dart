@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +17,9 @@ import 'title_field.dart';
 class EnterTitle extends StatelessWidget {
   const EnterTitle({
     Key? key,
-    this.initialValue,
+    required this.initialValue,
   }) : super(key: key);
-  final NewEntryTitle? initialValue;
+  final NewEntryTitle initialValue;
   @override
   Widget build(BuildContext context) {
     return DefaultPadding(
@@ -25,12 +27,23 @@ class EnterTitle extends StatelessWidget {
         HeadlineMedium('enterTitleHeadline'.tr()),
         const SizedBox(height: 20),
         TitleField(
-            initialValue: initialValue?.value.fold((_) => null, id),
-            onChanged: (title) {
-              context
-                  .read<NewEntryBloc>()
-                  .add(NewEntryEvent.titleChanged(title));
-            }),
+          initialValue: initialValue.value.fold((_) => null, id),
+          onChanged: (title) {
+            context
+                .read<NewEntryBloc>()
+                .add(NewEntryEvent.titleChanged(title.trim()));
+          },
+          validator: (_) =>
+              context.read<NewEntryBloc>().state.newEntry.title.value.fold(
+                    (f) => f.maybeMap(
+                      exceedingLength: (_) =>
+                          'Title maximum length is ${NewEntryTitle.maxLength} characters',
+                      empty: (_) => 'Title must not be empty',
+                      orElse: () => 'Invalid title',
+                    ),
+                    (_) => null,
+                  ),
+        ),
         Expanded(child: Assets.images.title.svg()),
         WideButton(label: 'submit'.tr(), onPressed: () {})
       ]),

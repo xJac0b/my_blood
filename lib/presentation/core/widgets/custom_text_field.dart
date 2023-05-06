@@ -3,20 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    this.controller,
-    this.keyboardType,
-    this.hintText = '',
-    this.prefixIcon,
-    this.suffixIcon,
-    this.obscureText = false,
-    this.onTap,
-    this.readOnly = false,
-    this.onChanged,
-    this.initialValue,
-    this.inputFormatters,
-  }) : super(key: key);
+  const CustomTextField(
+      {Key? key,
+      this.controller,
+      this.keyboardType,
+      this.hintText = '',
+      this.prefixIcon,
+      this.suffixIcon,
+      this.obscureText = false,
+      this.onTap,
+      this.readOnly = false,
+      this.onChanged,
+      this.initialValue,
+      this.inputFormatters,
+      this.validator,
+      this.maxLength})
+      : super(key: key);
 
   final TextEditingController? controller;
   final TextInputType? keyboardType;
@@ -29,10 +31,14 @@ class CustomTextField extends StatelessWidget {
   final bool readOnly;
   final String? initialValue;
   final List<TextInputFormatter>? inputFormatters;
+  final String? Function(String?)? validator;
+  final int? maxLength;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: maxLength,
+      validator: validator,
       inputFormatters: inputFormatters,
       initialValue: initialValue,
       onChanged: onChanged,
@@ -64,6 +70,9 @@ class CustomTextField extends StatelessWidget {
           ObjectFlagProperty<Function(String p1)?>.has('onChanged', onChanged))
       ..add(StringProperty('intialValue', initialValue))
       ..add(IterableProperty<TextInputFormatter>(
-          'inputFormatters', inputFormatters));
+          'inputFormatters', inputFormatters))
+      ..add(
+          ObjectFlagProperty<Function(String? p1)?>.has('validator', validator))
+      ..add(IntProperty('maxLength', maxLength));
   }
 }
