@@ -5,15 +5,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../domain/new_entry/new_entry.dart';
 import '../../domain/new_entry/value_objects.dart';
 
+part 'new_entry_bloc.freezed.dart';
 part 'new_entry_event.dart';
 part 'new_entry_state.dart';
-part 'new_entry_bloc.freezed.dart';
 
 class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
   NewEntryBloc() : super(NewEntryState.initial()) {
     on<_PageChanged>((event, emit) {
-      if (event.pageIndex == 1 && !state.newEntry.date.isValid() ||
-          event.pageIndex == 2 && state.newEntry.results.noElements) {
+      if (event.pageIndex == NewEntryFormPages.results &&
+              !state.newEntry.date.isValid() ||
+          event.pageIndex == NewEntryFormPages.title &&
+              state.newEntry.results.noElements) {
         return;
       }
       emit(state.copyWith(pageIndex: event.pageIndex));

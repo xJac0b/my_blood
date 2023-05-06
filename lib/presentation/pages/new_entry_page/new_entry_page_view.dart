@@ -19,8 +19,8 @@ class NewEntryPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<NewEntryBloc, NewEntryState>(
       listener: (context, state) {
-        if (state.pageIndex != _controller.page?.round()) {
-          _controller.animateToPage(state.pageIndex,
+        if (state.pageIndex.index != _controller.page?.round()) {
+          _controller.animateToPage(state.pageIndex.index,
               duration: const Duration(milliseconds: 500),
               curve: Curves.easeInOut);
         }
@@ -30,21 +30,20 @@ class NewEntryPageView extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
             title: 'newEntryAppBarTitle'.tr(),
-            leading: state.pageIndex == 0
+            leading: state.pageIndex == NewEntryFormPages.date
                 ? const HomeIcon()
                 : BackArrowIcon(
-                    onPressed: () => context
-                        .read<NewEntryBloc>()
-                        .add(NewEntryEvent.pageChanged(state.pageIndex - 1)),
+                    onPressed: () => context.read<NewEntryBloc>().add(
+                        NewEntryEvent.pageChanged(NewEntryFormPages
+                            .values[state.pageIndex.index - 1])),
                   ),
           ),
           body: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             child: PageView(
               physics: const NeverScrollableScrollPhysics(),
-              onPageChanged: (ind) => context
-                  .read<NewEntryBloc>()
-                  .add(NewEntryEvent.pageChanged(ind)),
+              onPageChanged: (ind) => context.read<NewEntryBloc>().add(
+                  NewEntryEvent.pageChanged(NewEntryFormPages.values[ind])),
               controller: _controller,
               children: [
                 EnterDate(
@@ -55,7 +54,7 @@ class NewEntryPageView extends StatelessWidget {
               ],
             ),
           ),
-          floatingActionButton: state.pageIndex == 1
+          floatingActionButton: state.pageIndex == NewEntryFormPages.results
               ? FloatingPlusButton(onPressed: () {
                   final categoriesLeft =
                       state.newEntry.results.categoriesLeft();

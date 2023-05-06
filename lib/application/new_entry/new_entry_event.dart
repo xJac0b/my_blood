@@ -2,7 +2,8 @@ part of 'new_entry_bloc.dart';
 
 @freezed
 class NewEntryEvent with _$NewEntryEvent {
-  const factory NewEntryEvent.pageChanged(int pageIndex) = _PageChanged;
+  const factory NewEntryEvent.pageChanged(NewEntryFormPages pageIndex) =
+      _PageChanged;
   const factory NewEntryEvent.dateChanged(DateTime date) = _DateChanged;
   const factory NewEntryEvent.titleChanged(String title) = _TitleChanged;
   const factory NewEntryEvent.categoryAdded(String category) = _CategoryAdded;
@@ -14,8 +15,8 @@ class NewEntryEvent with _$NewEntryEvent {
       String oldCategory, String newCategory) = _CategoryChanged;
   const factory NewEntryEvent.elementRemoved(String category, String element) =
       _ElementRemoved;
-  const factory NewEntryEvent.elementChanged(String category, String oldElement, String newElement) =
-      _ElementChanged;
+  const factory NewEntryEvent.elementChanged(
+      String category, String oldElement, String newElement) = _ElementChanged;
   const factory NewEntryEvent.unitChanged(
       String category, String element, int unitIndex) = _UnitChanged;
   const factory NewEntryEvent.valueChanged(

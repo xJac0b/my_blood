@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$NewEntryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -39,7 +39,7 @@ mixin _$NewEntryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -58,7 +58,7 @@ mixin _$NewEntryEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -151,7 +151,7 @@ abstract class _$$_PageChangedCopyWith<$Res> {
           _$_PageChanged value, $Res Function(_$_PageChanged) then) =
       __$$_PageChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({int pageIndex});
+  $Res call({NewEntryFormPages pageIndex});
 }
 
 /// @nodoc
@@ -171,7 +171,7 @@ class __$$_PageChangedCopyWithImpl<$Res>
       null == pageIndex
           ? _value.pageIndex
           : pageIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+              as NewEntryFormPages,
     ));
   }
 }
@@ -182,7 +182,7 @@ class _$_PageChanged implements _PageChanged {
   const _$_PageChanged(this.pageIndex);
 
   @override
-  final int pageIndex;
+  final NewEntryFormPages pageIndex;
 
   @override
   String toString() {
@@ -210,7 +210,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -234,7 +234,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -256,7 +256,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -342,9 +342,10 @@ class _$_PageChanged implements _PageChanged {
 }
 
 abstract class _PageChanged implements NewEntryEvent {
-  const factory _PageChanged(final int pageIndex) = _$_PageChanged;
+  const factory _PageChanged(final NewEntryFormPages pageIndex) =
+      _$_PageChanged;
 
-  int get pageIndex;
+  NewEntryFormPages get pageIndex;
   @JsonKey(ignore: true)
   _$$_PageChangedCopyWith<_$_PageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -414,7 +415,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -438,7 +439,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -460,7 +461,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -618,7 +619,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -642,7 +643,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -664,7 +665,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -823,7 +824,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -847,7 +848,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -869,7 +870,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -1036,7 +1037,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -1060,7 +1061,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -1082,7 +1083,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -1243,7 +1244,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -1267,7 +1268,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -1289,7 +1290,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -1457,7 +1458,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -1481,7 +1482,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -1503,7 +1504,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -1672,7 +1673,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -1696,7 +1697,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -1718,7 +1719,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -1898,7 +1899,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -1922,7 +1923,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -1944,7 +1945,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -2123,7 +2124,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -2147,7 +2148,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -2169,7 +2170,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -2348,7 +2349,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -2372,7 +2373,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -2394,7 +2395,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -2528,7 +2529,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(NewEntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
     required TResult Function(String category) categoryAdded,
@@ -2552,7 +2553,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
     TResult? Function(String category)? categoryAdded,
@@ -2574,7 +2575,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(NewEntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
     TResult Function(String category)? categoryAdded,
@@ -2665,7 +2666,7 @@ abstract class _Saved implements NewEntryEvent {
 
 /// @nodoc
 mixin _$NewEntryState {
-  int get pageIndex => throw _privateConstructorUsedError;
+  NewEntryFormPages get pageIndex => throw _privateConstructorUsedError;
   NewEntry get newEntry => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -2679,7 +2680,7 @@ abstract class $NewEntryStateCopyWith<$Res> {
           NewEntryState value, $Res Function(NewEntryState) then) =
       _$NewEntryStateCopyWithImpl<$Res, NewEntryState>;
   @useResult
-  $Res call({int pageIndex, NewEntry newEntry});
+  $Res call({NewEntryFormPages pageIndex, NewEntry newEntry});
 
   $NewEntryCopyWith<$Res> get newEntry;
 }
@@ -2704,7 +2705,7 @@ class _$NewEntryStateCopyWithImpl<$Res, $Val extends NewEntryState>
       pageIndex: null == pageIndex
           ? _value.pageIndex
           : pageIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+              as NewEntryFormPages,
       newEntry: null == newEntry
           ? _value.newEntry
           : newEntry // ignore: cast_nullable_to_non_nullable
@@ -2729,7 +2730,7 @@ abstract class _$$_NewEntryStateCopyWith<$Res>
       __$$_NewEntryStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int pageIndex, NewEntry newEntry});
+  $Res call({NewEntryFormPages pageIndex, NewEntry newEntry});
 
   @override
   $NewEntryCopyWith<$Res> get newEntry;
@@ -2753,7 +2754,7 @@ class __$$_NewEntryStateCopyWithImpl<$Res>
       pageIndex: null == pageIndex
           ? _value.pageIndex
           : pageIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+              as NewEntryFormPages,
       newEntry: null == newEntry
           ? _value.newEntry
           : newEntry // ignore: cast_nullable_to_non_nullable
@@ -2768,7 +2769,7 @@ class _$_NewEntryState implements _NewEntryState {
   const _$_NewEntryState({required this.pageIndex, required this.newEntry});
 
   @override
-  final int pageIndex;
+  final NewEntryFormPages pageIndex;
   @override
   final NewEntry newEntry;
 
@@ -2800,11 +2801,11 @@ class _$_NewEntryState implements _NewEntryState {
 
 abstract class _NewEntryState implements NewEntryState {
   const factory _NewEntryState(
-      {required final int pageIndex,
+      {required final NewEntryFormPages pageIndex,
       required final NewEntry newEntry}) = _$_NewEntryState;
 
   @override
-  int get pageIndex;
+  NewEntryFormPages get pageIndex;
   @override
   NewEntry get newEntry;
   @override

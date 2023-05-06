@@ -41,9 +41,8 @@ class EnterDate extends StatelessWidget {
         Expanded(child: Assets.images.datePicker.svg()),
         WideButton(
             label: 'next'.tr(),
-            onPressed: () => context
-                .read<NewEntryBloc>()
-                .add(const NewEntryEvent.pageChanged(1)))
+            onPressed: () => context.read<NewEntryBloc>().add(
+                const NewEntryEvent.pageChanged(NewEntryFormPages.results)))
       ]),
     );
   }

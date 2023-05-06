@@ -48,9 +48,8 @@ class EnterResults extends StatelessWidget {
           if (!results.noElements)
             WideButton(
                 label: 'next'.tr(),
-                onPressed: () => context
-                    .read<NewEntryBloc>()
-                    .add(const NewEntryEvent.pageChanged(2)))
+                onPressed: () => context.read<NewEntryBloc>().add(
+                    const NewEntryEvent.pageChanged(NewEntryFormPages.title)))
         ]),
       ),
     );
