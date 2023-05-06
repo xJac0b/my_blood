@@ -53,6 +53,13 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
                 .removeElement(event.category, event.element)),
       ));
     });
+    on<_ElementChanged>((event, emit) {
+      emit(state.copyWith(
+        newEntry: state.newEntry.copyWith(
+            results: state.newEntry.results.changeElement(
+                event.category, event.oldElement, event.newElement)),
+      ));
+    });
     on<_UnitChanged>((event, emit) {
       emit(state.copyWith(
         newEntry: state.newEntry.copyWith(
@@ -61,12 +68,6 @@ class NewEntryBloc extends Bloc<NewEntryEvent, NewEntryState> {
       ));
     });
     on<_ValueChanged>((event, emit) {
-      debugPrint((state.newEntry.results.results['hematology']!['WBC'] ==
-              state.newEntry.results
-                  .changeValue(event.category, event.element, event.value)
-                  .results['hematology']!['WBC'])
-          .toString());
-      //! Should be false
       emit(state.copyWith(
         newEntry: state.newEntry.copyWith(
             results: state.newEntry.results

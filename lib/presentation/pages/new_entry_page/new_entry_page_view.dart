@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/new_entry/new_entry_bloc.dart';
 import '../../core/widgets/app_bar.dart';
-import 'widgets/back_arrow_icon.dart';
-import 'widgets/enter_date.dart';
-import 'widgets/enter_results.dart';
-import 'widgets/enter_title.dart';
-import 'widgets/fields/floating_plus_button.dart';
-import 'widgets/home_icon.dart';
+import 'widgets/app_bar_icons/back_arrow_icon.dart';
+import 'widgets/app_bar_icons/home_icon.dart';
+import 'widgets/buttons/floating_plus_button.dart';
+import 'widgets/stages/enter_date/enter_date.dart';
+import 'widgets/stages/enter_results/enter_results.dart';
+import 'widgets/stages/enter_title/enter_title.dart';
 
 class NewEntryPageView extends StatelessWidget {
   NewEntryPageView({super.key});

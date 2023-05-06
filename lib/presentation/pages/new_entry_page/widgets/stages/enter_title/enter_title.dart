@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpdart/fpdart.dart';
 
-import '../../../../application/new_entry/new_entry_bloc.dart';
-import '../../../../domain/new_entry/value_objects.dart';
-import '../../../../gen/assets.gen.dart';
-import '../../../core/widgets/default_padding.dart';
-import '../../../core/widgets/headline_medium.dart';
-import 'fields/title_field.dart';
-import 'fields/wide_button.dart';
+import '../../../../../../application/new_entry/new_entry_bloc.dart';
+import '../../../../../../domain/new_entry/value_objects.dart';
+import '../../../../../../gen/assets.gen.dart';
+import '../../../../../core/widgets/default_padding.dart';
+import '../../../../../core/widgets/headline_medium.dart';
+import '../../buttons/wide_button.dart';
+import 'title_field.dart';
 
 class EnterTitle extends StatelessWidget {
   const EnterTitle({

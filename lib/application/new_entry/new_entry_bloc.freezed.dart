@@ -27,6 +27,9 @@ mixin _$NewEntryEvent {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -44,6 +47,8 @@ mixin _$NewEntryEvent {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -61,6 +66,8 @@ mixin _$NewEntryEvent {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -79,6 +86,7 @@ mixin _$NewEntryEvent {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -94,6 +102,7 @@ mixin _$NewEntryEvent {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -109,6 +118,7 @@ mixin _$NewEntryEvent {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -209,6 +219,9 @@ class _$_PageChanged implements _PageChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -229,6 +242,8 @@ class _$_PageChanged implements _PageChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -249,6 +264,8 @@ class _$_PageChanged implements _PageChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -273,6 +290,7 @@ class _$_PageChanged implements _PageChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -291,6 +309,7 @@ class _$_PageChanged implements _PageChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -309,6 +328,7 @@ class _$_PageChanged implements _PageChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -403,6 +423,9 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -423,6 +446,8 @@ class _$_DateChanged implements _DateChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -443,6 +468,8 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -467,6 +494,7 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -485,6 +513,7 @@ class _$_DateChanged implements _DateChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -503,6 +532,7 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -597,6 +627,9 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -617,6 +650,8 @@ class _$_TitleChanged implements _TitleChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -637,6 +672,8 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -661,6 +698,7 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -679,6 +717,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -697,6 +736,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -792,6 +832,9 @@ class _$_CategoryAdded implements _CategoryAdded {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -812,6 +855,8 @@ class _$_CategoryAdded implements _CategoryAdded {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -832,6 +877,8 @@ class _$_CategoryAdded implements _CategoryAdded {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -856,6 +903,7 @@ class _$_CategoryAdded implements _CategoryAdded {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -874,6 +922,7 @@ class _$_CategoryAdded implements _CategoryAdded {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -892,6 +941,7 @@ class _$_CategoryAdded implements _CategoryAdded {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -995,6 +1045,9 @@ class _$_ElementAdded implements _ElementAdded {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -1015,6 +1068,8 @@ class _$_ElementAdded implements _ElementAdded {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -1035,6 +1090,8 @@ class _$_ElementAdded implements _ElementAdded {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -1059,6 +1116,7 @@ class _$_ElementAdded implements _ElementAdded {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -1077,6 +1135,7 @@ class _$_ElementAdded implements _ElementAdded {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -1095,6 +1154,7 @@ class _$_ElementAdded implements _ElementAdded {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -1192,6 +1252,9 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -1212,6 +1275,8 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -1232,6 +1297,8 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -1256,6 +1323,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -1274,6 +1342,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -1292,6 +1361,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -1396,6 +1466,9 @@ class _$_CategoryChanged implements _CategoryChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -1416,6 +1489,8 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -1436,6 +1511,8 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -1460,6 +1537,7 @@ class _$_CategoryChanged implements _CategoryChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -1478,6 +1556,7 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -1496,6 +1575,7 @@ class _$_CategoryChanged implements _CategoryChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -1601,6 +1681,9 @@ class _$_ElementRemoved implements _ElementRemoved {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -1621,6 +1704,8 @@ class _$_ElementRemoved implements _ElementRemoved {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -1641,6 +1726,8 @@ class _$_ElementRemoved implements _ElementRemoved {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -1665,6 +1752,7 @@ class _$_ElementRemoved implements _ElementRemoved {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -1683,6 +1771,7 @@ class _$_ElementRemoved implements _ElementRemoved {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -1701,6 +1790,7 @@ class _$_ElementRemoved implements _ElementRemoved {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -1721,6 +1811,233 @@ abstract class _ElementRemoved implements NewEntryEvent {
   String get element;
   @JsonKey(ignore: true)
   _$$_ElementRemovedCopyWith<_$_ElementRemoved> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ElementChangedCopyWith<$Res> {
+  factory _$$_ElementChangedCopyWith(
+          _$_ElementChanged value, $Res Function(_$_ElementChanged) then) =
+      __$$_ElementChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String category, String oldElement, String newElement});
+}
+
+/// @nodoc
+class __$$_ElementChangedCopyWithImpl<$Res>
+    extends _$NewEntryEventCopyWithImpl<$Res, _$_ElementChanged>
+    implements _$$_ElementChangedCopyWith<$Res> {
+  __$$_ElementChangedCopyWithImpl(
+      _$_ElementChanged _value, $Res Function(_$_ElementChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = null,
+    Object? oldElement = null,
+    Object? newElement = null,
+  }) {
+    return _then(_$_ElementChanged(
+      null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == oldElement
+          ? _value.oldElement
+          : oldElement // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == newElement
+          ? _value.newElement
+          : newElement // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ElementChanged implements _ElementChanged {
+  const _$_ElementChanged(this.category, this.oldElement, this.newElement);
+
+  @override
+  final String category;
+  @override
+  final String oldElement;
+  @override
+  final String newElement;
+
+  @override
+  String toString() {
+    return 'NewEntryEvent.elementChanged(category: $category, oldElement: $oldElement, newElement: $newElement)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ElementChanged &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.oldElement, oldElement) ||
+                other.oldElement == oldElement) &&
+            (identical(other.newElement, newElement) ||
+                other.newElement == newElement));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, category, oldElement, newElement);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ElementChangedCopyWith<_$_ElementChanged> get copyWith =>
+      __$$_ElementChangedCopyWithImpl<_$_ElementChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int pageIndex) pageChanged,
+    required TResult Function(DateTime date) dateChanged,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String category) categoryAdded,
+    required TResult Function(String category, String element) elementAdded,
+    required TResult Function(String category) categoryRemoved,
+    required TResult Function(String oldCategory, String newCategory)
+        categoryChanged,
+    required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
+    required TResult Function(String category, String element, int unitIndex)
+        unitChanged,
+    required TResult Function(String category, String element, double value)
+        valueChanged,
+    required TResult Function() saved,
+  }) {
+    return elementChanged(category, oldElement, newElement);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int pageIndex)? pageChanged,
+    TResult? Function(DateTime date)? dateChanged,
+    TResult? Function(String title)? titleChanged,
+    TResult? Function(String category)? categoryAdded,
+    TResult? Function(String category, String element)? elementAdded,
+    TResult? Function(String category)? categoryRemoved,
+    TResult? Function(String oldCategory, String newCategory)? categoryChanged,
+    TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
+    TResult? Function(String category, String element, int unitIndex)?
+        unitChanged,
+    TResult? Function(String category, String element, double value)?
+        valueChanged,
+    TResult? Function()? saved,
+  }) {
+    return elementChanged?.call(category, oldElement, newElement);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int pageIndex)? pageChanged,
+    TResult Function(DateTime date)? dateChanged,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String category)? categoryAdded,
+    TResult Function(String category, String element)? elementAdded,
+    TResult Function(String category)? categoryRemoved,
+    TResult Function(String oldCategory, String newCategory)? categoryChanged,
+    TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
+    TResult Function(String category, String element, int unitIndex)?
+        unitChanged,
+    TResult Function(String category, String element, double value)?
+        valueChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (elementChanged != null) {
+      return elementChanged(category, oldElement, newElement);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PageChanged value) pageChanged,
+    required TResult Function(_DateChanged value) dateChanged,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_CategoryAdded value) categoryAdded,
+    required TResult Function(_ElementAdded value) elementAdded,
+    required TResult Function(_CategoryRemoved value) categoryRemoved,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
+    required TResult Function(_UnitChanged value) unitChanged,
+    required TResult Function(_ValueChanged value) valueChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return elementChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PageChanged value)? pageChanged,
+    TResult? Function(_DateChanged value)? dateChanged,
+    TResult? Function(_TitleChanged value)? titleChanged,
+    TResult? Function(_CategoryAdded value)? categoryAdded,
+    TResult? Function(_ElementAdded value)? elementAdded,
+    TResult? Function(_CategoryRemoved value)? categoryRemoved,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
+    TResult? Function(_UnitChanged value)? unitChanged,
+    TResult? Function(_ValueChanged value)? valueChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return elementChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PageChanged value)? pageChanged,
+    TResult Function(_DateChanged value)? dateChanged,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_CategoryAdded value)? categoryAdded,
+    TResult Function(_ElementAdded value)? elementAdded,
+    TResult Function(_CategoryRemoved value)? categoryRemoved,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
+    TResult Function(_UnitChanged value)? unitChanged,
+    TResult Function(_ValueChanged value)? valueChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (elementChanged != null) {
+      return elementChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ElementChanged implements NewEntryEvent {
+  const factory _ElementChanged(final String category, final String oldElement,
+      final String newElement) = _$_ElementChanged;
+
+  String get category;
+  String get oldElement;
+  String get newElement;
+  @JsonKey(ignore: true)
+  _$$_ElementChangedCopyWith<_$_ElementChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1815,6 +2132,9 @@ class _$_UnitChanged implements _UnitChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -1835,6 +2155,8 @@ class _$_UnitChanged implements _UnitChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -1855,6 +2177,8 @@ class _$_UnitChanged implements _UnitChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -1879,6 +2203,7 @@ class _$_UnitChanged implements _UnitChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -1897,6 +2222,7 @@ class _$_UnitChanged implements _UnitChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -1915,6 +2241,7 @@ class _$_UnitChanged implements _UnitChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -2030,6 +2357,9 @@ class _$_ValueChanged implements _ValueChanged {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -2050,6 +2380,8 @@ class _$_ValueChanged implements _ValueChanged {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -2070,6 +2402,8 @@ class _$_ValueChanged implements _ValueChanged {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -2094,6 +2428,7 @@ class _$_ValueChanged implements _ValueChanged {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -2112,6 +2447,7 @@ class _$_ValueChanged implements _ValueChanged {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -2130,6 +2466,7 @@ class _$_ValueChanged implements _ValueChanged {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,
@@ -2200,6 +2537,9 @@ class _$_Saved implements _Saved {
     required TResult Function(String oldCategory, String newCategory)
         categoryChanged,
     required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
     required TResult Function(String category, String element, int unitIndex)
         unitChanged,
     required TResult Function(String category, String element, double value)
@@ -2220,6 +2560,8 @@ class _$_Saved implements _Saved {
     TResult? Function(String category)? categoryRemoved,
     TResult? Function(String oldCategory, String newCategory)? categoryChanged,
     TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult? Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult? Function(String category, String element, double value)?
@@ -2240,6 +2582,8 @@ class _$_Saved implements _Saved {
     TResult Function(String category)? categoryRemoved,
     TResult Function(String oldCategory, String newCategory)? categoryChanged,
     TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
     TResult Function(String category, String element, int unitIndex)?
         unitChanged,
     TResult Function(String category, String element, double value)?
@@ -2264,6 +2608,7 @@ class _$_Saved implements _Saved {
     required TResult Function(_CategoryRemoved value) categoryRemoved,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
     required TResult Function(_UnitChanged value) unitChanged,
     required TResult Function(_ValueChanged value) valueChanged,
     required TResult Function(_Saved value) saved,
@@ -2282,6 +2627,7 @@ class _$_Saved implements _Saved {
     TResult? Function(_CategoryRemoved value)? categoryRemoved,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
     TResult? Function(_UnitChanged value)? unitChanged,
     TResult? Function(_ValueChanged value)? valueChanged,
     TResult? Function(_Saved value)? saved,
@@ -2300,6 +2646,7 @@ class _$_Saved implements _Saved {
     TResult Function(_CategoryRemoved value)? categoryRemoved,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
     TResult Function(_UnitChanged value)? unitChanged,
     TResult Function(_ValueChanged value)? valueChanged,
     TResult Function(_Saved value)? saved,

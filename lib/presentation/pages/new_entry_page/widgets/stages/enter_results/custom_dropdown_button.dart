@@ -18,6 +18,7 @@ class CustomDropdownButton extends StatelessWidget {
     return SizedBox(
       height: 60,
       child: DropdownButtonFormField(
+        isExpanded: true,
         value: items.first,
         items: items
             .map(

@@ -18,7 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Results {
   Map<String, Map<String, UnitValue>> get results =>
       throw _privateConstructorUsedError;
-  List<String> get order => throw _privateConstructorUsedError;
+  List<String> get categoriesOrder => throw _privateConstructorUsedError;
+  Map<String, List<String>> get elementsOrder =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ResultsCopyWith<Results> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +31,10 @@ abstract class $ResultsCopyWith<$Res> {
   factory $ResultsCopyWith(Results value, $Res Function(Results) then) =
       _$ResultsCopyWithImpl<$Res, Results>;
   @useResult
-  $Res call({Map<String, Map<String, UnitValue>> results, List<String> order});
+  $Res call(
+      {Map<String, Map<String, UnitValue>> results,
+      List<String> categoriesOrder,
+      Map<String, List<String>> elementsOrder});
 }
 
 /// @nodoc
@@ -46,17 +51,22 @@ class _$ResultsCopyWithImpl<$Res, $Val extends Results>
   @override
   $Res call({
     Object? results = null,
-    Object? order = null,
+    Object? categoriesOrder = null,
+    Object? elementsOrder = null,
   }) {
     return _then(_value.copyWith(
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as Map<String, Map<String, UnitValue>>,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
+      categoriesOrder: null == categoriesOrder
+          ? _value.categoriesOrder
+          : categoriesOrder // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      elementsOrder: null == elementsOrder
+          ? _value.elementsOrder
+          : elementsOrder // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ) as $Val);
   }
 }
@@ -68,7 +78,10 @@ abstract class _$$_ResultsCopyWith<$Res> implements $ResultsCopyWith<$Res> {
       __$$_ResultsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, Map<String, UnitValue>> results, List<String> order});
+  $Res call(
+      {Map<String, Map<String, UnitValue>> results,
+      List<String> categoriesOrder,
+      Map<String, List<String>> elementsOrder});
 }
 
 /// @nodoc
@@ -82,17 +95,22 @@ class __$$_ResultsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? results = null,
-    Object? order = null,
+    Object? categoriesOrder = null,
+    Object? elementsOrder = null,
   }) {
     return _then(_$_Results(
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as Map<String, Map<String, UnitValue>>,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
+      categoriesOrder: null == categoriesOrder
+          ? _value.categoriesOrder
+          : categoriesOrder // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      elementsOrder: null == elementsOrder
+          ? _value.elementsOrder
+          : elementsOrder // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ));
   }
 }
@@ -100,16 +118,22 @@ class __$$_ResultsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Results extends _Results with DiagnosticableTreeMixin {
-  _$_Results({required this.results, required this.order}) : super._();
+  _$_Results(
+      {required this.results,
+      required this.categoriesOrder,
+      required this.elementsOrder})
+      : super._();
 
   @override
   final Map<String, Map<String, UnitValue>> results;
   @override
-  final List<String> order;
+  final List<String> categoriesOrder;
+  @override
+  final Map<String, List<String>> elementsOrder;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Results(results: $results, order: $order)';
+    return 'Results(results: $results, categoriesOrder: $categoriesOrder, elementsOrder: $elementsOrder)';
   }
 
   @override
@@ -118,7 +142,8 @@ class _$_Results extends _Results with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'Results'))
       ..add(DiagnosticsProperty('results', results))
-      ..add(DiagnosticsProperty('order', order));
+      ..add(DiagnosticsProperty('categoriesOrder', categoriesOrder))
+      ..add(DiagnosticsProperty('elementsOrder', elementsOrder));
   }
 
   @override
@@ -127,14 +152,18 @@ class _$_Results extends _Results with DiagnosticableTreeMixin {
         (other.runtimeType == runtimeType &&
             other is _$_Results &&
             const DeepCollectionEquality().equals(other.results, results) &&
-            const DeepCollectionEquality().equals(other.order, order));
+            const DeepCollectionEquality()
+                .equals(other.categoriesOrder, categoriesOrder) &&
+            const DeepCollectionEquality()
+                .equals(other.elementsOrder, elementsOrder));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(results),
-      const DeepCollectionEquality().hash(order));
+      const DeepCollectionEquality().hash(categoriesOrder),
+      const DeepCollectionEquality().hash(elementsOrder));
 
   @JsonKey(ignore: true)
   @override
@@ -146,13 +175,16 @@ class _$_Results extends _Results with DiagnosticableTreeMixin {
 abstract class _Results extends Results {
   factory _Results(
       {required final Map<String, Map<String, UnitValue>> results,
-      required final List<String> order}) = _$_Results;
+      required final List<String> categoriesOrder,
+      required final Map<String, List<String>> elementsOrder}) = _$_Results;
   _Results._() : super._();
 
   @override
   Map<String, Map<String, UnitValue>> get results;
   @override
-  List<String> get order;
+  List<String> get categoriesOrder;
+  @override
+  Map<String, List<String>> get elementsOrder;
   @override
   @JsonKey(ignore: true)
   _$$_ResultsCopyWith<_$_Results> get copyWith =>

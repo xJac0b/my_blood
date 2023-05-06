@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-export 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../domain/new_entry/results.dart';
+import '../domain/new_entry/unit_value.dart';
 
-extension AppLocalizationsX on BuildContext {
-  // ignore: unnecessary_cast
-  AppLocalizations get l10n => AppLocalizations.of(this) as AppLocalizations;
+extension MapX on ResultsMap {
+  static ResultsMap copyNestedMap(ResultsMap originalMap) {
+    final newMap = <String, Map<String, UnitValue>>{};
+    originalMap.forEach((key, value) {
+      final newInnerMap = <String, UnitValue>{};
+      value.forEach((innerKey, innerValue) {
+        newInnerMap[innerKey] =
+            UnitValue(unitIndex: innerValue.unitIndex, value: innerValue.value);
+      });
+      newMap[key] = newInnerMap;
+    });
+
+    return newMap;
+  }
 }
 
 extension DateTimeX on DateTime {

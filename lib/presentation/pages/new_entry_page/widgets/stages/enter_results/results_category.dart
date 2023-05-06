@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../application/new_entry/new_entry_bloc.dart';
-import '../fields/custom_dropdown_button.dart';
+import '../../../../../../application/new_entry/new_entry_bloc.dart';
+import 'custom_dropdown_button.dart';
 
 class ResultsCategory extends StatelessWidget {
   const ResultsCategory({
@@ -23,7 +23,7 @@ class ResultsCategory extends StatelessWidget {
               onChanged: (newValue) => newValue != null
                   ? context.read<NewEntryBloc>().add(
                         NewEntryEvent.categoryChanged(
-                            items.values.first, items[newValue.tr()]!),
+                            items.values.first, items[newValue]!),
                       )
                   : null),
         ),

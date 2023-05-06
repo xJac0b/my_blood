@@ -1,69 +1,107 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../utils/extensions.dart';
 import 'constants/result_keys.dart';
 import 'constants/results_units.dart';
 import 'unit_value.dart';
 
 part 'results.freezed.dart';
 
+typedef ResultsMap = Map<String, Map<String, UnitValue>>;
+
 @Freezed(makeCollectionsUnmodifiable: false)
 abstract class Results implements _$Results {
   factory Results(
-      {required Map<String, Map<String, UnitValue>> results,
-      required List<String> order}) = _Results;
+      {required ResultsMap results,
+      required List<String> categoriesOrder,
+      required Map<String, List<String>> elementsOrder}) = _Results;
 
   const Results._();
 
-  factory Results.empty() => Results(results: {}, order: []);
+  factory Results.empty() =>
+      Results(results: {}, categoriesOrder: [], elementsOrder: {});
   bool get noElements =>
       results.isEmpty || results.values.every((e) => e.isEmpty);
   bool get noCategories => results.isEmpty;
 
-  Results addCategory(String category) {
+  Results addCategory(String category, [int? index]) {
     if (categoriesLeft().isEmpty) {
       return copyWith(results: results);
     }
-    final newResult = Map<String, Map<String, UnitValue>>.from(results);
+    final newResults = ResultsMap.from(results);
     if (category == ResultKeys.hematology) {
-      newResult[category] = resultsUnits[category]!
-          .map((k, v) => MapEntry(k, UnitValue(unitIndex: v[0], value: 0)));
+      newResults[category] = resultsUnits[category]!
+          .map((k, v) => MapEntry(k, UnitValue(unitIndex: v[0], value: null)));
+      elementsOrder[category] = resultsUnits[category]!.keys.toList();
     } else {
-      newResult[category] = {};
+      newResults[category] = {};
+      elementsOrder[category] = [];
     }
-    return copyWith(results: newResult, order: order..add(category));
+    return copyWith(
+        results: newResults,
+        categoriesOrder: categoriesOrder
+          ..insert(index ?? categoriesOrder.length, category),
+        elementsOrder: elementsOrder);
   }
 
   Results removeCategory(String category) {
-    final newResult = Map<String, Map<String, UnitValue>>.from(results);
+    final newResults = ResultsMap.from(results);
     return copyWith(
-        results: newResult..remove(category), order: order..remove(category));
+        results: newResults..remove(category),
+        categoriesOrder: categoriesOrder..remove(category),
+        elementsOrder: elementsOrder..remove(category));
   }
 
   Results changeCategory(String oldCategory, String newCategory) {
-    return removeCategory(oldCategory).addCategory(newCategory);
+    if (oldCategory == newCategory) {
+      return copyWith();
+    }
+    final index = categoriesOrder.indexOf(oldCategory);
+    return removeCategory(oldCategory).addCategory(newCategory, index);
   }
 
   Results addElement(String category, String key) {
-    results[category]![key] =
-        UnitValue(unitIndex: resultsUnits[category]![key]![0], value: 0);
-    return copyWith(results: results);
+    final newResults = MapX.copyNestedMap(results);
+    newResults[category]![key] =
+        UnitValue(unitIndex: resultsUnits[category]![key]![0], value: null);
+    return copyWith(
+        results: newResults,
+        elementsOrder: elementsOrder..[category]!.add(key));
   }
 
   Results removeElement(String category, String key) {
-    results[category]!.remove(key);
-    return copyWith(results: results);
+    final newResults = MapX.copyNestedMap(results);
+    newResults[category]!.remove(key);
+    return copyWith(
+        results: newResults,
+        elementsOrder: elementsOrder..[category]!.remove(key));
+  }
+
+  Results changeElement(String category, String oldElement, String newElement) {
+    if (oldElement == newElement) {
+      return copyWith();
+    }
+    final newResults = MapX.copyNestedMap(results);
+    final index = elementsOrder[category]!.indexOf(oldElement);
+    newResults[category]!.remove(oldElement);
+    newResults[category]![newElement] = UnitValue(
+        unitIndex: resultsUnits[category]![newElement]![0], value: null);
+    return copyWith(
+        results: newResults,
+        elementsOrder: elementsOrder..[category]![index] = newElement);
   }
 
   Results changeUnit(String category, String key, int unitIndex) {
-    // results[category]![key]!.unitIndex = unitIndex;
-    return copyWith(results: results);
+    final newResults = MapX.copyNestedMap(results);
+    newResults[category]![key]!.unitIndex = unitIndex;
+    return copyWith(results: newResults);
   }
 
   Results changeValue(String category, String key, double value) {
-    final newResult = Map<String, Map<String, UnitValue>>.from(results);
-    newResult[category]![key]!.value = value;
-    return copyWith(results: newResult);
+    final newResults = MapX.copyNestedMap(results);
+    newResults[category]![key]!.value = value;
+    return copyWith(results: newResults);
   }
 
   List<String> categoriesLeft() => resultsUnits.keys

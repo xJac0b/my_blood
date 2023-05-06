@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../core/widgets/custom_text_field.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
 
 class ValueField extends StatelessWidget {
   const ValueField({

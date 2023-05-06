@@ -3,15 +3,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../application/new_entry/new_entry_bloc.dart';
-import '../../../../domain/new_entry/results.dart';
-import '../../../../gen/assets.gen.dart';
-import '../../../core/widgets/default_padding.dart';
-import '../../../core/widgets/headline_medium.dart';
+import '../../../../../../application/new_entry/new_entry_bloc.dart';
+import '../../../../../../domain/new_entry/results.dart';
+import '../../../../../../gen/assets.gen.dart';
+import '../../../../../core/widgets/default_padding.dart';
+import '../../../../../core/widgets/headline_medium.dart';
+import '../../buttons/wide_button.dart';
 import 'custom_single_child_scroll_view.dart';
-import 'fields/wide_button.dart';
-import 'results/results_category.dart';
-import 'results/results_elements.dart';
+import 'results_category.dart';
+import 'results_elements.dart';
 
 class EnterResults extends StatelessWidget {
   const EnterResults({super.key, required this.results});
@@ -26,7 +26,7 @@ class EnterResults extends StatelessWidget {
             const HeadlineMedium('Enter results using the plus buttons'),
             Expanded(child: Assets.images.addResult.svg()),
           ],
-          for (var i in results.order) ...[
+          for (var i in results.categoriesOrder) ...[
             ResultsCategory(
               items: {
                 for (var e in results.categoriesLeft()..insert(0, i))
@@ -34,10 +34,16 @@ class EnterResults extends StatelessWidget {
               },
             ),
             ResultsElements(
-              categoryKey: i,
-              elementsKeys: results.results[i]!.keys.toList(),
-              unitValues: results.results[i]!.values.toList(),
-            ),
+                categoryKey: i,
+                elements: results.results[i]!,
+                elementsOrder: results.elementsOrder[i]!,
+                elementsLeft: results.elementsLeft(i)),
+            if (results.elementsLeft(i).isNotEmpty)
+              IconButton(
+                  onPressed: () => context.read<NewEntryBloc>().add(
+                      NewEntryEvent.elementAdded(
+                          i, results.elementsLeft(i).first)),
+                  icon: const Icon(Icons.add))
           ],
           if (!results.noElements)
             WideButton(
