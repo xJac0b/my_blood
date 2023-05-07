@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../utils/extensions.dart';
+
 class ResultCard extends StatelessWidget {
   const ResultCard({
     Key? key,
@@ -20,7 +22,7 @@ class ResultCard extends StatelessWidget {
       height: 60,
       child: Card(
         clipBehavior: Clip.hardEdge,
-        color: const Color.fromARGB(137, 230, 26, 7),
+        color: context.colors.surface,
         child: Row(
           children: [
             Container(
@@ -35,7 +37,7 @@ class ResultCard extends StatelessWidget {
                           text: '$dayMonth\n',
                           style: const TextStyle(
                             color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w400,
                             fontSize: 30,
                           )),
                       TextSpan(
@@ -43,7 +45,7 @@ class ResultCard extends StatelessWidget {
                           style: const TextStyle(
                               color: Colors.black,
                               fontSize: 22,
-                              fontWeight: FontWeight.bold)),
+                              fontWeight: FontWeight.w500)),
                     ]),
                   ),
                 )),

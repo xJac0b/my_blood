@@ -1,5 +1,6 @@
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -35,5 +36,31 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     await _authFacade.signOut();
     emit(const AuthState.unauthenticated());
+  }
+
+  @override
+  void onTransition(Transition<AuthEvent, AuthState> transition) {
+    super.onTransition(transition);
+    debugPrint(transition.toString());
+  }
+
+  @override
+  void onChange(Change<AuthState> change) {
+    super.onChange(change);
+    debugPrint(change.toString());
+    debugPrint(change.currentState.toString());
+    debugPrint(change.nextState.toString());
+  }
+
+  @override
+  void onError(Object error, StackTrace stackTrace) {
+    super.onError(error, stackTrace);
+    debugPrint(error.toString());
+  }
+
+  @override
+  void onEvent(AuthEvent event) {
+    super.onEvent(event);
+    debugPrint(event.toString());
   }
 }

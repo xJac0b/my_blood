@@ -30,21 +30,28 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         CustomTextField(
-            hintText: 'passwordFieldHint'.tr(),
-            keyboardType: TextInputType.visiblePassword,
-            prefixIcon: const Icon(Icons.lock),
-            suffixIcon: IconButton(
-              onPressed: () => setState(() => _obscureText = !_obscureText),
-              icon: _obscureText
-                  ? const Icon(Icons.visibility_off)
-                  : const Icon(Icons.visibility),
-            ),
-            obscureText: _obscureText,
-            onChanged: (value) {
-              context
-                  .read<SignInFormBloc>()
-                  .add(SignInFormEvent.passwordChanged(password: value));
-            }),
+          hintText: 'passwordFieldHint'.tr(),
+          keyboardType: TextInputType.visiblePassword,
+          prefixIcon: const Icon(Icons.lock),
+          suffixIcon: IconButton(
+            onPressed: () => setState(() => _obscureText = !_obscureText),
+            icon: _obscureText
+                ? const Icon(Icons.visibility_off)
+                : const Icon(Icons.visibility),
+          ),
+          obscureText: _obscureText,
+          onChanged: (value) => context.read<SignInFormBloc>().add(
+                SignInFormEvent.passwordChanged(password: value),
+              ),
+          validator: (_) =>
+              context.read<SignInFormBloc>().state.password.value.fold(
+                    (f) => f.maybeMap(
+                      shortPassword: (_) => 'Short Password',
+                      orElse: () => null,
+                    ),
+                    (_) => null,
+                  ),
+        ),
         if (widget.onPressed != null)
           TextButton(
               onPressed: widget.onPressed,

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../application/auth/auth_bloc.dart';
 import 'text/headline_small.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -20,7 +22,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           title,
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
+          PopupMenuButton(
+              onSelected: (value) => value == 'logout'
+                  ? context.read<AuthBloc>().add(const AuthEvent.signedOut())
+                  : null,
+              itemBuilder: (context) => [
+                    const PopupMenuItem(
+                      value: 'logout',
+                      child: Text('Logout'),
+                    ),
+                  ])
         ]);
   }
 

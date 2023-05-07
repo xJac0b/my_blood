@@ -25,7 +25,7 @@ class LoginPageView extends StatelessWidget {
               'loginPageHeadline'.tr(),
               color: context.colors.primary,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             const LoginForm(),
           ],
         ),

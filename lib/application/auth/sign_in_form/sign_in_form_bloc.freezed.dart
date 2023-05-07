@@ -23,6 +23,10 @@ mixin _$SignInFormEvent {
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +36,10 @@ mixin _$SignInFormEvent {
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +49,10 @@ mixin _$SignInFormEvent {
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +66,13 @@ mixin _$SignInFormEvent {
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +84,10 @@ mixin _$SignInFormEvent {
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +99,10 @@ mixin _$SignInFormEvent {
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +195,10 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) {
     return emailChanged(email);
   }
@@ -180,6 +211,10 @@ class _$EmailChanged implements EmailChanged {
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) {
     return emailChanged?.call(email);
   }
@@ -192,6 +227,10 @@ class _$EmailChanged implements EmailChanged {
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -211,6 +250,13 @@ class _$EmailChanged implements EmailChanged {
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) {
     return emailChanged(this);
   }
@@ -225,6 +271,10 @@ class _$EmailChanged implements EmailChanged {
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) {
     return emailChanged?.call(this);
   }
@@ -239,6 +289,10 @@ class _$EmailChanged implements EmailChanged {
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -327,6 +381,10 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) {
     return passwordChanged(password);
   }
@@ -339,6 +397,10 @@ class _$PasswordChanged implements PasswordChanged {
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) {
     return passwordChanged?.call(password);
   }
@@ -351,6 +413,10 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -370,6 +436,13 @@ class _$PasswordChanged implements PasswordChanged {
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) {
     return passwordChanged(this);
   }
@@ -384,6 +457,10 @@ class _$PasswordChanged implements PasswordChanged {
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) {
     return passwordChanged?.call(this);
   }
@@ -398,6 +475,10 @@ class _$PasswordChanged implements PasswordChanged {
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -461,6 +542,10 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) {
     return signInWithGooglePressed();
   }
@@ -473,6 +558,10 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) {
     return signInWithGooglePressed?.call();
   }
@@ -485,6 +574,10 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) {
     if (signInWithGooglePressed != null) {
@@ -504,6 +597,13 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) {
     return signInWithGooglePressed(this);
   }
@@ -518,6 +618,10 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) {
     return signInWithGooglePressed?.call(this);
   }
@@ -532,6 +636,10 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) {
     if (signInWithGooglePressed != null) {
@@ -593,6 +701,10 @@ class _$RegisterWithEmailAndPasswordPressed
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) {
     return registerWithEmailAndPasswordPressed();
   }
@@ -605,6 +717,10 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) {
     return registerWithEmailAndPasswordPressed?.call();
   }
@@ -617,6 +733,10 @@ class _$RegisterWithEmailAndPasswordPressed
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) {
     if (registerWithEmailAndPasswordPressed != null) {
@@ -636,6 +756,13 @@ class _$RegisterWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) {
     return registerWithEmailAndPasswordPressed(this);
   }
@@ -650,6 +777,10 @@ class _$RegisterWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) {
     return registerWithEmailAndPasswordPressed?.call(this);
   }
@@ -664,6 +795,10 @@ class _$RegisterWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) {
     if (registerWithEmailAndPasswordPressed != null) {
@@ -726,6 +861,10 @@ class _$SignInWithEmailAndPasswordPressed
     required TResult Function() signInWithGooglePressed,
     required TResult Function() registerWithEmailAndPasswordPressed,
     required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
   }) {
     return signInWithEmailAndPasswordPressed();
   }
@@ -738,6 +877,10 @@ class _$SignInWithEmailAndPasswordPressed
     TResult? Function()? signInWithGooglePressed,
     TResult? Function()? registerWithEmailAndPasswordPressed,
     TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
   }) {
     return signInWithEmailAndPasswordPressed?.call();
   }
@@ -750,6 +893,10 @@ class _$SignInWithEmailAndPasswordPressed
     TResult Function()? signInWithGooglePressed,
     TResult Function()? registerWithEmailAndPasswordPressed,
     TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPasswordPressed != null) {
@@ -769,6 +916,13 @@ class _$SignInWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     required TResult Function(SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
   }) {
     return signInWithEmailAndPasswordPressed(this);
   }
@@ -783,6 +937,10 @@ class _$SignInWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     TResult? Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
   }) {
     return signInWithEmailAndPasswordPressed?.call(this);
   }
@@ -797,6 +955,10 @@ class _$SignInWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
     TResult Function(SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
     required TResult orElse(),
   }) {
     if (signInWithEmailAndPasswordPressed != null) {
@@ -812,6 +974,623 @@ abstract class SignInWithEmailAndPasswordPressed implements SignInFormEvent {
 }
 
 /// @nodoc
+abstract class _$$SendPasswordResetEmailCopyWith<$Res> {
+  factory _$$SendPasswordResetEmailCopyWith(_$SendPasswordResetEmail value,
+          $Res Function(_$SendPasswordResetEmail) then) =
+      __$$SendPasswordResetEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SendPasswordResetEmailCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$SendPasswordResetEmail>
+    implements _$$SendPasswordResetEmailCopyWith<$Res> {
+  __$$SendPasswordResetEmailCopyWithImpl(_$SendPasswordResetEmail _value,
+      $Res Function(_$SendPasswordResetEmail) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SendPasswordResetEmail implements SendPasswordResetEmail {
+  const _$SendPasswordResetEmail();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.sendPasswordResetEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SendPasswordResetEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() signInWithGooglePressed,
+    required TResult Function() registerWithEmailAndPasswordPressed,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
+  }) {
+    return sendPasswordResetEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? signInWithGooglePressed,
+    TResult? Function()? registerWithEmailAndPasswordPressed,
+    TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
+  }) {
+    return sendPasswordResetEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? signInWithGooglePressed,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (sendPasswordResetEmail != null) {
+      return sendPasswordResetEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+    required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
+  }) {
+    return sendPasswordResetEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult? Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult? Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
+  }) {
+    return sendPasswordResetEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (sendPasswordResetEmail != null) {
+      return sendPasswordResetEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendPasswordResetEmail implements SignInFormEvent {
+  const factory SendPasswordResetEmail() = _$SendPasswordResetEmail;
+}
+
+/// @nodoc
+abstract class _$$SendVerificationEmailCopyWith<$Res> {
+  factory _$$SendVerificationEmailCopyWith(_$SendVerificationEmail value,
+          $Res Function(_$SendVerificationEmail) then) =
+      __$$SendVerificationEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SendVerificationEmailCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$SendVerificationEmail>
+    implements _$$SendVerificationEmailCopyWith<$Res> {
+  __$$SendVerificationEmailCopyWithImpl(_$SendVerificationEmail _value,
+      $Res Function(_$SendVerificationEmail) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SendVerificationEmail implements SendVerificationEmail {
+  const _$SendVerificationEmail();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.sendVerificationEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SendVerificationEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() signInWithGooglePressed,
+    required TResult Function() registerWithEmailAndPasswordPressed,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
+  }) {
+    return sendVerificationEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? signInWithGooglePressed,
+    TResult? Function()? registerWithEmailAndPasswordPressed,
+    TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
+  }) {
+    return sendVerificationEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? signInWithGooglePressed,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (sendVerificationEmail != null) {
+      return sendVerificationEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+    required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
+  }) {
+    return sendVerificationEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult? Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult? Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
+  }) {
+    return sendVerificationEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (sendVerificationEmail != null) {
+      return sendVerificationEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendVerificationEmail implements SignInFormEvent {
+  const factory SendVerificationEmail() = _$SendVerificationEmail;
+}
+
+/// @nodoc
+abstract class _$$CheckVerificationStatusCopyWith<$Res> {
+  factory _$$CheckVerificationStatusCopyWith(_$CheckVerificationStatus value,
+          $Res Function(_$CheckVerificationStatus) then) =
+      __$$CheckVerificationStatusCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckVerificationStatusCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$CheckVerificationStatus>
+    implements _$$CheckVerificationStatusCopyWith<$Res> {
+  __$$CheckVerificationStatusCopyWithImpl(_$CheckVerificationStatus _value,
+      $Res Function(_$CheckVerificationStatus) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckVerificationStatus implements CheckVerificationStatus {
+  const _$CheckVerificationStatus();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.checkVerificationStatus()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckVerificationStatus);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() signInWithGooglePressed,
+    required TResult Function() registerWithEmailAndPasswordPressed,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
+  }) {
+    return checkVerificationStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? signInWithGooglePressed,
+    TResult? Function()? registerWithEmailAndPasswordPressed,
+    TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
+  }) {
+    return checkVerificationStatus?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? signInWithGooglePressed,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (checkVerificationStatus != null) {
+      return checkVerificationStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+    required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
+  }) {
+    return checkVerificationStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult? Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult? Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
+  }) {
+    return checkVerificationStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (checkVerificationStatus != null) {
+      return checkVerificationStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CheckVerificationStatus implements SignInFormEvent {
+  const factory CheckVerificationStatus() = _$CheckVerificationStatus;
+}
+
+/// @nodoc
+abstract class _$$EmailVerifiedCopyWith<$Res> {
+  factory _$$EmailVerifiedCopyWith(
+          _$EmailVerified value, $Res Function(_$EmailVerified) then) =
+      __$$EmailVerifiedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmailVerifiedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$EmailVerified>
+    implements _$$EmailVerifiedCopyWith<$Res> {
+  __$$EmailVerifiedCopyWithImpl(
+      _$EmailVerified _value, $Res Function(_$EmailVerified) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmailVerified implements EmailVerified {
+  const _$EmailVerified();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.emailVerified()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmailVerified);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() signInWithGooglePressed,
+    required TResult Function() registerWithEmailAndPasswordPressed,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() sendPasswordResetEmail,
+    required TResult Function() sendVerificationEmail,
+    required TResult Function() checkVerificationStatus,
+    required TResult Function() emailVerified,
+  }) {
+    return emailVerified();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? signInWithGooglePressed,
+    TResult? Function()? registerWithEmailAndPasswordPressed,
+    TResult? Function()? signInWithEmailAndPasswordPressed,
+    TResult? Function()? sendPasswordResetEmail,
+    TResult? Function()? sendVerificationEmail,
+    TResult? Function()? checkVerificationStatus,
+    TResult? Function()? emailVerified,
+  }) {
+    return emailVerified?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? signInWithGooglePressed,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? sendPasswordResetEmail,
+    TResult Function()? sendVerificationEmail,
+    TResult Function()? checkVerificationStatus,
+    TResult Function()? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (emailVerified != null) {
+      return emailVerified();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+    required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(SendPasswordResetEmail value)
+        sendPasswordResetEmail,
+    required TResult Function(SendVerificationEmail value)
+        sendVerificationEmail,
+    required TResult Function(CheckVerificationStatus value)
+        checkVerificationStatus,
+    required TResult Function(EmailVerified value) emailVerified,
+  }) {
+    return emailVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult? Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult? Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult? Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult? Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult? Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult? Function(EmailVerified value)? emailVerified,
+  }) {
+    return emailVerified?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(SendPasswordResetEmail value)? sendPasswordResetEmail,
+    TResult Function(SendVerificationEmail value)? sendVerificationEmail,
+    TResult Function(CheckVerificationStatus value)? checkVerificationStatus,
+    TResult Function(EmailVerified value)? emailVerified,
+    required TResult orElse(),
+  }) {
+    if (emailVerified != null) {
+      return emailVerified(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailVerified implements SignInFormEvent {
+  const factory EmailVerified() = _$EmailVerified;
+}
+
+/// @nodoc
 mixin _$SignInFormState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
@@ -819,6 +1598,8 @@ mixin _$SignInFormState {
   AutovalidateMode? get showErrorMessages => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  bool? get isEmailVerified => throw _privateConstructorUsedError;
+  int get verificationEmailAttempts => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -836,7 +1617,9 @@ abstract class $SignInFormStateCopyWith<$Res> {
       Password password,
       bool isSubmitting,
       AutovalidateMode? showErrorMessages,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      bool? isEmailVerified,
+      int verificationEmailAttempts});
 }
 
 /// @nodoc
@@ -857,6 +1640,8 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
     Object? isSubmitting = null,
     Object? showErrorMessages = freezed,
     Object? authFailureOrSuccessOption = null,
+    Object? isEmailVerified = freezed,
+    Object? verificationEmailAttempts = null,
   }) {
     return _then(_value.copyWith(
       emailAddress: null == emailAddress
@@ -879,6 +1664,14 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isEmailVerified: freezed == isEmailVerified
+          ? _value.isEmailVerified
+          : isEmailVerified // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      verificationEmailAttempts: null == verificationEmailAttempts
+          ? _value.verificationEmailAttempts
+          : verificationEmailAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -896,7 +1689,9 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       Password password,
       bool isSubmitting,
       AutovalidateMode? showErrorMessages,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
+      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
+      bool? isEmailVerified,
+      int verificationEmailAttempts});
 }
 
 /// @nodoc
@@ -915,6 +1710,8 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? isSubmitting = null,
     Object? showErrorMessages = freezed,
     Object? authFailureOrSuccessOption = null,
+    Object? isEmailVerified = freezed,
+    Object? verificationEmailAttempts = null,
   }) {
     return _then(_$_SignInFormState(
       emailAddress: null == emailAddress
@@ -937,6 +1734,14 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isEmailVerified: freezed == isEmailVerified
+          ? _value.isEmailVerified
+          : isEmailVerified // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      verificationEmailAttempts: null == verificationEmailAttempts
+          ? _value.verificationEmailAttempts
+          : verificationEmailAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -949,7 +1754,9 @@ class _$_SignInFormState extends _SignInFormState {
       required this.password,
       required this.isSubmitting,
       required this.showErrorMessages,
-      required this.authFailureOrSuccessOption})
+      required this.authFailureOrSuccessOption,
+      this.isEmailVerified,
+      required this.verificationEmailAttempts})
       : super._();
 
   @override
@@ -962,10 +1769,14 @@ class _$_SignInFormState extends _SignInFormState {
   final AutovalidateMode? showErrorMessages;
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
+  @override
+  final bool? isEmailVerified;
+  @override
+  final int verificationEmailAttempts;
 
   @override
   String toString() {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authFailureOrSuccessOption: $authFailureOrSuccessOption, isEmailVerified: $isEmailVerified, verificationEmailAttempts: $verificationEmailAttempts)';
   }
 
   @override
@@ -984,12 +1795,24 @@ class _$_SignInFormState extends _SignInFormState {
             (identical(other.authFailureOrSuccessOption,
                     authFailureOrSuccessOption) ||
                 other.authFailureOrSuccessOption ==
-                    authFailureOrSuccessOption));
+                    authFailureOrSuccessOption) &&
+            (identical(other.isEmailVerified, isEmailVerified) ||
+                other.isEmailVerified == isEmailVerified) &&
+            (identical(other.verificationEmailAttempts,
+                    verificationEmailAttempts) ||
+                other.verificationEmailAttempts == verificationEmailAttempts));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailAddress, password,
-      isSubmitting, showErrorMessages, authFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      emailAddress,
+      password,
+      isSubmitting,
+      showErrorMessages,
+      authFailureOrSuccessOption,
+      isEmailVerified,
+      verificationEmailAttempts);
 
   @JsonKey(ignore: true)
   @override
@@ -1005,7 +1828,9 @@ abstract class _SignInFormState extends SignInFormState {
       required final bool isSubmitting,
       required final AutovalidateMode? showErrorMessages,
       required final Option<Either<AuthFailure, Unit>>
-          authFailureOrSuccessOption}) = _$_SignInFormState;
+          authFailureOrSuccessOption,
+      final bool? isEmailVerified,
+      required final int verificationEmailAttempts}) = _$_SignInFormState;
   _SignInFormState._() : super._();
 
   @override
@@ -1018,6 +1843,10 @@ abstract class _SignInFormState extends SignInFormState {
   AutovalidateMode? get showErrorMessages;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
+  @override
+  bool? get isEmailVerified;
+  @override
+  int get verificationEmailAttempts;
   @override
   @JsonKey(ignore: true)
   _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>

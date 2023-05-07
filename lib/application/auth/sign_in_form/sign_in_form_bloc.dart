@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
@@ -30,8 +32,16 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<PasswordChanged>(
       changePassword,
     );
+    on<SendPasswordResetEmail>(
+      sendPasswordResetEmail,
+    );
+    on<SendVerificationEmail>(
+      sendVerificationEmail,
+    );
+    on<CheckVerificationStatus>(checkVerificationStatus);
+    on<EmailVerified>(
+        (event, emit) => emit(state.copyWith(isEmailVerified: true)));
   }
-
   final IAuthFacade _authFacade;
 
   void changeEmailAddress(EmailChanged event, Emitter<SignInFormState> emit) {
@@ -135,5 +145,92 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         authFailureOrSuccessOption: some(failureOrSuccess),
       ),
     );
+  }
+
+  Future<void> sendPasswordResetEmail(
+    SendPasswordResetEmail event,
+    Emitter<SignInFormState> emit,
+  ) async {
+    if (!state.emailAddress.isValid()) {
+      emit(
+        state.copyWith(
+          showErrorMessages: AutovalidateMode.onUserInteraction,
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+      return;
+    }
+    emit(
+      state.copyWith(
+        isSubmitting: true,
+        authFailureOrSuccessOption: none(),
+      ),
+    );
+
+    final failureOrSuccess = await _authFacade.sendPasswordResetEmail(
+        emailAddress: state.emailAddress);
+
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        authFailureOrSuccessOption: some(failureOrSuccess),
+      ),
+    );
+  }
+
+  Future<void> sendVerificationEmail(
+      SendVerificationEmail event, Emitter<SignInFormState> emit) async {
+    if (state.verificationEmailAttempts < 1) {
+      return;
+    }
+    emit(state.copyWith(
+        isSubmitting: true,
+        verificationEmailAttempts: state.verificationEmailAttempts - 1));
+    await _authFacade.sendVerificationEmail();
+    emit(state.copyWith(
+      isSubmitting: false,
+    ));
+  }
+
+  Future<void> checkVerificationStatus(
+      CheckVerificationStatus event, Emitter<SignInFormState> emit) async {
+    Timer.periodic(const Duration(seconds: 3), (timer) async {
+      await _authFacade.isEmailVerified().then((value) {
+        if (value) {
+          timer.cancel();
+        }
+      });
+    });
+    emit(
+      state.copyWith(
+        isEmailVerified: true,
+      ),
+    );
+  }
+
+  @override
+  void onTransition(Transition<SignInFormEvent, SignInFormState> transition) {
+    super.onTransition(transition);
+    debugPrint(transition.toString());
+  }
+
+  @override
+  void onChange(Change<SignInFormState> change) {
+    super.onChange(change);
+    debugPrint(change.toString());
+    debugPrint(change.currentState.toString());
+    debugPrint(change.nextState.toString());
+  }
+
+  @override
+  void onError(Object error, StackTrace stackTrace) {
+    super.onError(error, stackTrace);
+    debugPrint(error.toString());
+  }
+
+  @override
+  void onEvent(SignInFormEvent event) {
+    super.onEvent(event);
+    debugPrint(event.toString());
   }
 }

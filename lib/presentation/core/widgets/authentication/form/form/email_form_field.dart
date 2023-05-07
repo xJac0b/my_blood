@@ -14,6 +14,14 @@ class EmailFormField extends StatelessWidget {
       prefixIcon: const Icon(Icons.email),
       hintText: 'emailFieldHint'.tr(),
       keyboardType: TextInputType.emailAddress,
+      validator: (_) =>
+          context.read<SignInFormBloc>().state.emailAddress.value.fold(
+                (f) => f.maybeMap(
+                  invalidEmail: (_) => 'Invalid Email',
+                  orElse: () => null,
+                ),
+                (_) => null,
+              ),
       onChanged: (value) {
         context
             .read<SignInFormBloc>()

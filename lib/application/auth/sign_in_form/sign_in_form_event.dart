@@ -13,4 +13,11 @@ class SignInFormEvent with _$SignInFormEvent {
       RegisterWithEmailAndPasswordPressed;
   const factory SignInFormEvent.signInWithEmailAndPasswordPressed() =
       SignInWithEmailAndPasswordPressed;
+  const factory SignInFormEvent.sendPasswordResetEmail() =
+      SendPasswordResetEmail;
+  const factory SignInFormEvent.sendVerificationEmail() = SendVerificationEmail;
+  const factory SignInFormEvent.checkVerificationStatus() =
+      CheckVerificationStatus;
+      const factory SignInFormEvent.emailVerified() =
+      EmailVerified;
 }

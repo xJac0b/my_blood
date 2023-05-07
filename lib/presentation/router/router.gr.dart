@@ -9,6 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
+import 'package:flutter/material.dart' as _i11;
 import 'package:my_blood/presentation/pages/fill_data/fill_data_page.dart'
     as _i7;
 import 'package:my_blood/presentation/pages/home/home_page.dart' as _i1;
@@ -54,9 +55,11 @@ abstract class $AppRouter extends _i10.RootStackRouter {
       );
     },
     LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.LoginPage(),
+        child: _i5.LoginPage(key: args.key),
       );
     },
     RegisterRoute.name: (routeData) {
@@ -144,16 +147,31 @@ class ResultListRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.LoginPage]
-class LoginRoute extends _i10.PageRouteInfo<void> {
-  const LoginRoute({List<_i10.PageRouteInfo>? children})
-      : super(
+class LoginRoute extends _i10.PageRouteInfo<LoginRouteArgs> {
+  LoginRoute({
+    _i11.Key? key,
+    List<_i10.PageRouteInfo>? children,
+  }) : super(
           LoginRoute.name,
+          args: LoginRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'LoginRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i10.PageInfo<LoginRouteArgs> page =
+      _i10.PageInfo<LoginRouteArgs>(name);
+}
+
+class LoginRouteArgs {
+  const LoginRouteArgs({this.key});
+
+  final _i11.Key? key;
+
+  @override
+  String toString() {
+    return 'LoginRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

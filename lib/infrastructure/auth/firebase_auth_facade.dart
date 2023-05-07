@@ -56,8 +56,7 @@ class FirebaseAuthFacade implements IAuthFacade {
     required Password password,
   }) async {
     final emailAddressString = emailAddress.getOrCrash();
-    final passwordString = emailAddress.getOrCrash();
-
+    final passwordString = password.getOrCrash();
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
         email: emailAddressString,
@@ -98,5 +97,35 @@ class FirebaseAuthFacade implements IAuthFacade {
     } on firebase_auth.FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
     }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> sendPasswordResetEmail({
+    required EmailAddress emailAddress,
+  }) async {
+    try {
+      final emailAddressString = emailAddress.getOrCrash();
+      await _firebaseAuth.sendPasswordResetEmail(email: emailAddressString);
+      return right(unit);
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return left(const AuthFailure.userNotFound());
+      } else {
+        return left(const AuthFailure.invalidEmail());
+      }
+    }
+  }
+
+  @override
+  Future<void> sendVerificationEmail() async {
+    final user = _firebaseAuth.currentUser;
+    await user!.sendEmailVerification();
+  }
+
+  @override
+  Future<bool> isEmailVerified() async {
+    final user = _firebaseAuth.currentUser;
+    await user!.reload();
+    return user.emailVerified;
   }
 }

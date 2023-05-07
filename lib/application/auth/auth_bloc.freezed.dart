@@ -91,12 +91,20 @@ class __$$AuthCheckRequestedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AuthCheckRequested implements AuthCheckRequested {
+class _$AuthCheckRequested
+    with DiagnosticableTreeMixin
+    implements AuthCheckRequested {
   const _$AuthCheckRequested();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthEvent.authCheckRequested()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthEvent.authCheckRequested'));
   }
 
   @override
@@ -193,12 +201,18 @@ class __$$SignedOutCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignedOut implements SignedOut {
+class _$SignedOut with DiagnosticableTreeMixin implements SignedOut {
   const _$SignedOut();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthEvent.signedOut()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthEvent.signedOut'));
   }
 
   @override
@@ -358,12 +372,18 @@ class __$$InitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Initial implements Initial {
+class _$Initial with DiagnosticableTreeMixin implements Initial {
   const _$Initial();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthState.initial'));
   }
 
   @override
@@ -466,12 +486,18 @@ class __$$AuthenticatedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Authenticated implements Authenticated {
+class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
   const _$Authenticated();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.authenticated()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthState.authenticated'));
   }
 
   @override
@@ -574,12 +600,20 @@ class __$$UnauthenticatedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Unauthenticated implements Unauthenticated {
+class _$Unauthenticated
+    with DiagnosticableTreeMixin
+    implements Unauthenticated {
   const _$Unauthenticated();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.unauthenticated()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthState.unauthenticated'));
   }
 
   @override

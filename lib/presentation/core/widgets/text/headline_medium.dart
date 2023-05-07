@@ -11,7 +11,7 @@ class HeadlineMedium extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: 32,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w300,
         color: color ?? Colors.black,
       ),
     );

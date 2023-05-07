@@ -23,7 +23,7 @@ class RegisterPageView extends StatelessWidget {
               const SizedBox(height: 30),
               HeadlineLarge('registerPageHeadline'.tr(),
                   color: context.colors.primary),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               const RegisterForm(),
             ],
           ),
