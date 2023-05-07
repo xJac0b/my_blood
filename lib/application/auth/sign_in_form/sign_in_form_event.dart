@@ -18,6 +18,5 @@ class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.sendVerificationEmail() = SendVerificationEmail;
   const factory SignInFormEvent.checkVerificationStatus() =
       CheckVerificationStatus;
-      const factory SignInFormEvent.emailVerified() =
-      EmailVerified;
+  const factory SignInFormEvent.emailVerified() = EmailVerified;
 }

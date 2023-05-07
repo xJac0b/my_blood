@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1086097283674',
     projectId: 'my-blood-40c6b',
     storageBucket: 'my-blood-40c6b.appspot.com',
-    iosClientId: '1086097283674-puk6lhnn62njsh5t8h268c4dlcnu2pda.apps.googleusercontent.com',
+    iosClientId:
+        '1086097283674-puk6lhnn62njsh5t8h268c4dlcnu2pda.apps.googleusercontent.com',
     iosBundleId: 'com.example.myBlood',
   );
 }
