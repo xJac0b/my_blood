@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../injection.dart';
 import '../router/router.dart';
-import 'constants/theme.dart';
 
 class MyAppWidget extends StatelessWidget {
-  final _appRouter = AppRouter();
+  final _appRouter = getIt<AppRouter>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,10 @@ class MyAppWidget extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      theme: themeData,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+      ),
     );
   }
 }

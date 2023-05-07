@@ -23,6 +23,12 @@ dependencies:
   fpdart: ^0.5.0
   uuid: ^3.0.7
   easy_localization: ^3.0.2-dev.2
+  cloud_firestore: ^4.6.0
+  firebase_auth: ^4.2.2
+  google_sign_in: ^6.1.0
+  get_it: ^7.4.1
+  injectable: ^2.1.1
+  firebase_core: ^2.11.0
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +39,7 @@ dev_dependencies:
   build_runner: ^2.4.1
   flutter_lints: ^2.0.0
   flutter_gen_runner: ^5.3.0
+  injectable_generator: ^2.1.5
 
 flutter_gen:
   integrations:

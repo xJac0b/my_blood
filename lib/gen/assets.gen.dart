@@ -18,6 +18,10 @@ class $AssetsImagesGen {
   SvgGenImage get addResult =>
       const SvgGenImage('assets/images/add_result.svg');
 
+  /// File path: assets/images/app_logo.png
+  AssetGenImage get appLogo =>
+      const AssetGenImage('assets/images/app_logo.png');
+
   /// File path: assets/images/date_picker.svg
   SvgGenImage get datePicker =>
       const SvgGenImage('assets/images/date_picker.svg');
@@ -26,7 +30,7 @@ class $AssetsImagesGen {
   SvgGenImage get title => const SvgGenImage('assets/images/title.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [addResult, datePicker, title];
+  List<dynamic> get values => [addResult, appLogo, datePicker, title];
 }
 
 class $AssetsTranslationsGen {

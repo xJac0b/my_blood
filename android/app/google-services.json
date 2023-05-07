@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1086097283674",
+    "project_id": "my-blood-40c6b",
+    "storage_bucket": "my-blood-40c6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086097283674:android:712eac013aac6d12e09663",
+        "android_client_info": {
+          "package_name": "com.example.my_blood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086097283674-5m1ne1aqlh69ct80nrik73o4p4rhgis4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQaysTYHjtyO2wKC18O_fDxIDqR3IzLgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086097283674-5m1ne1aqlh69ct80nrik73o4p4rhgis4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1086097283674-puk6lhnn62njsh5t8h268c4dlcnu2pda.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myBlood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
