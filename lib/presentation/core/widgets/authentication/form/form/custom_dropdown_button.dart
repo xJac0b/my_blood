@@ -18,6 +18,11 @@ class CustomDropdownButton extends StatelessWidget {
     return SizedBox(
       height: 60,
       child: DropdownButtonFormField(
+        decoration: const InputDecoration(
+          enabledBorder: UnderlineInputBorder(),
+          focusedBorder: UnderlineInputBorder(),
+          errorBorder: UnderlineInputBorder(),
+        ),
         isExpanded: true,
         value: items.first,
         items: items

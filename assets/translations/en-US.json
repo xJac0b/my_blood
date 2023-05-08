@@ -50,7 +50,7 @@
     "enterTitleHeadline": "Enter descriptive title",
     "emptyTitle": "Title must not be empty",
     "invalidTitle": "Invalid title",
-    "exceedingTitleLength": "Title maximum length is ${length} characters",
+    "exceedingTitleLength": "Title maximum length is {length} characters",
     "titleFieldHint": "e.g. Routine check-up",
     "progressAppBarTitle": "Track your progress",
     "progressSearchFieldHint": "Pick an element",
