@@ -10,9 +10,7 @@ import 'login_page_view.dart';
 
 @RoutePage()
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key) {
-    getIt<AuthBloc>().add(const AuthEvent.authCheckRequested());
-  }
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

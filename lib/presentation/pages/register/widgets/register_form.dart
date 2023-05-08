@@ -74,7 +74,7 @@ class RegisterForm extends StatelessWidget {
               SwitchFormButton(
                 leadingText: 'alreadyRegistered'.tr(),
                 buttonText: 'loginButton'.tr(),
-                route: LoginRoute(),
+                route: const LoginRoute(),
               )
             ],
           ),

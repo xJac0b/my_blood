@@ -15,6 +15,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._authFacade) : super(const AuthState.initial()) {
     on<AuthCheckRequested>(authCheckRequested);
     on<SignedOut>(signedOut);
+    add(const AuthEvent.authCheckRequested());
   }
 
   final IAuthFacade _authFacade;
