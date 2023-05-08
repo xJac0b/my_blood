@@ -10,11 +10,10 @@ class CheckIfAuthenticated extends AutoRouteGuard {
   @override
   Future<void> onNavigation(
       NavigationResolver resolver, StackRouter router) async {
-    final userOption = optionOf(getIt<FirebaseAuth>().currentUser?.toDomain())
-      ..fold(
-        () => resolver.next(),
-        (_) => router.push(const HomeRoute()),
-      );
+    optionOf(getIt<FirebaseAuth>().currentUser?.toDomain()).fold(
+      () => resolver.next(),
+      (_) => router.push(const HomeRoute()),
+    );
   }
 }
 

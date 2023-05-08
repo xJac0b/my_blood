@@ -45,9 +45,9 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
-      enabledBorder: const UnderlineInputBorder(),
-      focusedBorder: const UnderlineInputBorder(),
-      errorBorder: const UnderlineInputBorder(),
+        enabledBorder: const UnderlineInputBorder(),
+        focusedBorder: const UnderlineInputBorder(),
+        errorBorder: const UnderlineInputBorder(),
         hintText: hintText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,

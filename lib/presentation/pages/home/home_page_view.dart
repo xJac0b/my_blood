@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/auth_bloc.dart';
-import '../../../injection.dart';
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/text/headline_large.dart';
