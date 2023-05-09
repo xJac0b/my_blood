@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../application/new_entry/new_entry_bloc.dart';
-import '../../../../../core/widgets/authentication/form/form/custom_dropdown_button.dart';
+import '../../../../../core/widgets/authentication/form/custom_dropdown_button.dart';
 
 class ResultsCategory extends StatelessWidget {
   const ResultsCategory({

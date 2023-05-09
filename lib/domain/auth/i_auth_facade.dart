@@ -28,4 +28,10 @@ abstract class IAuthFacade {
   Future<void> sendVerificationEmail();
 
   Future<bool> isEmailVerified();
+
+  Future<void> setUserData(
+      {required DisplayName displayName,
+      required DateOfBirth dateOfBirth,
+      required bool male,
+      required Weight weight});
 }

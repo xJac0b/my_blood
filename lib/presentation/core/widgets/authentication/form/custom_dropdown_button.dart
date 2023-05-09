@@ -2,29 +2,30 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropdownButton extends StatelessWidget {
-  const CustomDropdownButton({
-    super.key,
-    required this.items,
-    this.prefixIcon,
-    this.onChanged,
-  });
+  const CustomDropdownButton(
+      {super.key,
+      required this.items,
+      this.prefixIcon,
+      this.onChanged,
+      this.value});
 
   final List<String> items;
   final Widget? prefixIcon;
   final Function(String?)? onChanged;
-
+  final String? value;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 60,
       child: DropdownButtonFormField(
-        decoration: const InputDecoration(
-          enabledBorder: UnderlineInputBorder(),
-          focusedBorder: UnderlineInputBorder(),
-          errorBorder: UnderlineInputBorder(),
+        decoration: InputDecoration(
+          prefixIcon: prefixIcon,
+          enabledBorder: const UnderlineInputBorder(),
+          focusedBorder: const UnderlineInputBorder(),
+          errorBorder: const UnderlineInputBorder(),
         ),
         isExpanded: true,
-        value: items.first,
+        value: value ?? items.first,
         items: items
             .map(
               (e) => DropdownMenuItem(
@@ -43,7 +44,8 @@ class CustomDropdownButton extends StatelessWidget {
     super.debugFillProperties(properties);
     properties
       ..add(IterableProperty<String>('items', items))
-      ..add(ObjectFlagProperty<Function(String? p1)?>.has(
-          'onChanged', onChanged));
+      ..add(
+          ObjectFlagProperty<Function(String? p1)?>.has('onChanged', onChanged))
+      ..add(StringProperty('value', value));
   }
 }

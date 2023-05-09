@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/auth_bloc.dart';
+import '../../../application/auth/user/user_bloc.dart';
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/text/headline_large.dart';
@@ -20,7 +21,12 @@ class HomePageView extends StatelessWidget {
       listeners: [
         BlocListener<AuthBloc, AuthState>(listener: (event, state) {
           state.maybeMap(
-            unauthenticated: (_) => context.router.replace(const LoginRoute()),
+            authenticated: (_) =>
+                context.read<UserBloc>().add(const UserEvent.loadUser()),
+            unauthenticated: (_) {
+              context.router.replace(const LoginRoute());
+              context.read<UserBloc>().add(const UserEvent.loadUser());
+            },
             orElse: () {},
           );
         })
@@ -37,8 +43,13 @@ class HomePageView extends StatelessWidget {
                   backgroundColor: Color.fromARGB(255, 201, 208, 213),
                 ),
               )),
-              DefaultPadding(
-                  child: HeadlineLarge('${'greeting'.tr()} John 👋')),
+              BlocBuilder<UserBloc, UserState>(
+                builder: (context, state) {
+                  return DefaultPadding(
+                      child: HeadlineLarge(
+                          '${'greeting'.tr()} ${state.user?.displayName.value.fold((l) => l, (r) => r)} 👋'));
+                },
+              ),
               const ResultsSection(),
               const DefaultPadding(
                 child: ButtonsSection(),

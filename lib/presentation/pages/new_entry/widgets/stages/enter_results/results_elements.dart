@@ -7,8 +7,8 @@ import '../../../../../../application/new_entry/new_entry_bloc.dart';
 import '../../../../../../domain/new_entry/constants/results_units.dart';
 import '../../../../../../domain/new_entry/constants/units.dart';
 import '../../../../../../domain/new_entry/unit_value.dart';
-import '../../../../../core/widgets/authentication/form/form/custom_dropdown_button.dart';
-import 'value_field.dart';
+import '../../../../../core/widgets/authentication/form/custom_dropdown_button.dart';
+import '../../../../../core/widgets/authentication/form/number_field.dart';
 
 class ResultsElements extends StatelessWidget {
   const ResultsElements({
@@ -40,7 +40,7 @@ class ResultsElements extends StatelessWidget {
                       : null),
             ),
             const SizedBox(width: 10),
-            ValueField(
+            NumberField(
               initialValue: elements[i]!.value,
               onChanged: (newValue) => context.read<NewEntryBloc>().add(
                     NewEntryEvent.valueChanged(

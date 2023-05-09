@@ -3,8 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/widgets/app_bar.dart';
-import '../../core/widgets/authentication/form/form/date_field.dart';
-import '../../core/widgets/authentication/form/form/search_field.dart';
+import '../../core/widgets/authentication/form/date_field.dart';
+import '../../core/widgets/authentication/form/search_field.dart';
 import '../../core/widgets/default_padding.dart';
 import 'widgets/progress_graph.dart';
 

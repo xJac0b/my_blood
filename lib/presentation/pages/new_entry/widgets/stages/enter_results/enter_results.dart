@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../application/new_entry/new_entry_bloc.dart';
 import '../../../../../../domain/new_entry/results.dart';
 import '../../../../../../gen/assets.gen.dart';
-import '../../../../../core/widgets/authentication/form/form/wide_button.dart';
+import '../../../../../core/widgets/authentication/form/wide_button.dart';
 import '../../../../../core/widgets/default_padding.dart';
 import '../../../../../core/widgets/text/headline_medium.dart';
 import 'custom_single_child_scroll_view.dart';

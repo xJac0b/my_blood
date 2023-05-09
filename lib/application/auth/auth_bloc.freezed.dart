@@ -296,21 +296,21 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(User user) authenticated,
+    required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(User user)? authenticated,
+    TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(User user)? authenticated,
+    TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) =>
@@ -399,7 +399,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(User user) authenticated,
+    required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) {
     return initial();
@@ -409,7 +409,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(User user)? authenticated,
+    TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
   }) {
     return initial?.call();
@@ -419,7 +419,7 @@ class _$Initial with DiagnosticableTreeMixin implements Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(User user)? authenticated,
+    TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
@@ -473,10 +473,6 @@ abstract class _$$AuthenticatedCopyWith<$Res> {
   factory _$$AuthenticatedCopyWith(
           _$Authenticated value, $Res Function(_$Authenticated) then) =
       __$$AuthenticatedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({User user});
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -486,97 +482,63 @@ class __$$AuthenticatedCopyWithImpl<$Res>
   __$$AuthenticatedCopyWithImpl(
       _$Authenticated _value, $Res Function(_$Authenticated) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = null,
-  }) {
-    return _then(_$Authenticated(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
-  const _$Authenticated(this.user);
-
-  @override
-  final User user;
+  const _$Authenticated();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthState.authenticated(user: $user)';
+    return 'AuthState.authenticated()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthState.authenticated'))
-      ..add(DiagnosticsProperty('user', user));
+    properties.add(DiagnosticsProperty('type', 'AuthState.authenticated'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Authenticated &&
-            (identical(other.user, user) || other.user == user));
+        (other.runtimeType == runtimeType && other is _$Authenticated);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
-      __$$AuthenticatedCopyWithImpl<_$Authenticated>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(User user) authenticated,
+    required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) {
-    return authenticated(user);
+    return authenticated();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(User user)? authenticated,
+    TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
   }) {
-    return authenticated?.call(user);
+    return authenticated?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(User user)? authenticated,
+    TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
     if (authenticated != null) {
-      return authenticated(user);
+      return authenticated();
     }
     return orElse();
   }
@@ -617,12 +579,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
 }
 
 abstract class Authenticated implements AuthState {
-  const factory Authenticated(final User user) = _$Authenticated;
-
-  User get user;
-  @JsonKey(ignore: true)
-  _$$AuthenticatedCopyWith<_$Authenticated> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory Authenticated() = _$Authenticated;
 }
 
 /// @nodoc
@@ -672,7 +629,7 @@ class _$Unauthenticated
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(User user) authenticated,
+    required TResult Function() authenticated,
     required TResult Function() unauthenticated,
   }) {
     return unauthenticated();
@@ -682,7 +639,7 @@ class _$Unauthenticated
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(User user)? authenticated,
+    TResult? Function()? authenticated,
     TResult? Function()? unauthenticated,
   }) {
     return unauthenticated?.call();
@@ -692,7 +649,7 @@ class _$Unauthenticated
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(User user)? authenticated,
+    TResult Function()? authenticated,
     TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {

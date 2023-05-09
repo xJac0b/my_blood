@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/authentication/form/form/custom_text_field.dart';
+import '../../../../../core/widgets/authentication/form/custom_text_field.dart';
 
 class TitleField extends StatelessWidget {
   const TitleField(

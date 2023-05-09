@@ -25,6 +25,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +36,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +47,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +59,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +70,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +81,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -201,6 +207,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return exceedingLength(failedValue, max);
   }
@@ -214,6 +221,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return exceedingLength?.call(failedValue, max);
   }
@@ -227,6 +235,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -244,6 +253,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return exceedingLength(this);
   }
@@ -257,6 +267,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return exceedingLength?.call(this);
   }
@@ -270,6 +281,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -376,6 +388,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return insufficientLength(failedValue, min);
   }
@@ -389,6 +402,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return insufficientLength?.call(failedValue, min);
   }
@@ -402,6 +416,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (insufficientLength != null) {
@@ -419,6 +434,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return insufficientLength(this);
   }
@@ -432,6 +448,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return insufficientLength?.call(this);
   }
@@ -445,6 +462,7 @@ class _$InsufficientLength<T> implements InsufficientLength<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (insufficientLength != null) {
@@ -540,6 +558,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return empty(failedValue);
   }
@@ -553,6 +572,7 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return empty?.call(failedValue);
   }
@@ -566,6 +586,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -583,6 +604,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return empty(this);
   }
@@ -596,6 +618,7 @@ class _$Empty<T> implements Empty<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return empty?.call(this);
   }
@@ -609,6 +632,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -703,6 +727,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return invalidDate(failedValue);
   }
@@ -716,6 +741,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return invalidDate?.call(failedValue);
   }
@@ -729,6 +755,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -746,6 +773,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return invalidDate(this);
   }
@@ -759,6 +787,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return invalidDate?.call(this);
   }
@@ -772,6 +801,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -866,6 +896,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return invalidEmail(failedValue);
   }
@@ -879,6 +910,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -892,6 +924,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -909,6 +942,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return invalidEmail(this);
   }
@@ -922,6 +956,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return invalidEmail?.call(this);
   }
@@ -935,6 +970,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -1030,6 +1066,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) invalidDate,
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
   }) {
     return shortPassword(failedValue);
   }
@@ -1043,6 +1080,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function(T failedValue)? invalidDate,
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -1056,6 +1094,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? invalidDate,
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1073,6 +1112,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
   }) {
     return shortPassword(this);
   }
@@ -1086,6 +1126,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult? Function(InvalidDate<T> value)? invalidDate,
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
   }) {
     return shortPassword?.call(this);
   }
@@ -1099,6 +1140,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1117,5 +1159,175 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidWeightCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidWeightCopyWith(
+          _$InvalidWeight<T> value, $Res Function(_$InvalidWeight<T>) then) =
+      __$$InvalidWeightCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidWeightCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidWeight<T>>
+    implements _$$InvalidWeightCopyWith<T, $Res> {
+  __$$InvalidWeightCopyWithImpl(
+      _$InvalidWeight<T> _value, $Res Function(_$InvalidWeight<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidWeight<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidWeight<T> implements InvalidWeight<T> {
+  const _$InvalidWeight({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidWeight(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidWeight<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidWeightCopyWith<T, _$InvalidWeight<T>> get copyWith =>
+      __$$InvalidWeightCopyWithImpl<T, _$InvalidWeight<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue, int min) insufficientLength,
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue) invalidDate,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidWeight,
+  }) {
+    return invalidWeight(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue, int max)? exceedingLength,
+    TResult? Function(T failedValue, int min)? insufficientLength,
+    TResult? Function(T failedValue)? empty,
+    TResult? Function(T failedValue)? invalidDate,
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidWeight,
+  }) {
+    return invalidWeight?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int min)? insufficientLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidDate,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidWeight,
+    required TResult orElse(),
+  }) {
+    if (invalidWeight != null) {
+      return invalidWeight(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(InsufficientLength<T> value) insufficientLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidWeight<T> value) invalidWeight,
+  }) {
+    return invalidWeight(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ExceedingLength<T> value)? exceedingLength,
+    TResult? Function(InsufficientLength<T> value)? insufficientLength,
+    TResult? Function(Empty<T> value)? empty,
+    TResult? Function(InvalidDate<T> value)? invalidDate,
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidWeight<T> value)? invalidWeight,
+  }) {
+    return invalidWeight?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(InsufficientLength<T> value)? insufficientLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidWeight<T> value)? invalidWeight,
+    required TResult orElse(),
+  }) {
+    if (invalidWeight != null) {
+      return invalidWeight(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidWeight<T> implements ValueFailure<T> {
+  const factory InvalidWeight({required final T failedValue}) =
+      _$InvalidWeight<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidWeightCopyWith<T, _$InvalidWeight<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

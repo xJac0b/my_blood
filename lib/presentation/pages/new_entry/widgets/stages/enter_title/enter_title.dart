@@ -7,7 +7,7 @@ import 'package:fpdart/fpdart.dart';
 import '../../../../../../application/new_entry/new_entry_bloc.dart';
 import '../../../../../../domain/new_entry/value_objects.dart';
 import '../../../../../../gen/assets.gen.dart';
-import '../../../../../core/widgets/authentication/form/form/wide_button.dart';
+import '../../../../../core/widgets/authentication/form/wide_button.dart';
 import '../../../../../core/widgets/default_padding.dart';
 import '../../../../../core/widgets/text/headline_medium.dart';
 import 'title_field.dart';

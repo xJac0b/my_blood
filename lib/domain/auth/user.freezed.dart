@@ -19,8 +19,11 @@ mixin _$User {
   UniqueId get id => throw _privateConstructorUsedError;
   bool get verified => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String? get photo => throw _privateConstructorUsedError;
-  String? get displayName => throw _privateConstructorUsedError;
+  DisplayName get displayName => throw _privateConstructorUsedError;
+  bool get filled => throw _privateConstructorUsedError;
+  DateOfBirth get dateOfBirth => throw _privateConstructorUsedError;
+  Weight get weight => throw _privateConstructorUsedError;
+  bool get male => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -35,8 +38,11 @@ abstract class $UserCopyWith<$Res> {
       {UniqueId id,
       bool verified,
       String email,
-      String? photo,
-      String? displayName});
+      DisplayName displayName,
+      bool filled,
+      DateOfBirth dateOfBirth,
+      Weight weight,
+      bool male});
 }
 
 /// @nodoc
@@ -55,8 +61,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? id = null,
     Object? verified = null,
     Object? email = null,
-    Object? photo = freezed,
-    Object? displayName = freezed,
+    Object? displayName = null,
+    Object? filled = null,
+    Object? dateOfBirth = null,
+    Object? weight = null,
+    Object? male = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -71,14 +80,26 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: freezed == photo
-          ? _value.photo
-          : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      displayName: freezed == displayName
+      displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DisplayName,
+      filled: null == filled
+          ? _value.filled
+          : filled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dateOfBirth: null == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateOfBirth,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Weight,
+      male: null == male
+          ? _value.male
+          : male // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -93,8 +114,11 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       {UniqueId id,
       bool verified,
       String email,
-      String? photo,
-      String? displayName});
+      DisplayName displayName,
+      bool filled,
+      DateOfBirth dateOfBirth,
+      Weight weight,
+      bool male});
 }
 
 /// @nodoc
@@ -109,8 +133,11 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? id = null,
     Object? verified = null,
     Object? email = null,
-    Object? photo = freezed,
-    Object? displayName = freezed,
+    Object? displayName = null,
+    Object? filled = null,
+    Object? dateOfBirth = null,
+    Object? weight = null,
+    Object? male = null,
   }) {
     return _then(_$_User(
       id: null == id
@@ -125,14 +152,26 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: freezed == photo
-          ? _value.photo
-          : photo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      displayName: freezed == displayName
+      displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as DisplayName,
+      filled: null == filled
+          ? _value.filled
+          : filled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dateOfBirth: null == dateOfBirth
+          ? _value.dateOfBirth
+          : dateOfBirth // ignore: cast_nullable_to_non_nullable
+              as DateOfBirth,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as Weight,
+      male: null == male
+          ? _value.male
+          : male // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -144,8 +183,11 @@ class _$_User implements _User {
       {required this.id,
       required this.verified,
       required this.email,
-      this.photo,
-      this.displayName});
+      required this.displayName,
+      required this.filled,
+      required this.dateOfBirth,
+      required this.weight,
+      required this.male});
 
   @override
   final UniqueId id;
@@ -154,13 +196,19 @@ class _$_User implements _User {
   @override
   final String email;
   @override
-  final String? photo;
+  final DisplayName displayName;
   @override
-  final String? displayName;
+  final bool filled;
+  @override
+  final DateOfBirth dateOfBirth;
+  @override
+  final Weight weight;
+  @override
+  final bool male;
 
   @override
   String toString() {
-    return 'User(id: $id, verified: $verified, email: $email, photo: $photo, displayName: $displayName)';
+    return 'User(id: $id, verified: $verified, email: $email, displayName: $displayName, filled: $filled, dateOfBirth: $dateOfBirth, weight: $weight, male: $male)';
   }
 
   @override
@@ -172,14 +220,18 @@ class _$_User implements _User {
             (identical(other.verified, verified) ||
                 other.verified == verified) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.photo, photo) || other.photo == photo) &&
             (identical(other.displayName, displayName) ||
-                other.displayName == displayName));
+                other.displayName == displayName) &&
+            (identical(other.filled, filled) || other.filled == filled) &&
+            (identical(other.dateOfBirth, dateOfBirth) ||
+                other.dateOfBirth == dateOfBirth) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.male, male) || other.male == male));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, verified, email, photo, displayName);
+  int get hashCode => Object.hash(runtimeType, id, verified, email, displayName,
+      filled, dateOfBirth, weight, male);
 
   @JsonKey(ignore: true)
   @override
@@ -193,8 +245,11 @@ abstract class _User implements User {
       {required final UniqueId id,
       required final bool verified,
       required final String email,
-      final String? photo,
-      final String? displayName}) = _$_User;
+      required final DisplayName displayName,
+      required final bool filled,
+      required final DateOfBirth dateOfBirth,
+      required final Weight weight,
+      required final bool male}) = _$_User;
 
   @override
   UniqueId get id;
@@ -203,9 +258,15 @@ abstract class _User implements User {
   @override
   String get email;
   @override
-  String? get photo;
+  DisplayName get displayName;
   @override
-  String? get displayName;
+  bool get filled;
+  @override
+  DateOfBirth get dateOfBirth;
+  @override
+  Weight get weight;
+  @override
+  bool get male;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

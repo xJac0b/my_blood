@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../text/label_large.dart';
+import '../../text/label_large.dart';
 
 class WideButton extends StatelessWidget {
   const WideButton({super.key, required this.label, required this.onPressed});

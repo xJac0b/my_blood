@@ -9,6 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
+import 'package:flutter/foundation.dart' as _i11;
 import 'package:my_blood/presentation/pages/fill_data/fill_data_page.dart'
     as _i7;
 import 'package:my_blood/presentation/pages/home/home_page.dart' as _i1;
@@ -72,9 +73,13 @@ abstract class $AppRouter extends _i10.RootStackRouter {
       );
     },
     VerificationRoute.name: (routeData) {
+      final args = routeData.argsAs<VerificationRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i8.VerificationPage(),
+        child: _i8.VerificationPage(
+          key: args.key,
+          email: args.email,
+        ),
       );
     },
     ResetPasswordRoute.name: (routeData) {
@@ -186,16 +191,40 @@ class FillDataRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i8.VerificationPage]
-class VerificationRoute extends _i10.PageRouteInfo<void> {
-  const VerificationRoute({List<_i10.PageRouteInfo>? children})
-      : super(
+class VerificationRoute extends _i10.PageRouteInfo<VerificationRouteArgs> {
+  VerificationRoute({
+    _i11.Key? key,
+    required String email,
+    List<_i10.PageRouteInfo>? children,
+  }) : super(
           VerificationRoute.name,
+          args: VerificationRouteArgs(
+            key: key,
+            email: email,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'VerificationRoute';
 
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+  static const _i10.PageInfo<VerificationRouteArgs> page =
+      _i10.PageInfo<VerificationRouteArgs>(name);
+}
+
+class VerificationRouteArgs {
+  const VerificationRouteArgs({
+    this.key,
+    required this.email,
+  });
+
+  final _i11.Key? key;
+
+  final String email;
+
+  @override
+  String toString() {
+    return 'VerificationRouteArgs{key: $key, email: $email}';
+  }
 }
 
 /// generated route for

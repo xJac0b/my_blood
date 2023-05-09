@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
-import '../../../core/widgets/authentication/form/form/email_form_field.dart';
-import '../../../core/widgets/authentication/form/form/wide_button.dart';
+import '../../../core/widgets/authentication/form/email_form_field.dart';
+import '../../../core/widgets/authentication/form/wide_button.dart';
 import '../../../core/widgets/default_padding.dart';
 
 class ResetPaswordForm extends StatelessWidget {

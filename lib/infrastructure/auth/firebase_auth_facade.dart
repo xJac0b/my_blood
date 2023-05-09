@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:fpdart/fpdart.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -7,18 +8,20 @@ import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/i_auth_facade.dart';
 import '../../domain/auth/user.dart';
 import '../../domain/auth/value_objects.dart';
-import 'firebase_user_mapper.dart';
+import '../auth/firebase_user_mapper.dart';
+import '../core/firestore_helpers.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
+  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn, this._firestore);
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
 
   @override
   Future<Option<User>> getSignedInUser() async {
-    return optionOf(_firebaseAuth.currentUser?.toDomain());
+    return optionOf(await _firebaseAuth.currentUser?.toDomain());
   }
 
   @override
@@ -40,6 +43,13 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: emailAddressString,
         password: passwordString,
       );
+      final userDocument = await _firestore.userDocument();
+      await userDocument.set({
+        'filled': false,
+        'male': true,
+        'weight': 0.0,
+        'dateOfBirth': DateTime.now()
+      });
       return right(unit);
     } on firebase_auth.FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use' ||
@@ -128,5 +138,24 @@ class FirebaseAuthFacade implements IAuthFacade {
     final user = _firebaseAuth.currentUser;
     await user!.reload();
     return user.emailVerified;
+  }
+
+  @override
+  Future<void> setUserData(
+      {required DisplayName displayName,
+      required DateOfBirth dateOfBirth,
+      required bool male,
+      required Weight weight}) async {
+    final _displayName = displayName.getOrCrash();
+    final _dateOfBirth = dateOfBirth.getOrCrash();
+    final _weight = weight.getOrCrash();
+    await _firebaseAuth.currentUser?.updateDisplayName(_displayName);
+    final doc = await _firestore.userDocument();
+    await doc.set({
+      'filled': true,
+      'dateOfBirth': _dateOfBirth,
+      'male': male,
+      'weight': _weight
+    });
   }
 }

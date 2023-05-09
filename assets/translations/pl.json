@@ -24,13 +24,17 @@
     "emailNotVerified": "Adres e-mail nie został zweryfikowany",
     
     "firstName": "Imię",
-    "lastName": "Nazwisko",
+    "emptyName": "Imię nie może być puste",
+    "invalidName": "Niepoprawne imię",
+    "exceedingNameLength": "Imię nie może przekraczać {length} znaków",
     "genderMale": "Mężczyzna",
     "genderFemale": "Kobieta",
     "genderOther": "Inna",
     "fillDataHeading": "Jeszcze kilka informacji",
     "dateOfBirth": "Data urodzenia",
-
+    "weight": "Waga [kg]",
+    "invalidWeight": "Niepoprawna waga",
+    
     "greeting": "Cześć",
     "resultsSectionTitle": "Twoje ostatnie wyniki",
     "showFullListButton": "Pokaż całą listę",

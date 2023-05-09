@@ -61,3 +61,11 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return left(ValueFailure.shortPassword(failedValue: input));
   }
 }
+
+Either<ValueFailure<double>, double> validateWeight(double input) {
+  if (input > 0 && input < 1000) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidWeight(failedValue: input));
+  }
+}
