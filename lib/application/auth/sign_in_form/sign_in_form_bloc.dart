@@ -183,27 +183,28 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     if (state.verificationEmailAttempts < 1) {
       return;
     }
-    emit(state.copyWith(
-        isSubmitting: true,
-        verificationEmailAttempts: state.verificationEmailAttempts - 1));
+    emit(
+      state.copyWith(
+          isSubmitting: true,
+          isEmailVerified: null,
+          verificationEmailAttempts: state.verificationEmailAttempts - 1,
+          authFailureOrSuccessOption: none()),
+    );
     await _authFacade.sendVerificationEmail();
     emit(state.copyWith(
-      isSubmitting: false,
-    ));
+        isEmailVerified: null,
+        isSubmitting: false,
+        authFailureOrSuccessOption: none()));
   }
 
   Future<void> checkVerificationStatus(
       CheckVerificationStatus event, Emitter<SignInFormState> emit) async {
-    Timer.periodic(const Duration(seconds: 3), (timer) async {
-      await _authFacade.isEmailVerified().then((value) {
-        if (value) {
-          timer.cancel();
-        }
-      });
-    });
+    emit(state.copyWith(isSubmitting: true));
+    final verified = await _authFacade.isEmailVerified();
     emit(
       state.copyWith(
-        isEmailVerified: true,
+        isSubmitting: false,
+        isEmailVerified: verified,
       ),
     );
   }

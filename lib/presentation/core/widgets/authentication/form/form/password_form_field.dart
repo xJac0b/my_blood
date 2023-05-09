@@ -30,6 +30,12 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         CustomTextField(
+          initialValue: context
+              .read<SignInFormBloc>()
+              .state
+              .password
+              .value
+              .fold((f) => null, (r) => r),
           hintText: 'passwordFieldHint'.tr(),
           keyboardType: TextInputType.visiblePassword,
           prefixIcon: const Icon(Icons.lock),

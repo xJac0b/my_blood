@@ -11,6 +11,11 @@ class EmailFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
+      initialValue:
+          context.read<SignInFormBloc>().state.emailAddress.value.fold(
+                (f) => null,
+                (r) => r,
+              ),
       prefixIcon: const Icon(Icons.email),
       hintText: 'emailFieldHint'.tr(),
       keyboardType: TextInputType.emailAddress,

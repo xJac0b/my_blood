@@ -41,9 +41,6 @@ class RegisterForm extends StatelessWidget {
               context.read<SignInFormBloc>().add(
                     const SignInFormEvent.sendVerificationEmail(),
                   );
-              context.read<SignInFormBloc>().add(
-                    const SignInFormEvent.checkVerificationStatus(),
-                  );
             },
           ),
         );
@@ -65,7 +62,7 @@ class RegisterForm extends StatelessWidget {
                 onPressed: () => context.read<SignInFormBloc>().add(
                       const SignInFormEvent
                           .registerWithEmailAndPasswordPressed(),
-                    ), //context.router.push(const VerificationRoute()),
+                    ),
                 label: 'registerButton'.tr(),
               ),
               const SizedBox(

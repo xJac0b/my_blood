@@ -17,8 +17,9 @@ class FirebaseAuthFacade implements IAuthFacade {
   final GoogleSignIn _googleSignIn;
 
   @override
-  Future<Option<User>> getSignedInUser() async =>
-      optionOf(_firebaseAuth.currentUser?.toDomain());
+  Future<Option<User>> getSignedInUser() async {
+    return optionOf(_firebaseAuth.currentUser?.toDomain());
+  }
 
   @override
   Future<void> signOut() => Future.wait([
@@ -32,7 +33,7 @@ class FirebaseAuthFacade implements IAuthFacade {
     required Password password,
   }) async {
     final emailAddressString = emailAddress.getOrCrash();
-    final passwordString = emailAddress.getOrCrash();
+    final passwordString = password.getOrCrash();
 
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -119,7 +120,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<void> sendVerificationEmail() async {
     final user = _firebaseAuth.currentUser;
-    await user!.sendEmailVerification();
+    await user?.sendEmailVerification();
   }
 
   @override

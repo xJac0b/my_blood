@@ -19,8 +19,10 @@
     "registerButton": "Zarejestruj się",
     "alreadyRegistered": "Masz już konto?",
     "verifyEmailHeading": "Sprawdź swój adres e-mail",
-    "verifyEmailInfo": "Sprawdź swoją skrzynkę pocztową i wejdź w link, aby zweryfikować swój adres e-mail",
-    "verifyEmailResend": "Wyślij ponownie",
+    "verifyEmailInfo": "Wysłaliśmy link aktywacyjny na adres {email}",
+    "verifyEmailResend": "Nie otrzymałeś maila? Wyślij ponownie",
+    "emailNotVerified": "Adres e-mail nie został zweryfikowany",
+    
     "firstName": "Imię",
     "lastName": "Nazwisko",
     "genderMale": "Mężczyzna",
