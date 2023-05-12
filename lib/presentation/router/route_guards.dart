@@ -17,7 +17,7 @@ class CheckIfAuthenticated extends AutoRouteGuard {
       await router.push(const LoginRoute());
       return;
     }
-
+    await u.reload();
     final user =
         await u.toDomain(await getIt<FirebaseFirestore>().userDocument());
     debugPrint(user.toString());

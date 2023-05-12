@@ -20,7 +20,7 @@ class VerificationPageView extends StatelessWidget {
       listener: (context, state) {
         if (state.isEmailVerified != null) {
           if (state.isEmailVerified!) {
-            context.router.push(const FillDataRoute());
+            context.router.replace(const FillDataRoute());
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(

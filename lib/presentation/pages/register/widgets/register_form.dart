@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../application/auth/auth_bloc.dart';
 import '../../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
+import '../../../../application/auth/user/user_bloc.dart';
 import '../../../core/widgets/authentication/form/email_form_field.dart';
 import '../../../core/widgets/authentication/form/password_form_field.dart';
 import '../../../core/widgets/authentication/form/switch_form_button.dart';
@@ -42,6 +43,9 @@ class RegisterForm extends StatelessWidget {
                   email: state.emailAddress.value.fold((l) => '', (r) => r)));
               context.read<AuthBloc>().add(
                     const AuthEvent.authCheckRequested(),
+                  );
+              context.read<UserBloc>().add(
+                    const UserEvent.loadUser(),
                   );
               context.read<SignInFormBloc>().add(
                     const SignInFormEvent.sendVerificationEmail(),

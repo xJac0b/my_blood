@@ -10,20 +10,20 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
 import 'package:flutter/foundation.dart' as _i11;
-import 'package:my_blood/presentation/pages/fill_data/fill_data_page.dart'
-    as _i7;
-import 'package:my_blood/presentation/pages/home/home_page.dart' as _i1;
-import 'package:my_blood/presentation/pages/login/login_page.dart' as _i5;
-import 'package:my_blood/presentation/pages/new_entry/new_entry_page.dart'
-    as _i2;
-import 'package:my_blood/presentation/pages/progress/progress_page.dart' as _i3;
-import 'package:my_blood/presentation/pages/register/register_page.dart' as _i6;
-import 'package:my_blood/presentation/pages/reset_password/reset_password_page.dart'
-    as _i9;
-import 'package:my_blood/presentation/pages/result_list/result_list_page.dart'
-    as _i4;
-import 'package:my_blood/presentation/pages/verification/verification_page.dart'
+import 'package:my_blood/presentation/pages/entry_form/entry_form_page.dart'
     as _i8;
+import 'package:my_blood/presentation/pages/entry_list/entry_list_page.dart'
+    as _i9;
+import 'package:my_blood/presentation/pages/fill_data/fill_data_page.dart'
+    as _i5;
+import 'package:my_blood/presentation/pages/home/home_page.dart' as _i1;
+import 'package:my_blood/presentation/pages/login/login_page.dart' as _i3;
+import 'package:my_blood/presentation/pages/progress/progress_page.dart' as _i2;
+import 'package:my_blood/presentation/pages/register/register_page.dart' as _i4;
+import 'package:my_blood/presentation/pages/reset_password/reset_password_page.dart'
+    as _i7;
+import 'package:my_blood/presentation/pages/verification/verification_page.dart'
+    as _i6;
 
 abstract class $AppRouter extends _i10.RootStackRouter {
   $AppRouter({super.navigatorKey});
@@ -36,47 +36,35 @@ abstract class $AppRouter extends _i10.RootStackRouter {
         child: const _i1.HomePage(),
       );
     },
-    NewEntryRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i2.NewEntryPage(),
-      );
-    },
     ProgressRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.ProgressPage(),
-      );
-    },
-    ResultListRoute.name: (routeData) {
-      return _i10.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i4.ResultListPage(),
+        child: const _i2.ProgressPage(),
       );
     },
     LoginRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.LoginPage(),
+        child: const _i3.LoginPage(),
       );
     },
     RegisterRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.RegisterPage(),
+        child: const _i4.RegisterPage(),
       );
     },
     FillDataRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i7.FillDataPage(),
+        child: const _i5.FillDataPage(),
       );
     },
     VerificationRoute.name: (routeData) {
       final args = routeData.argsAs<VerificationRouteArgs>();
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i8.VerificationPage(
+        child: _i6.VerificationPage(
           key: args.key,
           email: args.email,
         ),
@@ -85,7 +73,19 @@ abstract class $AppRouter extends _i10.RootStackRouter {
     ResetPasswordRoute.name: (routeData) {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.ResetPasswordPage(),
+        child: const _i7.ResetPasswordPage(),
+      );
+    },
+    EntryFormRoute.name: (routeData) {
+      return _i10.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i8.EntryFormPage(),
+      );
+    },
+    EntryListRoute.name: (routeData) {
+      return _i10.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.EntryListPage(),
       );
     },
   };
@@ -106,21 +106,7 @@ class HomeRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.NewEntryPage]
-class NewEntryRoute extends _i10.PageRouteInfo<void> {
-  const NewEntryRoute({List<_i10.PageRouteInfo>? children})
-      : super(
-          NewEntryRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'NewEntryRoute';
-
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i3.ProgressPage]
+/// [_i2.ProgressPage]
 class ProgressRoute extends _i10.PageRouteInfo<void> {
   const ProgressRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -134,21 +120,7 @@ class ProgressRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.ResultListPage]
-class ResultListRoute extends _i10.PageRouteInfo<void> {
-  const ResultListRoute({List<_i10.PageRouteInfo>? children})
-      : super(
-          ResultListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ResultListRoute';
-
-  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i5.LoginPage]
+/// [_i3.LoginPage]
 class LoginRoute extends _i10.PageRouteInfo<void> {
   const LoginRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -162,7 +134,7 @@ class LoginRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.RegisterPage]
+/// [_i4.RegisterPage]
 class RegisterRoute extends _i10.PageRouteInfo<void> {
   const RegisterRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -176,7 +148,7 @@ class RegisterRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.FillDataPage]
+/// [_i5.FillDataPage]
 class FillDataRoute extends _i10.PageRouteInfo<void> {
   const FillDataRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -190,7 +162,7 @@ class FillDataRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.VerificationPage]
+/// [_i6.VerificationPage]
 class VerificationRoute extends _i10.PageRouteInfo<VerificationRouteArgs> {
   VerificationRoute({
     _i11.Key? key,
@@ -228,7 +200,7 @@ class VerificationRouteArgs {
 }
 
 /// generated route for
-/// [_i9.ResetPasswordPage]
+/// [_i7.ResetPasswordPage]
 class ResetPasswordRoute extends _i10.PageRouteInfo<void> {
   const ResetPasswordRoute({List<_i10.PageRouteInfo>? children})
       : super(
@@ -237,6 +209,34 @@ class ResetPasswordRoute extends _i10.PageRouteInfo<void> {
         );
 
   static const String name = 'ResetPasswordRoute';
+
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i8.EntryFormPage]
+class EntryFormRoute extends _i10.PageRouteInfo<void> {
+  const EntryFormRoute({List<_i10.PageRouteInfo>? children})
+      : super(
+          EntryFormRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EntryFormRoute';
+
+  static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i9.EntryListPage]
+class EntryListRoute extends _i10.PageRouteInfo<void> {
+  const EntryListRoute({List<_i10.PageRouteInfo>? children})
+      : super(
+          EntryListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EntryListRoute';
 
   static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
 }

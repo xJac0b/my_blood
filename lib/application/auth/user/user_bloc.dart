@@ -84,33 +84,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       user = state.user!.copyWith(filled: true);
     }
     emit(
-      state.copyWith(isSubmitting: false, user: user ?? state.user),
+      state.copyWith(
+          isSubmitting: false,
+          user: user ?? state.user,
+          showErrorMessages: AutovalidateMode.always),
     );
-  }
-
-  @override
-  void onTransition(Transition<UserEvent, UserState> transition) {
-    super.onTransition(transition);
-    debugPrint(transition.toString());
-  }
-
-  @override
-  void onChange(Change<UserState> change) {
-    super.onChange(change);
-    debugPrint(change.toString());
-    debugPrint(change.currentState.toString());
-    debugPrint(change.nextState.toString());
-  }
-
-  @override
-  void onError(Object error, StackTrace stackTrace) {
-    super.onError(error, stackTrace);
-    debugPrint(error.toString());
-  }
-
-  @override
-  void onEvent(UserEvent event) {
-    super.onEvent(event);
-    debugPrint(event.toString());
   }
 }

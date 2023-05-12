@@ -32,30 +32,27 @@ class HomePageView extends StatelessWidget {
         })
       ],
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const DefaultPadding(
-                  child: CustomAppBar(
-                leading: CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 201, 208, 213),
-                ),
-              )),
-              BlocBuilder<UserBloc, UserState>(
-                builder: (context, state) {
-                  return DefaultPadding(
-                      child: HeadlineLarge(
-                          '${'greeting'.tr()} ${state.user?.displayName.value.fold((l) => l, (r) => r)} 👋'));
-                },
-              ),
-              const ResultsSection(),
-              const DefaultPadding(
-                child: ButtonsSection(),
-              ),
-            ],
+        appBar: CustomAppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.person),
+            onPressed: () {},
           ),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BlocBuilder<UserBloc, UserState>(
+              builder: (context, state) {
+                return DefaultPadding(
+                    child: HeadlineLarge(
+                        '${'greeting'.tr()} ${state.user?.displayName.value.fold((l) => l, (r) => r)} 👋'));
+              },
+            ),
+            const ResultsSection(),
+            const DefaultPadding(
+              child: ButtonsSection(),
+            ),
+          ],
         ),
       ),
     );

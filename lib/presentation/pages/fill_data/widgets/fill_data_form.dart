@@ -20,7 +20,7 @@ class FillDataForm extends StatelessWidget {
     return BlocConsumer<UserBloc, UserState>(
       listener: (context, state) {
         if (state.user?.filled == true) {
-          context.router.push(const HomeRoute());
+          context.router.replace(const HomeRoute());
         }
       },
       builder: (context, state) {
@@ -28,11 +28,6 @@ class FillDataForm extends StatelessWidget {
           autovalidateMode: state.showErrorMessages,
           child: Column(
             children: [
-              BlocBuilder<UserBloc, UserState>(
-                builder: (context, state) {
-                  return Text(state.user.toString());
-                },
-              ),
               const NameFormField(),
               const SizedBox(height: 20),
               GenderDropdown(

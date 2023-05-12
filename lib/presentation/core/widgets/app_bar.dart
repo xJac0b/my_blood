@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,24 +16,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   @override
   Widget build(BuildContext context) {
+    debugPrint('context.router.currentPath: ${context.router.currentPath}');
     return AppBar(
         centerTitle: true,
         leading: leading,
         title: HeadlineSmall(
           title,
         ),
-        actions: [
-          PopupMenuButton(
-              onSelected: (value) => value == 'logout'
-                  ? context.read<AuthBloc>().add(const AuthEvent.signedOut())
-                  : null,
-              itemBuilder: (context) => [
-                    const PopupMenuItem(
-                      value: 'logout',
-                      child: Text('Logout'),
-                    ),
-                  ])
-        ]);
+        actions: context.router.currentPath == '/'
+            ? [
+                PopupMenuButton(
+                    onSelected: (value) => value == 'logout'
+                        ? context
+                            .read<AuthBloc>()
+                            .add(const AuthEvent.signedOut())
+                        : null,
+                    itemBuilder: (context) => [
+                          const PopupMenuItem(
+                            value: 'logout',
+                            child: Text('Logout'),
+                          ),
+                        ])
+              ]
+            : null);
   }
 
   @override

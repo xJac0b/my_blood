@@ -15,12 +15,12 @@ class ButtonsSection extends StatelessWidget {
     return Column(
       children: [
         MenuButton(
-          onPressed: () => context.router.push(const ResultListRoute()),
+          onPressed: () => context.router.push(const EntryListRoute()),
           label: 'showFullListButton'.tr(),
         ),
         const SizedBox(height: 20),
         MenuButton(
-          onPressed: () => context.router.push(const NewEntryRoute()),
+          onPressed: () => context.router.push(const EntryFormRoute()),
           label: 'addNewEntryButton'.tr(),
         ),
         const SizedBox(height: 20),

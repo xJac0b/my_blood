@@ -199,7 +199,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
   Future<void> checkVerificationStatus(
       CheckVerificationStatus event, Emitter<SignInFormState> emit) async {
-    emit(state.copyWith(isSubmitting: true));
+    emit(state.copyWith(isSubmitting: true, isEmailVerified: null));
     final verified = await _authFacade.isEmailVerified();
     emit(
       state.copyWith(

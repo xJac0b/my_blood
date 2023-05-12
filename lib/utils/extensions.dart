@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../domain/new_entry/results.dart';
-import '../domain/new_entry/unit_value.dart';
+import '../domain/entries/results.dart';
+import '../domain/entries/unit_value.dart';
 
 extension MapX on ResultsMap {
   static ResultsMap copyNestedMap(ResultsMap originalMap) {
