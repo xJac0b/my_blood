@@ -32,10 +32,11 @@ class HomePageView extends StatelessWidget {
         })
       ],
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
           leading: IconButton(
             icon: const Icon(Icons.person),
-            onPressed: () {},
+            onPressed: () => context.router.push(const UserRoute()),
           ),
         ),
         body: Column(

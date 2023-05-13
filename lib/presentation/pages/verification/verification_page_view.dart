@@ -35,6 +35,7 @@ class VerificationPageView extends StatelessWidget {
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
+            resizeToAvoidBottomInset: false,
             body: Center(
               child: state.isSubmitting
                   ? const CircularProgressIndicator()

@@ -1,12 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:fpdart/fpdart.dart';
 
 import 'auth_failure.dart';
-import 'user.dart';
 import 'value_objects.dart';
 
 abstract class IAuthFacade {
-  Future<Option<User>> getSignedInUser();
-
+  Option<firebase_auth.User> getSignedInUser();
+  void reloadUser();
   Future<void> signOut();
 
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({

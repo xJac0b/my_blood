@@ -62,5 +62,6 @@
     "progressAppBarTitle": "Śledź postępy",
     "progressSearchFieldHint": "Wybierz element",
     "progressDateFieldStart": "Data początkowa",
-    "progressDateFieldEnd": "Data końcowa"
+    "progressDateFieldEnd": "Data końcowa",
+    "yourData": "Twoje dane"
 }

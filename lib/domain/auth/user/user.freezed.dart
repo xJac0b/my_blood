@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   UniqueId get id => throw _privateConstructorUsedError;
   bool get verified => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
+  EmailAddress get email => throw _privateConstructorUsedError;
   DisplayName get displayName => throw _privateConstructorUsedError;
   bool get filled => throw _privateConstructorUsedError;
   DateOfBirth get dateOfBirth => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {UniqueId id,
       bool verified,
-      String email,
+      EmailAddress email,
       DisplayName displayName,
       bool filled,
       DateOfBirth dateOfBirth,
@@ -79,7 +79,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as EmailAddress,
       displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -113,7 +113,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {UniqueId id,
       bool verified,
-      String email,
+      EmailAddress email,
       DisplayName displayName,
       bool filled,
       DateOfBirth dateOfBirth,
@@ -151,7 +151,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
+              as EmailAddress,
       displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -194,7 +194,7 @@ class _$_User implements _User {
   @override
   final bool verified;
   @override
-  final String email;
+  final EmailAddress email;
   @override
   final DisplayName displayName;
   @override
@@ -244,7 +244,7 @@ abstract class _User implements User {
   const factory _User(
       {required final UniqueId id,
       required final bool verified,
-      required final String email,
+      required final EmailAddress email,
       required final DisplayName displayName,
       required final bool filled,
       required final DateOfBirth dateOfBirth,
@@ -256,7 +256,7 @@ abstract class _User implements User {
   @override
   bool get verified;
   @override
-  String get email;
+  EmailAddress get email;
   @override
   DisplayName get displayName;
   @override

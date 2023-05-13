@@ -61,5 +61,6 @@
     "progressAppBarTitle": "Track your progress",
     "progressSearchFieldHint": "Pick an element",
     "progressDateFieldStart": "Start date",
-    "progressDateFieldEnd": "End date"
+    "progressDateFieldEnd": "End date",
+    "yourData": "Your data"
 }

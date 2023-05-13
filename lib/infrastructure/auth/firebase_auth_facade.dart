@@ -6,22 +6,29 @@ import 'package:injectable/injectable.dart';
 
 import '../../domain/auth/auth_failure.dart';
 import '../../domain/auth/i_auth_facade.dart';
-import '../../domain/auth/user.dart';
+import '../../domain/auth/user/i_user_repository.dart';
 import '../../domain/auth/value_objects.dart';
-import '../auth/firebase_user_mapper.dart';
 import '../core/firestore_helpers.dart';
+import 'firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
-  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn, this._firestore);
+  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn, this._firestore,
+      this._userReposiory);
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
   final FirebaseFirestore _firestore;
+  final IUserRepository _userReposiory;
 
   @override
-  Future<Option<User>> getSignedInUser() async {
-    return optionOf(await _firebaseAuth.currentUser?.toDomain());
+  Option<firebase_auth.User> getSignedInUser() {
+    return optionOf(_firebaseAuth.currentUser);
+  }
+
+  @override
+  void reloadUser() {
+    _firebaseAuth.currentUser!.reload();
   }
 
   @override
@@ -43,13 +50,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: emailAddressString,
         password: passwordString,
       );
-      final userDocument = await _firestore.userDocument();
-      await userDocument.set({
-        'filled': false,
-        'male': true,
-        'weight': 0.0,
-        'dateOfBirth': DateTime.now()
-      });
+      await _userReposiory.create(getSignedInUser()
+          .fold(() => throw Exception(), (user) => user.toDomain()));
       return right(unit);
     } on firebase_auth.FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use' ||

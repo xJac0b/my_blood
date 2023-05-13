@@ -19,6 +19,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(path: '/reset', page: ResetPasswordRoute.page),
         AutoRoute(path: '/fill', page: FillDataRoute.page),
         AutoRoute(path: '/entry', page: EntryRoute.page),
+        AutoRoute(path: '/user', page: UserRoute.page),
         RedirectRoute(path: '*', redirectTo: '/'),
       ];
 }

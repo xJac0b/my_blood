@@ -1,15 +1,12 @@
 import 'package:bloc/bloc.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/auth/i_auth_facade.dart';
-import '../../../domain/auth/user.dart';
+import '../../../domain/auth/user/i_user_repository.dart';
+import '../../../domain/auth/user/user.dart';
 import '../../../domain/auth/value_objects.dart';
-import '../../../infrastructure/auth/firebase_user_mapper.dart';
-import '../../../infrastructure/core/firestore_helpers.dart';
 import '../../../injection.dart';
 
 part 'user_bloc.freezed.dart';
@@ -19,13 +16,14 @@ part 'user_state.dart';
 @injectable
 class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc(
-    this._authFacade,
+    this._userRepository,
   ) : super(UserState.initial()) {
-    on<LoadUser>((event, emit) async => getIt<firebase_auth.FirebaseAuth>()
-        .currentUser
-        ?.toDomain(await getIt<FirebaseFirestore>().userDocument())
-        .then(
-            (value) => emit(state.copyWith(user: value, isSubmitting: false))));
+    on<LoadUser>((event, emit) async {
+      await getIt<IAuthFacade>().getSignedInUser().fold(
+          () => null,
+          (t) => _userRepository.get(t).then((value) => value.fold((l) => null,
+              (r) => emit(state.copyWith(user: r, isSubmitting: false)))));
+    });
     on<NameChanged>(changeName);
     on<GenderChanged>(changeGender);
     on<DateOfBirthChanged>(changeDateOfBirth);
@@ -33,7 +31,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<Saved>(save);
     add(const UserEvent.loadUser());
   }
-  final IAuthFacade _authFacade;
+  final IUserRepository _userRepository;
 
   void changeName(NameChanged event, Emitter<UserState> emit) {
     emit(
@@ -68,6 +66,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   }
 
   Future<void> save(Saved event, Emitter<UserState> emit) async {
+    if (state.user == null) {
+      add(const UserEvent.loadUser());
+      if (state.user == null) {
+        return;
+      }
+    }
     final isDisplayNameValid = state.user!.displayName.isValid();
     final isWeightValid = state.user!.weight.isValid();
     final isDateOfBirthValid = state.user!.dateOfBirth.isValid();
@@ -76,11 +80,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       emit(
         state.copyWith(isSubmitting: true),
       );
-      await _authFacade.setUserData(
-          displayName: state.user!.displayName,
-          dateOfBirth: state.user!.dateOfBirth,
-          male: state.user!.male,
-          weight: state.user!.weight);
+      await _userRepository.update(state.user!);
+      final a =
+          getIt<IAuthFacade>().getSignedInUser().fold(() => null, (t) => t);
+      await a?.updateDisplayName(state.user!.displayName.getOrCrash());
       user = state.user!.copyWith(filled: true);
     }
     emit(
