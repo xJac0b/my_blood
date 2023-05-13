@@ -5,12 +5,12 @@ Welcome to **My Blood** - an application for managing blood test results! MyBloo
 
 ## Screenshots
 <p float="left">
-<img src="flutter_07.png" width="300">
-<img src="flutter_01.png" width="300">
-<img src="flutter_02.png" width="300">
-<img src="flutter_03.png" width="300">
-<img src="flutter_04.png" width="300">
-<img src="flutter_06.png" width="300">
+<img src="screenshots/flutter_07.png" width="300">
+<img src="screenshots/flutter_01.png" width="300">
+<img src="screenshots/flutter_02.png" width="300">
+<img src="screenshots/flutter_03.png" width="300">
+<img src="screenshots/flutter_04.png" width="300">
+<img src="screenshots/flutter_06.png" width="300">
 </p>
 
 ## Requirements
