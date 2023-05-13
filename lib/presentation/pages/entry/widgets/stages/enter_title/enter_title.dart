@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpdart/fpdart.dart';
@@ -14,7 +15,11 @@ import '../../../../../router/router.gr.dart';
 import 'title_field.dart';
 
 class EnterTitle extends StatelessWidget {
-  const EnterTitle({Key? key}) : super(key: key);
+  const EnterTitle({
+    Key? key,
+    required this.initialValue,
+  }) : super(key: key);
+  final EntryTitle initialValue;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<EntryFormBloc, EntryFormState>(
@@ -53,7 +58,7 @@ class EnterTitle extends StatelessWidget {
               HeadlineMedium('enterTitleHeadline'.tr()),
               const SizedBox(height: 20),
               TitleField(
-                initialValue: state.entry.title.value.fold((_) => null, id),
+                initialValue: initialValue.value.fold((_) => null, id),
                 onChanged: (title) {
                   context
                       .read<EntryFormBloc>()
@@ -94,5 +99,12 @@ class EnterTitle extends StatelessWidget {
         );
       },
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty<EntryTitle?>('initialValue', initialValue));
   }
 }

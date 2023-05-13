@@ -11,7 +11,9 @@ import '../../../../../core/widgets/default_padding.dart';
 import '../../../../../core/widgets/text/headline_medium.dart';
 
 class EnterDate extends StatelessWidget {
-  const EnterDate({Key? key}) : super(key: key);
+  const EnterDate({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<EntryFormBloc, EntryFormState>(

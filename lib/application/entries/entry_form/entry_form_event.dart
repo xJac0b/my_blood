@@ -2,6 +2,7 @@ part of 'entry_form_bloc.dart';
 
 @freezed
 class EntryFormEvent with _$EntryFormEvent {
+  const factory EntryFormEvent.initialized(Entry? entry) = _Initialized;
   const factory EntryFormEvent.pageChanged(EntryFormPages pageIndex) =
       _PageChanged;
   const factory EntryFormEvent.dateChanged(DateTime date) = _DateChanged;

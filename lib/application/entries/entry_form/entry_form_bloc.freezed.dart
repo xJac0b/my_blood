@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$EntryFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -39,6 +40,7 @@ mixin _$EntryFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -58,6 +60,7 @@ mixin _$EntryFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -78,6 +81,7 @@ mixin _$EntryFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -94,6 +98,7 @@ mixin _$EntryFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -110,6 +115,7 @@ mixin _$EntryFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -146,6 +152,238 @@ class _$EntryFormEventCopyWithImpl<$Res, $Val extends EntryFormEvent>
 }
 
 /// @nodoc
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Entry? entry});
+
+  $EntryCopyWith<$Res>? get entry;
+}
+
+/// @nodoc
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$EntryFormEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? entry = freezed,
+  }) {
+    return _then(_$_Initialized(
+      freezed == entry
+          ? _value.entry
+          : entry // ignore: cast_nullable_to_non_nullable
+              as Entry?,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EntryCopyWith<$Res>? get entry {
+    if (_value.entry == null) {
+      return null;
+    }
+
+    return $EntryCopyWith<$Res>(_value.entry!, (value) {
+      return _then(_value.copyWith(entry: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
+  const _$_Initialized(this.entry);
+
+  @override
+  final Entry? entry;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'EntryFormEvent.initialized(entry: $entry)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.initialized'))
+      ..add(DiagnosticsProperty('entry', entry));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Initialized &&
+            (identical(other.entry, entry) || other.entry == entry));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, entry);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
+      __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
+    required TResult Function(EntryFormPages pageIndex) pageChanged,
+    required TResult Function(DateTime date) dateChanged,
+    required TResult Function(String title) titleChanged,
+    required TResult Function(String category) categoryAdded,
+    required TResult Function(String category, String element) elementAdded,
+    required TResult Function(String category) categoryRemoved,
+    required TResult Function(String oldCategory, String newCategory)
+        categoryChanged,
+    required TResult Function(String category, String element) elementRemoved,
+    required TResult Function(
+            String category, String oldElement, String newElement)
+        elementChanged,
+    required TResult Function(String category, String element, int unitIndex)
+        unitChanged,
+    required TResult Function(String category, String element, double value)
+        valueChanged,
+    required TResult Function() saved,
+  }) {
+    return initialized(entry);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
+    TResult? Function(EntryFormPages pageIndex)? pageChanged,
+    TResult? Function(DateTime date)? dateChanged,
+    TResult? Function(String title)? titleChanged,
+    TResult? Function(String category)? categoryAdded,
+    TResult? Function(String category, String element)? elementAdded,
+    TResult? Function(String category)? categoryRemoved,
+    TResult? Function(String oldCategory, String newCategory)? categoryChanged,
+    TResult? Function(String category, String element)? elementRemoved,
+    TResult? Function(String category, String oldElement, String newElement)?
+        elementChanged,
+    TResult? Function(String category, String element, int unitIndex)?
+        unitChanged,
+    TResult? Function(String category, String element, double value)?
+        valueChanged,
+    TResult? Function()? saved,
+  }) {
+    return initialized?.call(entry);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
+    TResult Function(EntryFormPages pageIndex)? pageChanged,
+    TResult Function(DateTime date)? dateChanged,
+    TResult Function(String title)? titleChanged,
+    TResult Function(String category)? categoryAdded,
+    TResult Function(String category, String element)? elementAdded,
+    TResult Function(String category)? categoryRemoved,
+    TResult Function(String oldCategory, String newCategory)? categoryChanged,
+    TResult Function(String category, String element)? elementRemoved,
+    TResult Function(String category, String oldElement, String newElement)?
+        elementChanged,
+    TResult Function(String category, String element, int unitIndex)?
+        unitChanged,
+    TResult Function(String category, String element, double value)?
+        valueChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(entry);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PageChanged value) pageChanged,
+    required TResult Function(_DateChanged value) dateChanged,
+    required TResult Function(_TitleChanged value) titleChanged,
+    required TResult Function(_CategoryAdded value) categoryAdded,
+    required TResult Function(_ElementAdded value) elementAdded,
+    required TResult Function(_CategoryRemoved value) categoryRemoved,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ElementRemoved value) elementRemoved,
+    required TResult Function(_ElementChanged value) elementChanged,
+    required TResult Function(_UnitChanged value) unitChanged,
+    required TResult Function(_ValueChanged value) valueChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_PageChanged value)? pageChanged,
+    TResult? Function(_DateChanged value)? dateChanged,
+    TResult? Function(_TitleChanged value)? titleChanged,
+    TResult? Function(_CategoryAdded value)? categoryAdded,
+    TResult? Function(_ElementAdded value)? elementAdded,
+    TResult? Function(_CategoryRemoved value)? categoryRemoved,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ElementRemoved value)? elementRemoved,
+    TResult? Function(_ElementChanged value)? elementChanged,
+    TResult? Function(_UnitChanged value)? unitChanged,
+    TResult? Function(_ValueChanged value)? valueChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PageChanged value)? pageChanged,
+    TResult Function(_DateChanged value)? dateChanged,
+    TResult Function(_TitleChanged value)? titleChanged,
+    TResult Function(_CategoryAdded value)? categoryAdded,
+    TResult Function(_ElementAdded value)? elementAdded,
+    TResult Function(_CategoryRemoved value)? categoryRemoved,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ElementRemoved value)? elementRemoved,
+    TResult Function(_ElementChanged value)? elementChanged,
+    TResult Function(_UnitChanged value)? unitChanged,
+    TResult Function(_ValueChanged value)? valueChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements EntryFormEvent {
+  const factory _Initialized(final Entry? entry) = _$_Initialized;
+
+  Entry? get entry;
+  @JsonKey(ignore: true)
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$_PageChangedCopyWith<$Res> {
   factory _$$_PageChangedCopyWith(
           _$_PageChanged value, $Res Function(_$_PageChanged) then) =
@@ -178,15 +416,23 @@ class __$$_PageChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PageChanged implements _PageChanged {
+class _$_PageChanged with DiagnosticableTreeMixin implements _PageChanged {
   const _$_PageChanged(this.pageIndex);
 
   @override
   final EntryFormPages pageIndex;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.pageChanged(pageIndex: $pageIndex)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.pageChanged'))
+      ..add(DiagnosticsProperty('pageIndex', pageIndex));
   }
 
   @override
@@ -210,6 +456,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -234,6 +481,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -256,6 +504,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -282,6 +531,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -301,6 +551,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -320,6 +571,7 @@ class _$_PageChanged implements _PageChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -383,15 +635,23 @@ class __$$_DateChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DateChanged implements _DateChanged {
+class _$_DateChanged with DiagnosticableTreeMixin implements _DateChanged {
   const _$_DateChanged(this.date);
 
   @override
   final DateTime date;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.dateChanged(date: $date)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.dateChanged'))
+      ..add(DiagnosticsProperty('date', date));
   }
 
   @override
@@ -414,6 +674,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -438,6 +699,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -460,6 +722,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -486,6 +749,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -505,6 +769,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -524,6 +789,7 @@ class _$_DateChanged implements _DateChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -587,15 +853,23 @@ class __$$_TitleChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TitleChanged implements _TitleChanged {
+class _$_TitleChanged with DiagnosticableTreeMixin implements _TitleChanged {
   const _$_TitleChanged(this.title);
 
   @override
   final String title;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.titleChanged(title: $title)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.titleChanged'))
+      ..add(DiagnosticsProperty('title', title));
   }
 
   @override
@@ -618,6 +892,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -642,6 +917,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -664,6 +940,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -690,6 +967,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -709,6 +987,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -728,6 +1007,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -791,15 +1071,23 @@ class __$$_CategoryAddedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CategoryAdded implements _CategoryAdded {
+class _$_CategoryAdded with DiagnosticableTreeMixin implements _CategoryAdded {
   const _$_CategoryAdded(this.category);
 
   @override
   final String category;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.categoryAdded(category: $category)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.categoryAdded'))
+      ..add(DiagnosticsProperty('category', category));
   }
 
   @override
@@ -823,6 +1111,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -847,6 +1136,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -869,6 +1159,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -895,6 +1186,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -914,6 +1206,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -933,6 +1226,7 @@ class _$_CategoryAdded implements _CategoryAdded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -1001,7 +1295,7 @@ class __$$_ElementAddedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ElementAdded implements _ElementAdded {
+class _$_ElementAdded with DiagnosticableTreeMixin implements _ElementAdded {
   const _$_ElementAdded(this.category, this.element);
 
   @override
@@ -1010,8 +1304,17 @@ class _$_ElementAdded implements _ElementAdded {
   final String element;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.elementAdded(category: $category, element: $element)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.elementAdded'))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('element', element));
   }
 
   @override
@@ -1036,6 +1339,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -1060,6 +1364,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -1082,6 +1387,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -1108,6 +1414,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -1127,6 +1434,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -1146,6 +1454,7 @@ class _$_ElementAdded implements _ElementAdded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -1211,15 +1520,25 @@ class __$$_CategoryRemovedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CategoryRemoved implements _CategoryRemoved {
+class _$_CategoryRemoved
+    with DiagnosticableTreeMixin
+    implements _CategoryRemoved {
   const _$_CategoryRemoved(this.category);
 
   @override
   final String category;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.categoryRemoved(category: $category)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.categoryRemoved'))
+      ..add(DiagnosticsProperty('category', category));
   }
 
   @override
@@ -1243,6 +1562,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -1267,6 +1587,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -1289,6 +1610,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -1315,6 +1637,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -1334,6 +1657,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -1353,6 +1677,7 @@ class _$_CategoryRemoved implements _CategoryRemoved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -1421,7 +1746,9 @@ class __$$_CategoryChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CategoryChanged implements _CategoryChanged {
+class _$_CategoryChanged
+    with DiagnosticableTreeMixin
+    implements _CategoryChanged {
   const _$_CategoryChanged(this.oldCategory, this.newCategory);
 
   @override
@@ -1430,8 +1757,17 @@ class _$_CategoryChanged implements _CategoryChanged {
   final String newCategory;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.categoryChanged(oldCategory: $oldCategory, newCategory: $newCategory)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.categoryChanged'))
+      ..add(DiagnosticsProperty('oldCategory', oldCategory))
+      ..add(DiagnosticsProperty('newCategory', newCategory));
   }
 
   @override
@@ -1457,6 +1793,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -1481,6 +1818,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -1503,6 +1841,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -1529,6 +1868,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -1548,6 +1888,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -1567,6 +1908,7 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -1637,7 +1979,9 @@ class __$$_ElementRemovedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ElementRemoved implements _ElementRemoved {
+class _$_ElementRemoved
+    with DiagnosticableTreeMixin
+    implements _ElementRemoved {
   const _$_ElementRemoved(this.category, this.element);
 
   @override
@@ -1646,8 +1990,17 @@ class _$_ElementRemoved implements _ElementRemoved {
   final String element;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.elementRemoved(category: $category, element: $element)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.elementRemoved'))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('element', element));
   }
 
   @override
@@ -1672,6 +2025,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -1696,6 +2050,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -1718,6 +2073,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -1744,6 +2100,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -1763,6 +2120,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -1782,6 +2140,7 @@ class _$_ElementRemoved implements _ElementRemoved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -1857,7 +2216,9 @@ class __$$_ElementChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ElementChanged implements _ElementChanged {
+class _$_ElementChanged
+    with DiagnosticableTreeMixin
+    implements _ElementChanged {
   const _$_ElementChanged(this.category, this.oldElement, this.newElement);
 
   @override
@@ -1868,8 +2229,18 @@ class _$_ElementChanged implements _ElementChanged {
   final String newElement;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.elementChanged(category: $category, oldElement: $oldElement, newElement: $newElement)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.elementChanged'))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('oldElement', oldElement))
+      ..add(DiagnosticsProperty('newElement', newElement));
   }
 
   @override
@@ -1898,6 +2269,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -1922,6 +2294,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -1944,6 +2317,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -1970,6 +2344,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -1989,6 +2364,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -2008,6 +2384,7 @@ class _$_ElementChanged implements _ElementChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -2084,7 +2461,7 @@ class __$$_UnitChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UnitChanged implements _UnitChanged {
+class _$_UnitChanged with DiagnosticableTreeMixin implements _UnitChanged {
   const _$_UnitChanged(this.category, this.element, this.unitIndex);
 
   @override
@@ -2095,8 +2472,18 @@ class _$_UnitChanged implements _UnitChanged {
   final int unitIndex;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.unitChanged(category: $category, element: $element, unitIndex: $unitIndex)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.unitChanged'))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('element', element))
+      ..add(DiagnosticsProperty('unitIndex', unitIndex));
   }
 
   @override
@@ -2123,6 +2510,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -2147,6 +2535,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -2169,6 +2558,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -2195,6 +2585,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -2214,6 +2605,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -2233,6 +2625,7 @@ class _$_UnitChanged implements _UnitChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -2310,7 +2703,7 @@ class __$$_ValueChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ValueChanged implements _ValueChanged {
+class _$_ValueChanged with DiagnosticableTreeMixin implements _ValueChanged {
   const _$_ValueChanged(this.category, this.element, this.value);
 
   @override
@@ -2321,8 +2714,18 @@ class _$_ValueChanged implements _ValueChanged {
   final double value;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.valueChanged(category: $category, element: $element, value: $value)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormEvent.valueChanged'))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('element', element))
+      ..add(DiagnosticsProperty('value', value));
   }
 
   @override
@@ -2348,6 +2751,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -2372,6 +2776,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -2394,6 +2799,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -2420,6 +2826,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -2439,6 +2846,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -2458,6 +2866,7 @@ class _$_ValueChanged implements _ValueChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -2508,12 +2917,18 @@ class __$$_SavedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Saved implements _Saved {
+class _$_Saved with DiagnosticableTreeMixin implements _Saved {
   const _$_Saved();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'EntryFormEvent.saved()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'EntryFormEvent.saved'));
   }
 
   @override
@@ -2528,6 +2943,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Entry? entry) initialized,
     required TResult Function(EntryFormPages pageIndex) pageChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(String title) titleChanged,
@@ -2552,6 +2968,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Entry? entry)? initialized,
     TResult? Function(EntryFormPages pageIndex)? pageChanged,
     TResult? Function(DateTime date)? dateChanged,
     TResult? Function(String title)? titleChanged,
@@ -2574,6 +2991,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Entry? entry)? initialized,
     TResult Function(EntryFormPages pageIndex)? pageChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(String title)? titleChanged,
@@ -2600,6 +3018,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_PageChanged value) pageChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_TitleChanged value) titleChanged,
@@ -2619,6 +3038,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
     TResult? Function(_PageChanged value)? pageChanged,
     TResult? Function(_DateChanged value)? dateChanged,
     TResult? Function(_TitleChanged value)? titleChanged,
@@ -2638,6 +3058,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_PageChanged value)? pageChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_TitleChanged value)? titleChanged,
@@ -2670,6 +3091,8 @@ mixin _$EntryFormState {
   Option<Either<EntryFailure, Unit>> get entryFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
+  bool get editMode => throw _privateConstructorUsedError;
+  bool get ready => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $EntryFormStateCopyWith<EntryFormState> get copyWith =>
@@ -2686,7 +3109,9 @@ abstract class $EntryFormStateCopyWith<$Res> {
       {EntryFormPages pageIndex,
       Entry entry,
       Option<Either<EntryFailure, Unit>> entryFailureOrSuccessOption,
-      bool isSaving});
+      bool isSaving,
+      bool editMode,
+      bool ready});
 
   $EntryCopyWith<$Res> get entry;
 }
@@ -2708,6 +3133,8 @@ class _$EntryFormStateCopyWithImpl<$Res, $Val extends EntryFormState>
     Object? entry = null,
     Object? entryFailureOrSuccessOption = null,
     Object? isSaving = null,
+    Object? editMode = null,
+    Object? ready = null,
   }) {
     return _then(_value.copyWith(
       pageIndex: null == pageIndex
@@ -2725,6 +3152,14 @@ class _$EntryFormStateCopyWithImpl<$Res, $Val extends EntryFormState>
       isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
+      editMode: null == editMode
+          ? _value.editMode
+          : editMode // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ready: null == ready
+          ? _value.ready
+          : ready // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -2750,7 +3185,9 @@ abstract class _$$_EntryFormStateCopyWith<$Res>
       {EntryFormPages pageIndex,
       Entry entry,
       Option<Either<EntryFailure, Unit>> entryFailureOrSuccessOption,
-      bool isSaving});
+      bool isSaving,
+      bool editMode,
+      bool ready});
 
   @override
   $EntryCopyWith<$Res> get entry;
@@ -2771,6 +3208,8 @@ class __$$_EntryFormStateCopyWithImpl<$Res>
     Object? entry = null,
     Object? entryFailureOrSuccessOption = null,
     Object? isSaving = null,
+    Object? editMode = null,
+    Object? ready = null,
   }) {
     return _then(_$_EntryFormState(
       pageIndex: null == pageIndex
@@ -2789,18 +3228,30 @@ class __$$_EntryFormStateCopyWithImpl<$Res>
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
+      editMode: null == editMode
+          ? _value.editMode
+          : editMode // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ready: null == ready
+          ? _value.ready
+          : ready // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_EntryFormState implements _EntryFormState {
+class _$_EntryFormState
+    with DiagnosticableTreeMixin
+    implements _EntryFormState {
   const _$_EntryFormState(
       {required this.pageIndex,
       required this.entry,
       required this.entryFailureOrSuccessOption,
-      required this.isSaving});
+      required this.isSaving,
+      required this.editMode,
+      required this.ready});
 
   @override
   final EntryFormPages pageIndex;
@@ -2810,10 +3261,28 @@ class _$_EntryFormState implements _EntryFormState {
   final Option<Either<EntryFailure, Unit>> entryFailureOrSuccessOption;
   @override
   final bool isSaving;
+  @override
+  final bool editMode;
+  @override
+  final bool ready;
 
   @override
-  String toString() {
-    return 'EntryFormState(pageIndex: $pageIndex, entry: $entry, entryFailureOrSuccessOption: $entryFailureOrSuccessOption, isSaving: $isSaving)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'EntryFormState(pageIndex: $pageIndex, entry: $entry, entryFailureOrSuccessOption: $entryFailureOrSuccessOption, isSaving: $isSaving, editMode: $editMode, ready: $ready)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'EntryFormState'))
+      ..add(DiagnosticsProperty('pageIndex', pageIndex))
+      ..add(DiagnosticsProperty('entry', entry))
+      ..add(DiagnosticsProperty(
+          'entryFailureOrSuccessOption', entryFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('isSaving', isSaving))
+      ..add(DiagnosticsProperty('editMode', editMode))
+      ..add(DiagnosticsProperty('ready', ready));
   }
 
   @override
@@ -2829,12 +3298,15 @@ class _$_EntryFormState implements _EntryFormState {
                 other.entryFailureOrSuccessOption ==
                     entryFailureOrSuccessOption) &&
             (identical(other.isSaving, isSaving) ||
-                other.isSaving == isSaving));
+                other.isSaving == isSaving) &&
+            (identical(other.editMode, editMode) ||
+                other.editMode == editMode) &&
+            (identical(other.ready, ready) || other.ready == ready));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, pageIndex, entry, entryFailureOrSuccessOption, isSaving);
+  int get hashCode => Object.hash(runtimeType, pageIndex, entry,
+      entryFailureOrSuccessOption, isSaving, editMode, ready);
 
   @JsonKey(ignore: true)
   @override
@@ -2849,7 +3321,9 @@ abstract class _EntryFormState implements EntryFormState {
       required final Entry entry,
       required final Option<Either<EntryFailure, Unit>>
           entryFailureOrSuccessOption,
-      required final bool isSaving}) = _$_EntryFormState;
+      required final bool isSaving,
+      required final bool editMode,
+      required final bool ready}) = _$_EntryFormState;
 
   @override
   EntryFormPages get pageIndex;
@@ -2859,6 +3333,10 @@ abstract class _EntryFormState implements EntryFormState {
   Option<Either<EntryFailure, Unit>> get entryFailureOrSuccessOption;
   @override
   bool get isSaving;
+  @override
+  bool get editMode;
+  @override
+  bool get ready;
   @override
   @JsonKey(ignore: true)
   _$$_EntryFormStateCopyWith<_$_EntryFormState> get copyWith =>

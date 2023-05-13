@@ -29,7 +29,9 @@ class EntryFormPageView extends StatelessWidget {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBar(
-            title: 'entryFormAppBarTitle'.tr(),
+            title: state.editMode
+                ? 'updateEntryFormAppBarTitle'.tr()
+                : 'newEntryFormAppBarTitle'.tr(),
             leading: state.pageIndex == EntryFormPages.date
                 ? const HomeIcon()
                 : BackArrowIcon(
@@ -47,15 +49,18 @@ class EntryFormPageView extends StatelessWidget {
                   .add(EntryFormEvent.pageChanged(EntryFormPages.values[ind])),
               controller: _controller,
               children: [
-                EnterDate(
-                  initialValue: state.entry.date,
-                ),
-                EnterResults(results: state.entry.results),
-                EnterTitle(initialValue: state.entry.title),
+                if (!state.ready)
+                  const Center(child: CircularProgressIndicator())
+                else ...const [
+                  EnterDate(),
+                  EnterResults(),
+                  EnterTitle(),
+                ]
               ],
             ),
           ),
-          floatingActionButton: state.pageIndex == EntryFormPages.results
+          floatingActionButton: state.pageIndex == EntryFormPages.results &&
+                  state.entry.results.categoriesLeft().isNotEmpty
               ? FloatingPlusButton(onPressed: () {
                   final categoriesLeft = state.entry.results.categoriesLeft();
                   if (categoriesLeft.isEmpty) {

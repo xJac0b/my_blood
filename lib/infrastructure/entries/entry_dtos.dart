@@ -40,7 +40,9 @@ class EntryDto with _$EntryDto {
         };
         innerMap[innerKey] = unitMap;
       });
-      outputMap[outerKey] = innerMap;
+      if (innerMap.isNotEmpty) {
+        outputMap[outerKey] = innerMap;
+      }
     });
 
     return EntryDto(

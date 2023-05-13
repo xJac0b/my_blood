@@ -9,14 +9,17 @@ class EntryFormState with _$EntryFormState {
     required Entry entry,
     required Option<Either<EntryFailure, Unit>> entryFailureOrSuccessOption,
     required bool isSaving,
+    required bool editMode,
+    required bool ready,
   }) = _EntryFormState;
 
-  factory EntryFormState.initial() {
+  factory EntryFormState.initial({required bool ready}) {
     return EntryFormState(
-      pageIndex: EntryFormPages.date,
-      entry: Entry.empty(),
-      entryFailureOrSuccessOption: none(),
-      isSaving: false,
-    );
+        pageIndex: EntryFormPages.date,
+        entry: Entry.empty(),
+        entryFailureOrSuccessOption: none(),
+        isSaving: false,
+        editMode: false,
+        ready: ready);
   }
 }

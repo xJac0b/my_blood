@@ -111,4 +111,19 @@ abstract class Results implements _$Results {
       .keys
       .where((element) => !results[category]!.keys.contains(element))
       .toList();
+
+  Results createOrder() {
+    final newCategoriesOrder = <String>[];
+    final newElementsOrder = <String, List<String>>{};
+    results.forEach((category, elements) {
+      newCategoriesOrder.add(category);
+      newElementsOrder[category] = [];
+      elements.forEach((key, value) {
+        newElementsOrder[category]!.add(key);
+      });
+    });
+
+    return copyWith(
+        categoriesOrder: newCategoriesOrder, elementsOrder: newElementsOrder);
+  }
 }

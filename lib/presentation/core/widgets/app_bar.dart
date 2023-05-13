@@ -11,9 +11,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     this.title = '',
     this.leading,
+    this.actions,
   }) : super(key: key);
   final String title;
   final Widget? leading;
+  final List<Widget>? actions;
   @override
   Widget build(BuildContext context) {
     debugPrint('context.router.currentPath: ${context.router.currentPath}');
@@ -38,13 +40,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                           ),
                         ])
               ]
-            : null);
+            : actions);
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(StringProperty('text', title));
+    properties
+      ..add(StringProperty('text', title))
+      ..add(IterableProperty<Widget>('actions', actions))
+      ..add(DiagnosticsProperty<Widget?>('leading', leading));
   }
 
   @override

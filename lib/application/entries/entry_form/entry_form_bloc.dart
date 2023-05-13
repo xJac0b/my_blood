@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,7 +15,17 @@ part 'entry_form_state.dart';
 
 @injectable
 class EntryFormBloc extends Bloc<EntryFormEvent, EntryFormState> {
-  EntryFormBloc(this._entryRepository) : super(EntryFormState.initial()) {
+  EntryFormBloc(this._entryRepository)
+      : super(EntryFormState.initial(ready: false)) {
+    on<_Initialized>((event, emit) {
+      if (event.entry != null) {
+        emit(state.copyWith(
+            entry: event.entry!
+                .copyWith(results: event.entry!.results.createOrder()),
+            editMode: true));
+      }
+      emit(state.copyWith(ready: true));
+    });
     on<_PageChanged>((event, emit) {
       if (event.pageIndex == EntryFormPages.results &&
               !state.entry.date.isValid() ||
@@ -91,7 +102,12 @@ class EntryFormBloc extends Bloc<EntryFormEvent, EntryFormState> {
         return;
       }
       emit(state.copyWith(isSaving: true));
-      final failureOrSuccess = await _entryRepository.create(state.entry);
+      Either<EntryFailure, Unit> failureOrSuccess;
+      if (state.editMode) {
+        failureOrSuccess = await _entryRepository.update(state.entry);
+      } else {
+        failureOrSuccess = await _entryRepository.create(state.entry);
+      }
       emit(state.copyWith(
         isSaving: false,
         entryFailureOrSuccessOption: optionOf(failureOrSuccess),

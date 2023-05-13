@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../application/entries/entry_list/entry_list_bloc.dart';
 import '../../core/widgets/app_bar.dart';
 import '../../core/widgets/default_padding.dart';
+import '../entry/widgets/app_bar_icons/home_icon.dart';
 import 'widgets/critical_failure_display_widget.dart';
 import 'widgets/result_card.dart';
 
@@ -18,10 +18,7 @@ class EntryListPageView extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
         title: 'resultListAppBarTitle'.tr(),
-        leading: IconButton(
-          icon: const Icon(Icons.home, color: Colors.black),
-          onPressed: () => context.router.pop(),
-        ),
+        leading: const HomeIcon(),
       ),
       body: DefaultPadding(
         child: BlocBuilder<EntryListBloc, EntryListState>(

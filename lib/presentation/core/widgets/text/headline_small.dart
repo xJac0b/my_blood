@@ -8,7 +8,11 @@ class HeadlineSmall extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: context.textTheme.headlineSmall);
+    return Text(
+      text,
+      style: context.textTheme.headlineSmall,
+      textAlign: TextAlign.start,
+    );
   }
 
   @override
