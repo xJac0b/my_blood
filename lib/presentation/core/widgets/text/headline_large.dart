@@ -10,7 +10,7 @@ class HeadlineLarge extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 42,
+        fontSize: 38,
         fontWeight: FontWeight.w300,
         color: color ?? Colors.black,
       ),

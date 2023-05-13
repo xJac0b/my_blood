@@ -19,6 +19,6 @@ class SignInFormState with _$SignInFormState {
         isSubmitting: false,
         showErrorMessages: AutovalidateMode.disabled,
         authFailureOrSuccessOption: none(),
-        verificationEmailAttempts: 2,
+        verificationEmailAttempts: 1,
       );
 }

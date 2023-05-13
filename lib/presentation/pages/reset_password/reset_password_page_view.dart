@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../../gen/assets.gen.dart';
 import '../../../utils/extensions.dart';
 import '../../core/widgets/default_padding.dart';
 import '../../core/widgets/text/headline_large.dart';
@@ -14,7 +15,7 @@ class ResetPasswordPageView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Center(
+        body: DefaultPadding(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -31,6 +32,7 @@ class ResetPasswordPageView extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const ResetPaswordForm(),
+              Expanded(child: Assets.images.forgotPassword.svg()),
             ],
           ),
         ),

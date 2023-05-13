@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
+import '../../../gen/assets.gen.dart';
 import '../../../utils/extensions.dart';
 import '../../core/widgets/authentication/form/wide_button.dart';
 import '../../core/widgets/default_padding.dart';
@@ -36,40 +37,26 @@ class VerificationPageView extends StatelessWidget {
         return SafeArea(
           child: Scaffold(
             resizeToAvoidBottomInset: false,
-            body: Center(
-              child: state.isSubmitting
-                  ? const CircularProgressIndicator()
-                  : Column(
+            body: state.isSubmitting
+                ? const Center(child: CircularProgressIndicator())
+                : DefaultPadding(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        DefaultPadding(
-                            child: HeadlineLarge('verifyEmailHeading'.tr())),
+                        HeadlineLarge('verifyEmailHeading'.tr()),
                         const SizedBox(height: 10),
-                        DefaultPadding(
-                          child: Text(
-                              style:
-                                  TextStyle(color: context.colors.onBackground),
-                              textAlign: TextAlign.center,
-                              'verifyEmailInfo'
-                                  .tr(namedArgs: {'email': email})),
-                        ),
-                        DefaultPadding(
-                          child: Icon(
-                            Icons.mail_outline,
-                            color: context.colors.primary,
-                            size: 300,
-                          ),
-                        ),
+                        Text(
+                            style:
+                                TextStyle(color: context.colors.onBackground),
+                            textAlign: TextAlign.center,
+                            'verifyEmailInfo'.tr(namedArgs: {'email': email})),
+                        Expanded(child: Assets.images.mail.svg()),
                         if (state.verificationEmailAttempts > 0)
-                          DefaultPadding(
-                            child: TextButton(
-                              onPressed: () =>
-                                  context.read<SignInFormBloc>().add(
-                                        const SignInFormEvent
-                                            .sendVerificationEmail(),
-                                      ),
-                              child: Text('verifyEmailResend'.tr()),
-                            ),
+                          TextButton(
+                            onPressed: () => context.read<SignInFormBloc>().add(
+                                  const SignInFormEvent.sendVerificationEmail(),
+                                ),
+                            child: Text('verifyEmailResend'.tr()),
                           ),
                         WideButton(
                             label: 'next'.tr(),
@@ -81,7 +68,7 @@ class VerificationPageView extends StatelessWidget {
                             })
                       ],
                     ),
-            ),
+                  ),
           ),
         );
       },

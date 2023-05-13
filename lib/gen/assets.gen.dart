@@ -26,6 +26,13 @@ class $AssetsImagesGen {
   SvgGenImage get datePicker =>
       const SvgGenImage('assets/images/date_picker.svg');
 
+  /// File path: assets/images/forgot_password.svg
+  SvgGenImage get forgotPassword =>
+      const SvgGenImage('assets/images/forgot_password.svg');
+
+  /// File path: assets/images/mail.svg
+  SvgGenImage get mail => const SvgGenImage('assets/images/mail.svg');
+
   /// File path: assets/images/title.svg
   SvgGenImage get title => const SvgGenImage('assets/images/title.svg');
 
@@ -33,7 +40,8 @@ class $AssetsImagesGen {
   SvgGenImage get userData => const SvgGenImage('assets/images/user_data.svg');
 
   /// List of all assets
-  List<dynamic> get values => [addResult, appLogo, datePicker, title, userData];
+  List<dynamic> get values =>
+      [addResult, appLogo, datePicker, forgotPassword, mail, title, userData];
 }
 
 class $AssetsTranslationsGen {
