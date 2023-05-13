@@ -1,16 +1,30 @@
-# my_blood
 
-A new Flutter project.
+# My Blood - Blood Test Result Management Application
 
-## Getting Started
+Welcome to **My Blood** - an application for managing blood test results! MyBlood is a Flutter && Firebase based application that follows the principles of Domain-Driven Design (DDD)
 
-This project is a starting point for a Flutter application.
+## Screenshots
+<p float="left">
+<img src="flutter_07.png" width="300">
+<img src="flutter_01.png" width="300">
+<img src="flutter_02.png" width="300">
+<img src="flutter_03.png" width="300">
+<img src="flutter_04.png" width="300">
+<img src="flutter_06.png" width="300">
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Requirements
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Before you can start using **My Blood**, you need to have Flutter installed on your machine.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running the Application
+
+Simply clone this repository to your local machine and navigate to the project directory, then run following command in your terminal.
+
+```
+flutter run
+```
+
+## Data Storage
+
+To ensure that your data is secure and easily accessible, **My Blood** uses Firebase Firestore as its primary data storage solution.
