@@ -39,21 +39,23 @@ class HomePageView extends StatelessWidget {
             onPressed: () => context.router.push(const UserRoute()),
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            BlocBuilder<UserBloc, UserState>(
-              builder: (context, state) {
-                return DefaultPadding(
-                    child: HeadlineLarge(
-                        '${'greeting'.tr()} ${state.user?.displayName.value.fold((l) => l, (r) => r)} 👋'));
-              },
-            ),
-            const ResultsSection(),
-            const DefaultPadding(
-              child: ButtonsSection(),
-            ),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BlocBuilder<UserBloc, UserState>(
+                builder: (context, state) {
+                  return DefaultPadding(
+                      child: HeadlineLarge(
+                          '${'greeting'.tr()} ${state.user?.displayName.value.fold((l) => l, (r) => r)} 👋'));
+                },
+              ),
+              const ResultsSection(),
+              const DefaultPadding(
+                child: ButtonsSection(),
+              ),
+            ],
+          ),
         ),
       ),
     );

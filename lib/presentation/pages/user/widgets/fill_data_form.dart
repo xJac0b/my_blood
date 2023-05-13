@@ -4,13 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpdart/fpdart.dart';
 
 import '../../../../application/auth/user/user_bloc.dart';
+import '../../../../gen/assets.gen.dart';
 import '../../../core/widgets/authentication/form/date_field.dart';
 import '../../../core/widgets/authentication/form/gender_dropdown.dart';
 import '../../../core/widgets/authentication/form/name_form_field.dart';
-import 'weight_field.dart';
+import '../../fill_data/widgets/weight_field.dart';
 
-class FillDataForm extends StatelessWidget {
-  const FillDataForm({super.key});
+class UserDataForm extends StatelessWidget {
+  const UserDataForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,7 @@ class FillDataForm extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const WeightField(),
+              Expanded(child: Assets.images.userData.svg()),
             ],
           ),
         );

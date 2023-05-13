@@ -39,7 +39,7 @@ class DisplayName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  static const maxLength = 25;
+  static const maxLength = 20;
 }
 
 class DateOfBirth extends ValueObject<DateTime> {

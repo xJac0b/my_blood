@@ -8,8 +8,8 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Assets.images.appLogo.image(
-      width: 120,
-      height: 120,
+      width: 200,
+      height: 200,
     );
   }
 }

@@ -15,7 +15,7 @@ class UserPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       appBar:
           CustomAppBar(leading: const BackArrowIcon(), title: 'yourData'.tr()),
       body: DefaultPadding(
@@ -24,7 +24,7 @@ class UserPageView extends StatelessWidget {
             if (state.isSubmitting) {
               return const Center(child: CircularProgressIndicator());
             }
-            return const FillDataForm();
+            return const UserDataForm();
           },
         ),
       ),
