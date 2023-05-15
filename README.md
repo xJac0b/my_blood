@@ -1,7 +1,7 @@
 
 # My Blood - Blood Test Result Management Application
 
-Welcome to **My Blood** - an application for managing blood test results! MyBlood is a Flutter && Firebase based application that follows the principles of Domain-Driven Design (DDD)
+Welcome to **My Blood** - an application for managing blood test results! MyBlood is a Flutter && Firebase based application that follows the principles of Domain-Driven Design (DDD). The application uses the Bloc library for state management and the Injectable package with Get It for dependency injection.
 
 ## Screenshots
 <p float="left">
